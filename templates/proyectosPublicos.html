@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container marketing" style="margin-top: 100px;">
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+       {% for proyecto in pPublico %}
+
+        <div class="col-lg-4">
+
+          <img class="rounded-circle" src="{{ proyecto.img_minatura.url }}" alt="Generic placeholder image" width="140" height="140">
+          <h2>{{ proyecto.nombre }}</h2>
+          <p>{{ proyecto.descripcion }}</p>
+          <p><a class="btn btn-secondary" href="{{ proyecto.get_absolute_url }}" role="button">View details &raquo;</a></p>
+        </div>
+        {% endfor %}
+
+      </div><!-- /.row -->
+
+  </div>
+
+
+{% endblock %}

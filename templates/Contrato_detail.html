@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="DivBody">
+<table class="table table-bordered">
+  <tr>
+    <th>Numero:</th>
+    <td>{{ contrato.numero }}</td>
+  </tr>
+  <tr>
+    <th>Año:</th>
+    <td>{{ contrato.year }}</td>
+  </tr>
+  <tr>
+    <th>Numero en proponente:</th>
+    <td>{{ contrato.numero_en_proponente }}</td>
+  </tr>
+  <tr>
+    <th>Objeto:</th>
+    <td>{{ contrato.objeto }}</td>
+  </tr>
+  <tr>
+    <th>Tipo de obra:</th>
+    <td>{{ contrato.tipo_de_obra }}</td>
+  </tr>
+  <tr>
+    <th>Entidad contratante:</th>
+    <td>{{ contrato.entidad_contratante }}</td>
+  </tr>
+  <tr>
+    <th>Valor ejecutado:</th>
+    <td>{{ contrato.valor_ejecutado }}</td>
+  </tr>
+  <tr>
+    <th>Plazo en dias:</th>
+    <td>{{ contrato.plazo_en_dias }}</td>
+  </tr>
+  <tr>
+    <th>Fecha terminación:</th>
+    <td>{{ contrato.fecha_terminacion }}</td>
+  </tr>
+  <tr>
+    <th>Valor en sm:</th>
+    <td>{{ contrato.valor_en_sm }}</td>
+  </tr>
+  <tr>
+    <th>Porcentaje participación:</th>
+    <td>{{ contrato.porcentaje_participacion }}</td>
+  </tr>
+  <tr>
+    <th>Valor en sm participación:</th>
+    <td>{{ contrato.valor_en_sm_participacion }}</td>
+  </tr>
+  <tr>
+    <th>Departamento:</th>
+    <td>{{ contrato.departamento }}</td>
+  </tr>
+  <tr>
+    <th>Municipio:</th>
+    <td>{{ contrato.municipio }}</td>
+  </tr>
+
+  
+
+  {% if user.groups.all.0.name != "Cliente_No_Autorizado" %}
+
+      <tr>
+        <th>Contrato:</th>
+        <td>{% if contrato.contrato != ''  %}<a href="{{ contrato.contrato.url }}">Descargar</a> {% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Adicional 1:</th>
+        <td>{% if contrato.adicional1 != ''  %}<a href="{{ contrato.adicional1 }}">Descargar</a>{% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Adicional 2:</th>
+        <td>{% if contrato.adicional2 != ''  %}<a href="{{ contrato.adicional2 }}">Descargar</a>{% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Acta recibo final:</th>
+        <td>{% if contrato.acta_recibo_final != ''  %}<a href="{{ contrato.acta_recibo_final }}">Descargar</a>{% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Acta liquidacion:</th>
+        <td>{% if contrato.acta_liquidacion != ''  %}<a href="{{ contrato.acta_liquidacion }}">Descargar</a>{% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Certificacion de obra:</th>
+        <td>{% if contrato.certificacion_de_obra != ''  %}<a href="{{ contrato.certificacion_de_obra }}">Descargar</a>{% else %} Archivo no disponible{% endif %}</td>
+      </tr>
+      <tr>
+        <th>Certificacion director:</th>
+        <td>{% if contrato.certificacion_director != ''  %}<a href="{{ contrato.certificacion_director }}">Descargar</a>{% else %}Archivo no disponible {% endif %}</td>
+      </tr>
+      <tr>
+        <th>Acuerdo consorcial:</th>
+        <td>{% if contrato.acuerdo_consorcial != ''  %}<a href="{{ contrato.acuerdo_consorcial }}">Descargar</a>{% else %} Archivo no disponible {% endif %}</td>
+      </tr>
+
+  {% else %}
+
+      <tr>
+        <th>Contrato:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Adicional 1:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Adicional 2:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Acta recibo final:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Acta liquidacion:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Certificacion de obra:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Certificacion director:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+      <tr>
+        <th>Acuerdo consorcial:</th>
+        <td>No esta autorizado para descargar</td>
+      </tr>
+        
+
+  {% endif %}
+
+</table>
+
+</div>
+
+{% endblock %}

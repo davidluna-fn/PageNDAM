@@ -1,0 +1,272 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<style type="text/css" media="screen">
+    h1 {
+    color: #fff;
+    text-align: center;
+    }
+
+    /*Estilos de la galeria*/
+
+    .galeria {
+        width: 90%;
+        margin: auto;
+        list-style: none;
+        padding: 20px;
+        box-sizing: border-box;
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .galeria li {
+        margin: 5px;
+    }
+
+    .galeria img {
+        width: 300px;
+        height: 200px;
+    }
+
+    /*Estilos del modal*/
+
+    .modal {
+        display: none;
+    }
+
+    .modal:target {
+        
+        display: block;
+        position: fixed;
+        background: rgba(0,0,0,0.8);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .modal h3 {
+        color: #fff;
+        font-size: 30px;
+        text-align: center;
+        margin: 15px 0;
+    }
+
+    .imagen {
+        width: 100%;
+        height: 50%;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imagen a {
+        color: #fff;
+        font-size: 40px;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    .imagen a:nth-child(2) {
+        margin: 0;
+        height: 100%;
+        flex-shrink: 2;
+    }
+
+    .imagen img {
+        width: 80%;
+        height: 80vh;
+        max-width: 100%;
+        border: 7px solid #fff;
+        box-sizing: border-box;
+    }
+
+    .cerrar {
+        display: block;
+        background: #fff;
+        width: 35px;
+        height: 35px;
+        margin: 15px auto;
+        text-align: center;
+        text-decoration: none;
+        font-size: 25px;
+        color: #000;
+        padding: 5px;
+        vertical-align: bottom;
+        border-radius: 50%;
+        line-height: 25px;
+    }
+</style>
+
+    <div class="container">
+
+
+    <h1 style="color:#018DAC;">{{ pPublico.nombre }}</h1>
+    <div style="text-align: justify; color:gray;text-shadow: 0px 0px;"><h3>{{ pPublico.descripcion }}</h3></div>
+    
+
+    <ul class="galeria">
+        {% if pPublico.img1 != '' %}
+            <li><a href="#img1"><img src="{{ pPublico.img1.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img2 != '' %}
+            <li><a href="#img2"><img src="{{ pPublico.img2.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img3 != '' %}
+            <li><a href="#img3"><img src="{{ pPublico.img3.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img4 != '' %}
+            <li><a href="#img4"><img src="{{ pPublico.img4.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img5 != '' %}
+            <li><a href="#img5"><img src="{{ pPublico.img5.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img6 != '' %}
+            <li><a href="#img6"><img src="{{ pPublico.img6.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img7 != '' %}
+            <li><a href="#img7"><img src="{{ pPublico.img7.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img8 != '' %}
+            <li><a href="#img8"><img src="{{ pPublico.img8.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img9 != '' %}
+            <li><a href="#img9"><img src="{{ pPublico.img9.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+        {% if pPublico.img10 != '' %}
+            <li><a href="#img10"><img src="{{ pPublico.img10.url }}" width="400" height="200" alt=""></a></li>
+        {% endif %}
+    </ul>
+
+    <div class="modal" id="img1">
+        <h3>Imagen 1</h3>
+        <div class="imagen">
+            <a href="#img10">&#60;</a>
+            <a href="#img2"><img src="{{ pPublico.img1.url }}" width="600" height="400" alt=""></a>
+            <a href="#img2">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+    
+    <div class="modal" id="img2">
+        <h3>Paisaje 2</h3>
+        <div class="imagen">
+            <a href="#img1">&#60;</a>
+            <a href="#img3"><img src="{{ pPublico.img2.url }}" width="600" height="400" alt=""></a>
+            <a href="#img3">></a>
+        </div>
+        <div style="margin-top: 210px;">
+            <a class="cerrar" href="">X</a>
+        </div>
+    </div>
+    
+    <div class="modal" id="img3">
+        <h3>Paisaje 3</h3>
+        <div class="imagen">
+            <a href="#img2">&#60;</a>
+            <a href="#img4"><img src="{{ pPublico.img3.url }}" width="600" height="400" alt=""></a>
+            <a href="#img4">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+    
+    <div class="modal" id="img4">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img3">&#60;</a>
+            <a href="#img5"><img src="{{ pPublico.img4.url }}" width="600" height="400" alt=""></a>
+            <a href="#img5">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+    <div class="modal" id="img5">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img4">&#60;</a>
+            <a href="#img6"><img src="{{ pPublico.img5.url }}" width="600" height="400" alt=""></a>
+            <a href="#img6">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+    <div class="modal" id="img6">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img5">&#60;</a>
+            <a href="#img7"><img src="{{ pPublico.img6.url }}" width="600" height="400" alt=""></a>
+            <a href="#img7">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+    <div class="modal" id="img7">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img6">&#60;</a>
+            <a href="#img8"><img src="{{ pPublico.img7.url }}" width="600" height="400" alt=""></a>
+            <a href="#img8">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+    <div class="modal" id="img8">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img7">&#60;</a>
+            <a href="#img9"><img src="{{ pPublico.img8.url }}" width="600" height="400" alt=""></a>
+            <a href="#img9">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+    <div class="modal" id="img9">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img8">&#60;</a>
+            <a href="#img10"><img src="{{ pPublico.img9.url }}" width="600" height="400" alt=""></a>
+            <a href="#img10">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+    </div>
+    </div>
+
+
+    <div class="modal" id="img10">
+        <h3>Paisaje 4</h3>
+        <div class="imagen">
+            <a href="#img9">&#60;</a>
+            <a href="#img1"><img src="{{ pPublico.img10.url }}" width="600" height="400" alt=""></a>
+            <a href="#img1">></a>
+        </div>
+        <div style="margin-top: 210px;">
+        <a class="cerrar" href="">X</a>
+        </div>
+    </div>
+
+    </div>
+
+
+{% endblock %}

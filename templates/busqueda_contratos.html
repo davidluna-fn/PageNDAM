@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+
+{% block content %}
+
+
+<!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+
+<!--     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+
+
+ <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+
+<form method="get">
+
+
+
+<div >
+
+
+    <div class="well" style="background-color: gray; padding-left: 10px;padding-right: 10px; padding-top: 10px; border: black solid; border-bottom: 0px">
+
+      <h4 style="margin-top: 0;">Filtrar</h4>
+      <div class="row"  >
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filterqs.form.numero.label_tag }}
+          {% render_field filterqs.form.numero class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filterqs.form.year.label_tag }}
+          {% render_field filterqs.form.year class="form-control date-picker-year" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filterqs.form.departamento.label_tag }}
+          {% render_field filterqs.form.departamento class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filterqs.form.municipio.label_tag }}
+          {% render_field filterqs.form.municipio class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          <B>Palabra clave:</B>
+          {% render_field filterqs.form.objeto class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          {{ filterqs.form.tipo_de_obra.label_tag }}
+          {% render_field filterqs.form.tipo_de_obra class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          <B>Valor ejecutado menor a:</B>
+          {% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          <B>Valor ejecutado mayor a:</B>
+          {% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          <B>Fecha de terminación menor a:</B>
+          {% render_field filterqs.form.fecha_terminacion_lt class="form-control date-picker" %}
+        </div>
+        <div class="form-group col-sm-4 col-md-3">
+          <B>Fecha de terminación mayor a:</B>
+            <div class="form-group" style="text-shadow: 0px 0px;">
+          {% render_field filterqs.form.fecha_terminacion_gt class="form-control date-picker" %}
+        </div>
+
+
+        <script type="text/javascript">
+            $(function () {
+                $('.date-picker').datepicker({
+                  format: 'yyyy-mm-dd'
+                }
+                );
+            });
+        </script>
+
+         <script type="text/javascript">
+        $(function () {
+            $('.date-picker-year').datepicker({
+                minViewMode: 2,
+                format: 'yyyy'
+            });
+        });</script>
+
+
+      </div>
+
+
+  </form>
+
+
+</div>
+
+<div style = "padding: 10; height: 100px;">
+  <div class="btm" style = "float: left">
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-search"></span> Buscar
+      </button>
+      </div>
+      <div class="btm" style = "float: left">
+        <button name='pdf' type="submit" class="btn btn-primary" >
+        <span class="glyphicon "></span> Generar Reporte
+      </button>
+      </div>
+      <div class="btm" style = "float: left">
+      <a class="btn btn-primary"  href="{% url 'logout' %}" >cerrar sesion</a>
+      </div>
+    </div>
+</div>
+
+
+
+  <table class="table table-bordered" style="border: black solid;">
+    <thead style="border: black solid;">
+      <tr style="color: #018DAC; text-shadow: 0px 0px;">
+        <th style="border: black solid;">Número</th>
+        <th style="border: black solid;">Año</th>
+        <th style="border: black solid;">Objeto</th>
+        <th style="border: black solid;">Valor en SM</th>
+        <th style="border: black solid;">Contrato</th>
+        <th style="border: black solid;">Acta de liquidación</th>
+        <th style="border: black solid;">Acta de Recibo final</th>
+      </tr>
+    </thead>
+    <tbody style="border: black solid; border: black solid;">
+      {% for contrato in filter %}
+        <tr style="color: gray;text-shadow: 0px 0px;">
+          <td style="border: black solid;">{{ contrato.numero }}</td>
+          <td style="border: black solid;">{{ contrato.year }}</td>
+          <th style="border: black solid;"><a href="{{ contrato.get_absolute_url }}" style="color: gray; text-shadow: 0px 0px;"> {{ contrato.objeto }}</a></th>
+          <th style="border: black solid;">{{ contrato.valor_en_sm}}</th>
+          <th style="border: black solid;">{% if contrato.contrato == '' %} No {% else %} Si {% endif %}</th>
+          <th style="border: black solid;">{% if contrato.acta_liquidacion == '' %} No {% else %} Si {% endif %}</th>
+          <th style="border: black solid;">{% if contrato.acta_recibo_final == '' %} No {% else %} Si {% endif %}</th>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+<!--
+{% if filter.has_other_pages %}
+    <nav aria-label="Topics pagination" class="mb-4">
+      <ul class="pagination">
+        {% if filter.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ filter.previous_page_number }}">Previous</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+          </li>
+        {% endif %}
+
+        {% for page_num in filter.paginator.page_range %}
+          {% if filter.number == page_num %}
+            <li class="page-item active">
+              <span class="page-link">
+                {{ page_num }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+
+        {% if filter.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ filter.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <span class="page-link">Next</span>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+-->
+</div>
+
+{% endblock %}

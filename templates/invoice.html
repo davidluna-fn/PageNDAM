@@ -1,0 +1,100 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+ <html>
+     <head>
+         <title>Title</title>
+          <meta charset="utf-8">
+         <style type="text/css">
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+     </head>
+     <body>
+         <div class='wrapper'>
+             <div class='header'>
+                 <p class='title'>Reporte Experiencia contratos NDAM </p>
+             </div>
+         <div>
+         <div class='details'>
+             Usuario: {{ user }}<br/>
+             Fecha: {{ date }} <br/>
+             <hr class='hrItem' />
+         </div>
+     </div>
+
+  <table border=1 width=1000 class="table table-bordered" cellpadding = 5px>
+    <thead>
+      <tr>
+        <th width=50>Número</th>
+        <th width=35>Año</th>
+        <th>Objeto</th>
+        <th width=50>Valor en SM</th>
+        <th width=55>Contrato</th>
+        <th width=70>Acta de liquidación</th>
+        <th width=50>Acta de Recibo final</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for contrato in filter.qs %}
+        <tr>
+          <td align="center">{{ contrato.numero }}</td>
+          <td align="center">{{ contrato.year }}</td>
+          <th align="left" valign="middle">{{ contrato.objeto }}</th>
+		      <th align="center">{{ contrato.valor_en_sm}}</th>
+          <th align="center">
+              {% if contrato.contrato == '' %} No {% else %} Si {% endif %}
+          </th>
+          <th align="center">
+              {% if contrato.acta_liquidacion == '' %} No {% else %} Si {% endif %}
+          </th>
+          <th align="center">
+              {% if contrato.acta_recibo_final == '' %} No {% else %} Si {% endif %}
+          </th>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+
+
+
+     </body>
+ </html>
+
+ {% endblock %}

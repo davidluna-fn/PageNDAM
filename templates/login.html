@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br><br><br>
+  <h2 style="color: #018DAC;">Iniciar Sesión</h2>
+  <div class="container" style="margin-bottom: 300px; background-color: gray;padding-bottom: 20px;">
+  	<div style="width: :50%;"> 
+  		<form method="post" class="form-signin">
+    	{% csrf_token %}
+    	{{ form|crispy}}
+    	<button type="submit" class="btn btn-primary">Iniciar sesion</button>
+  		</form>
+  	</div>	
+  </div> 
+  
+{% endblock %}
+
+
