@@ -175,3 +175,9 @@ header li{
 header a{
 	color: white;
 }
+
+#textobanner{
+	float: left;
+	margin-left: 150px;
+	margin-top: 230px;
+}
