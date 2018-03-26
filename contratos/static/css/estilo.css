@@ -1,0 +1,133 @@
+*{
+	margin:0px;
+	border:0px;
+	padding:0px;
+}
+
+#contenedor{
+	background: red;
+	height: 1050px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+body{
+	background: #363637;
+
+}
+
+header, #banner{
+	background: white;
+	height: 100px;
+}
+
+#banner{
+	height: 620px;
+	background: grey;
+}
+
+#proyectosenventa{
+	height: 540px;
+	background-color: green;
+
+}
+
+footer{
+	height: 290px;
+}
+
+#logo3{
+	background: #0092C2;
+	height: 520px;
+	width: 310px;
+	float: left;
+	margin-right: 25px;
+}
+
+#proyectos{
+	height: 540px;
+	position: absolute;
+	margin-top:-35px;
+
+}
+
+#proyecto1 {
+	background: red;
+	float: right;
+	width: 285px;
+	height: 520px;
+	display: inline-block;
+	margin-right: 120px;
+}
+
+#proyecto2{
+	background: red;
+	float: right;
+	width: 285px;
+	height: 520px;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#proyecto3{
+	background: red;
+	float: right;
+	width: 285px;
+	height: 520px;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#subfooter{
+	margin-right: 120px;
+	margin-left: 120px;
+	margin-top: 0px;
+	height: 225px;
+	background-color: yellow;
+}
+
+#subfooter2{
+	margin-right: 120px;
+	margin-left: 120px;
+	margin-top: 0px;
+	height: 65px;
+	background-color: blue;
+}
+
+footer p{
+	text-align: center;
+    padding-top: 25px;
+    color: white;
+}
+
+#logo1{
+	background-color: magenta;
+	width: 400px;
+	height: 100px; 
+	float: left;
+}
+
+#headermenu{
+	height: 100px;
+	background-color: black;
+	width: 525px;
+	float: left;
+}
+
+#redesheader{
+	height: 100px;
+	background-color: blue;
+	width: 200px;	
+	float: left;
+}
+
+#intranetheader{
+	width: 110px;
+	background-color: #98A4A2;
+	height: 35px;
+	margin-bottom: 0px;
+	float: left;
+	margin-top: 65px;
+}
