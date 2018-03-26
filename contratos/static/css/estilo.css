@@ -115,14 +115,14 @@ footer p{
 #headermenu{
 	height: 100px;
 	background-color: #31333C;
-	width: 525px;
+	width: 535px;
 	float: left;
 }
 
 #redesheader{
 	height: 100px;
 	background-color: #31333C;
-	width: 200px;	
+	width: 190px;	
 	float: left;
 }
 
@@ -139,6 +139,8 @@ footer p{
 	color: white;
 	text-align: center;
 	margin-top: 10px;
+	  font-family: 'Raleway', medium;
+      font-weight: bold;
 }
 
 #logo2{
@@ -158,8 +160,18 @@ header li{
   float: left;
   font-size: 15px;
   margin-top: 25px;
+  font-family: 'Raleway', medium;
+      font-weight: bold;
 }
-
+#redesheader li{
+  display: block;
+  padding: .9em;
+  text-decoration: none;
+  float: left;
+  font-size: 15px;
+  margin-top: 22px;
+  width: 4%;
+}
 header a{
 	color: white;
 }

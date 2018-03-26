@@ -10,7 +10,13 @@
         <a href="{% url 'contacto' %}"><li> <p>CONTACTO</p></li></a>
       </ul>
     </div>
-    <div id="redesheader"></div>
+    <div id="redesheader">
+      <ul>
+        <a href="{% url 'index' %}"><li><img src="{% static 'img/hinsta.png' %}" alt="" width="25px"> </li></a>
+        <a href="{% url 'sobreNosotros' %}"><li><img src="{% static 'img/hfb.png' %}" alt="" width="25px"> </li></a>
+        <a href=""><li><img src="{% static 'img/htwitter.png' %}" alt="" width="25px"> </li></a>
+      </ul>
+    </div>
     <a href="{% url 'login' %}"><div id="intranetheader"><h5>INTRANET</h5></div></a>
 
 </header>
