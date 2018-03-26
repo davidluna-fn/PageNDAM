@@ -2,7 +2,14 @@
 
 <header id="header" class="">
     <a href="{% url 'index' %}" alt="logo.png"><div id="logo1"><img src="{% static 'img/nda1.png' %}" alt="" width="400px"></div></a>
-    <div id="headermenu"></div>
+    <div id="headermenu">
+      <ul>
+        <a href="{% url 'index' %}"><li> <p>INICIO</p></li></a>
+        <a href="{% url 'sobreNosotros' %}"><li> <p>SOBRE NOSOTROS</p></li></a>
+        <a href=""><li> <p>EXPERIENCIA</p></li></a>
+        <a href="{% url 'contacto' %}"><li> <p>CONTACTO</p></li></a>
+      </ul>
+    </div>
     <div id="redesheader"></div>
     <a href="{% url 'login' %}"><div id="intranetheader"><h5>INTRANET</h5></div></a>
 

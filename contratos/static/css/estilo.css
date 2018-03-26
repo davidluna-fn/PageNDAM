@@ -21,6 +21,7 @@ body{
 header, #banner{
 	background: #31333C;
 	height: 100px;
+	color: white;
 }
 
 #banner{
@@ -144,3 +145,21 @@ footer p{
 	width: 310px;
 	height: 225px;
 } 
+
+header ul{
+	list-style:none;
+	overflow: hidden;
+}
+
+header li{
+  display: block;
+  padding: .9em;
+  text-decoration: none;
+  float: left;
+  font-size: 15px;
+  margin-top: 25px;
+}
+
+header a{
+	color: white;
+}
