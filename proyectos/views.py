@@ -36,38 +36,40 @@ def index(request):
     pprivado = ProyectoPrivado.objects.all()
     ppublico = ProyectoPrivado.objects.all()
     config   = configuracionInicio.objects.all()[0]
+
+    print(pprivado)
     banner   = []
     projects = []
 
     if config.imgbanner1.split()[1] == 'ProyectoPublico':
-        banner.append(ppublico(int(config.imgbanner1.split()[0])))
+        banner.append(ppublico[int(config.imgbanner1.split()[0])-1])
     else:
-        banner.append(pprivado(int(config.imgbanner1.split()[0])))
+        banner.append(pprivado[int(config.imgbanner1.split()[0])-1])
 
     if config.imgbanner2.split()[1] == 'ProyectoPublico':
-        banner.append(ppublico(int(config.imgbanner2.split()[0])))
+        banner.append(ppublico[int(config.imgbanner2.split()[0])-1])
     else:
-        banner.append(pprivado(int(config.imgbanner2.split()[0])))
+        banner.append(pprivado[int(config.imgbanner2.split()[0])-1])
 
     if config.imgbanner3.split()[1] == 'ProyectoPublico':
-        banner.append(ppublico(int(config.imgbanner3.split()[0])))
+        banner.append(ppublico[int(config.imgbanner3.split()[0])-1])
     else:
-        banner.append(pprivado(int(config.imgbanner3.split()[0])))
+        banner.append(pprivado[int(config.imgbanner3.split()[0])-1])
 
     if config.proyectoventa1.split()[1] == 'ProyectoPublico':
-        projects.append(ppublico(int(config.proyectoventa1.split()[0])))
+        projects.append(ppublico[int(config.proyectoventa1.split()[0])-1])
     else:
-        projects.append(pprivado(int(config.proyectoventa1.split()[0])))
+        projects.append(pprivado[int(config.proyectoventa1.split()[0])-1])
 
     if config.proyectoventa2.split()[1] == 'ProyectoPublico':
-        projects.append(ppublico(int(config.proyectoventa2.split()[0])))
+        projects.append(ppublico[int(config.proyectoventa2.split()[0])-1])
     else:
-        projects.append(pprivado(int(config.proyectoventa2.split()[0])))
+        projects.append(pprivado[int(config.proyectoventa2.split()[0])-1])
 
     if config.proyectoventa3.split()[1] == 'ProyectoPublico':
-        projects.append(ppublico(int(config.proyectoventa3.split()[0])))
+        projects.append(ppublico[int(config.proyectoventa3.split()[0])-1])
     else:
-        projects.append(pprivado(int(config.proyectoventa3.split()[0])))
+        projects.append(pprivado[int(config.proyectoventa3.split()[0])-1])
 
     context = {'banner':banner, 'projects':projects}
     return render(request,'home.html',context)
