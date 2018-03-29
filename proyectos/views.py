@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import ProyectoPrivado, ProyectoPublico
+import sys
+sys.path.append("..") # Adds higher directory to python modules path.
+from web.models import configuracionInicio
 
 
 # Create your views here.
@@ -30,10 +33,41 @@ def pPrivado_detalles(request,pk):
     return render(request,'pPrivado-detalles.html', context={'pPrivado':pPrivado_id,})
 
 def index(request):
-    imgs = ProyectoPrivado.objects.all()
-    obj = []
-    for i in imgs:
-        if i.mostrar_al_inicio == True:
-            obj.append(i)
-    context = {'img':obj}
+    pprivado = ProyectoPrivado.objects.all()
+    ppublico = ProyectoPrivado.objects.all()
+    config   = configuracionInicio.objects.all()[0]
+    banner   = []
+    projects = []
+
+    if config.imgbanner1.split()[1] == 'ProyectoPublico':
+        banner.append(ppublico(int(config.imgbanner1.split()[0])))
+    else:
+        banner.append(pprivado(int(config.imgbanner1.split()[0])))
+
+    if config.imgbanner2.split()[1] == 'ProyectoPublico':
+        banner.append(ppublico(int(config.imgbanner2.split()[0])))
+    else:
+        banner.append(pprivado(int(config.imgbanner2.split()[0])))
+
+    if config.imgbanner3.split()[1] == 'ProyectoPublico':
+        banner.append(ppublico(int(config.imgbanner3.split()[0])))
+    else:
+        banner.append(pprivado(int(config.imgbanner3.split()[0])))
+
+    if config.proyectoventa1.split()[1] == 'ProyectoPublico':
+        projects.append(ppublico(int(config.proyectoventa1.split()[0])))
+    else:
+        projects.append(pprivado(int(config.proyectoventa1.split()[0])))
+
+    if config.proyectoventa2.split()[1] == 'ProyectoPublico':
+        projects.append(ppublico(int(config.proyectoventa2.split()[0])))
+    else:
+        projects.append(pprivado(int(config.proyectoventa2.split()[0])))
+
+    if config.proyectoventa3.split()[1] == 'ProyectoPublico':
+        projects.append(ppublico(int(config.proyectoventa3.split()[0])))
+    else:
+        projects.append(pprivado(int(config.proyectoventa3.split()[0])))
+
+    context = {'banner':banner, 'projects':projects}
     return render(request,'home.html',context)
