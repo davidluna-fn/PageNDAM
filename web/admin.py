@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import ImgInicio
+from .models import configuracionInicio
 # Register your models here.
 
-class AdminImgInicio(admin.ModelAdmin):
-	list_display = ['img1','img2']
+class AdminConfiguracionInicio(admin.ModelAdmin):
+	list_display = ['imgbanner1','imgbanner2','imgbanner3']
 	class Meta:
-		model = ImgInicio
+		model = configuracionInicio
 
 
-admin.site.register(ImgInicio,AdminImgInicio)
+admin.site.register(configuracionInicio,AdminConfiguracionInicio)

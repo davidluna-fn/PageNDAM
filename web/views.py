@@ -1,5 +1,5 @@
 from django.shortcuts import render, render_to_response, get_object_or_404
-from .models import ImgInicio
+from .models import configuracionInicio
 from .models import Contacto
 from .forms import ContactoForm
 from django.http import HttpResponse, HttpResponseRedirect
