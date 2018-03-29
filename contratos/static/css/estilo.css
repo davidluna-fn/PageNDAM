@@ -1,0 +1,309 @@
+*{
+	margin:0px;
+	border:0px;
+	padding:0px;
+}
+
+#contenedor{
+	background: #353537;
+	height: 1050px;
+	margin-right: auto;
+	margin-left: auto;
+
+
+}
+
+body{
+	background: #353537;
+
+}
+
+header, #banner{
+	background: #353537;
+	height: 100px;
+	color: white;
+}
+
+#banner{
+	height: 620px;
+	background: grey;
+}
+
+#proyectosenventa{
+	height: 540px;
+	background-color: #353537;
+
+}
+
+footer{
+	height: 290px;
+	background-color: #353537;
+}
+
+#logo3{
+	height: 520px;
+	width: 310px;
+	float: left;
+	margin-right: 25px;
+}
+
+#proyectos{
+	height: 540px;
+	position: absolute;
+	margin-top:-35px;
+
+}
+
+#proyecto1 {
+	background: #FFFFFF;
+	float: right;
+	width: 285px;
+	height: 520px;
+	display: inline-block;
+	margin-right: 120px;
+}
+
+#proyecto2{
+	background: #FFFFFF;
+	float: right;
+	width: 285px;
+	height: 520px;
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#proyecto3{
+background: #FFFFFF;
+float: right;
+width: 285px;
+height: 520px;
+display: inline-block;
+margin-right: 20px;
+}
+
+#subfooter{
+margin-right: 120px;
+margin-left: 120px;
+margin-top: 0px;
+height: 225px;
+background-color: #353537;
+border-top: 1px solid #FFFFFF;
+border-bottom: 1px solid #FFFFFF;
+}
+
+#subfooter2{
+margin-right: 120px;
+margin-left: 120px;
+margin-top: 0px;
+height: 65px;
+background-color: #353537;
+}
+
+footer p{
+text-align: center;
+padding-top: 25px;
+color: white;
+}
+
+#logo1{
+background-color: #353537;
+width: 400px;
+height: 100px; 
+float: left;
+}
+
+#headermenu{
+height: 100px;
+background-color: #353537;
+width: 535px;
+float: left;
+}
+
+#redesheader{
+height: 100px;
+background-color: #31333C;
+width: 190px;	
+float: left;
+}
+
+#intranetheader{
+width: 110px;
+background-color: #98A4A2;
+height: 35px;
+margin-bottom: 0px;
+float: left;
+margin-top: 65px;
+}
+
+#intranetheader h5{
+color: white;
+text-align: center;
+margin-top: 10px;
+font-family: 'Raleway', medium;
+font-weight: bold;
+}
+
+#logo2{
+width: 310px;
+height: 225px;
+float: left;
+display: inline-block;
+
+} 
+
+header ul{
+list-style:none;
+overflow: hidden;
+}
+
+header li{
+	display: block;
+	padding: .9em;
+	text-decoration: none;
+	float: left;
+	font-size: 15px;
+	margin-top: 25px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+}
+#redesheader li{
+	display: block;
+	padding: .9em;
+	text-decoration: none;
+	float: left;
+	font-size: 15px;
+	margin-top: 22px;
+	width: 4%;
+}
+
+header a{
+	color: white;
+}
+
+#textobanner{
+	float: left;
+	margin-left: 150px;
+	margin-top: 230px;
+}
+
+#mapasitio{
+	width: 250px;
+	height: 225px;
+	margin-right: 15px;
+	color: white;
+	padding-top: 0px;
+	float: left;
+
+}
+
+#mapasitio li {
+	text-decoration: none;
+	padding-left: 30px;
+		padding-top: 2px;
+
+
+}
+
+#mapasitio ul{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 2px;
+	padding-top: 20px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 13px;
+}
+#mapasitio p{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 2px;
+	padding-top: 7px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: left;
+}
+
+
+
+#footercontacto{
+
+	width: 250px;
+	height: 225px;
+	float: left;
+		margin-right: 15px;
+	color: white;
+	padding-top: 0px;
+
+}
+
+#footercontacto li {
+	text-decoration: none;
+	padding-left: 30px;
+		padding-top: 2px;
+		padding-bottom: 3px;
+
+
+}
+
+#footercontacto ul{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 2px;
+	padding-top: 20px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 13px;
+}
+#footercontacto p{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 15px;
+	padding-top: 7px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: left;
+}
+
+
+#footerredes{
+
+	width: 250px;
+	display: inline-block;
+	height: 225px;
+
+}
+
+#footerredes li {
+	text-decoration: none;
+	padding-left: 12px;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	display: block;
+	float: left;
+
+	
+}
+
+
+
+#footerredes ul{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 5px;
+	padding-top: 20px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 13px;
+}
+#footerredes p{
+	list-style:none;
+	overflow: hidden;
+	padding-left: 3	px;
+	padding-top: 7px;
+	font-family: 'Raleway', medium;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: left;
+}

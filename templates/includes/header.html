@@ -1,7 +1,29 @@
     {% load static %}
 
+<header id="header" class="">
+    <a href="{% url 'index' %}" alt="logo.png"><div id="logo1"><img src="{% static 'img/nda1.png' %}" alt="" width="400px"></div></a>
+    <div id="headermenu">
+      <ul>
+        <a href="{% url 'index' %}"><li> <p>INICIO</p></li></a>
+        <a href="{% url 'sobreNosotros' %}"><li> <p>SOBRE NOSOTROS</p></li></a>
+        <a href=""><li> <p>EXPERIENCIA</p></li></a>
+        <a href="{% url 'contacto' %}"><li> <p>CONTACTO</p></li></a>
+      </ul>
+    </div>
+    <div id="redesheader">
+      <ul>
+        <a href="{% url 'index' %}"><li><img src="{% static 'img/hinsta.png' %}" alt="" width="25px"> </li></a>
+        <a href="{% url 'sobreNosotros' %}"><li><img src="{% static 'img/hfb.png' %}" alt="" width="25px"> </li></a>
+        <a href=""><li><img src="{% static 'img/htwitter.png' %}" alt="" width="25px"> </li></a>
+      </ul>
+    </div>
+    <a href="{% url 'login' %}"><div id="intranetheader"><h5>INTRANET</h5></div></a>
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+</header>
+
+
+<!-- /header -->
+<!--     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,3 +54,4 @@
       </div>
     </nav>
 
+ -->
