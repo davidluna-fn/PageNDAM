@@ -34,14 +34,14 @@ def pPrivado_detalles(request,pk):
 
 def index(request):
     pprivado = ProyectoPrivado.objects.all()
-    ppublico = ProyectoPrivado.objects.all()
+    ppublico = ProyectoPublico.objects.all()
     config   = configuracionInicio.objects.all()[0]
 
-    print(pprivado)
+
     banner   = []
     projects = []
 
-    if config.imgbanner1.split()[1] == 'ProyectoPublico':
+    if str(config.imgbanner1.split()[1]) == 'ProyectoPublico':
         banner.append(ppublico[int(config.imgbanner1.split()[0])-1])
     else:
         banner.append(pprivado[int(config.imgbanner1.split()[0])-1])

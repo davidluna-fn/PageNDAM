@@ -1,3 +1,6 @@
+{% load static %}
+
+
 *{
 	margin:0px;
 	border:0px;
@@ -9,6 +12,7 @@
 	height: 1050px;
 	margin-right: auto;
 	margin-left: auto;
+	width: 1353px;
 
 
 }
@@ -22,12 +26,9 @@ header, #banner{
 	background: #353537;
 	height: 100px;
 	color: white;
+	width: 1353px;
 }
 
-#banner{
-	height: 620px;
-	background: grey;
-}
 
 #proyectosenventa{
 	height: 540px;
@@ -63,6 +64,22 @@ footer{
 	margin-right: 120px;
 }
 
+#proyecto1 h3{
+	padding-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+font-weight: bold;
+}
+
+#proyecto1 p{
+		margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+	font-size: 14px;
+}
+
+
 #proyecto2{
 	background: #FFFFFF;
 	float: right;
@@ -70,6 +87,20 @@ footer{
 	height: 520px;
 	display: inline-block;
 	margin-right: 20px;
+}
+#proyecto2 h3{
+	padding-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+font-weight: bold;
+}
+
+#proyecto2 p{
+		margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+	font-size: 14px;
 }
 
 #proyecto3{
@@ -79,6 +110,20 @@ width: 285px;
 height: 520px;
 display: inline-block;
 margin-right: 20px;
+}
+#proyecto3 h3{
+	padding-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+font-weight: bold;
+}
+
+#proyecto3 p{
+		margin-left: 20px;
+	margin-right: 20px;
+	font-family: 'Raleway', medium;
+	font-size: 14px;
 }
 
 #subfooter{
@@ -166,6 +211,44 @@ header li{
 	font-family: 'Raleway', medium;
 	font-weight: bold;
 }
+
+#headerinicio{
+	width: 75px;
+	background-color: #349CD1;
+	text-align: center;
+	height: 120px;
+	margin-top: -40px;
+}
+#headerinicio p{
+	padding-top: 39px;
+}
+
+header ul li:hover ul {display: block;}
+header ul li:hover li {float: none;}
+header ul li ul {
+  position: absolute;
+  width: 130px;
+  display: none;
+  padding-top: 20px;
+  margin-left: -12px;
+}
+
+header ul li ul li { 
+  background: #353537; 
+  display: block; 
+  list-style: square inside;
+  margin-top:  0px; 
+  text-align: left;
+}
+
+header ul li ul li:hover {color: #349CD1;}
+
+
+
+
+
+
+
 #redesheader li{
 	display: block;
 	padding: .9em;
@@ -180,9 +263,17 @@ header a{
 	color: white;
 }
 
+#banner{
+	height: 620px;
+	    background-repeat: no-repeat;
+background-size: 100% 100%;
+width: 1353px;
+}
+
+
 #textobanner{
 	float: left;
-	margin-left: 150px;
+	margin-left: 60px;
 	margin-top: 230px;
 }
 
@@ -306,4 +397,63 @@ header a{
 	font-weight: bold;
 	font-size: 14px;
 	text-align: left;
+}
+
+#b1{
+	background-color: #009DD4;
+	color: white;
+	width: 100px;
+	height: 35px;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 160px;
+	
+}
+
+#b1 p{
+	padding-top: 9px;
+	font-family: 'Raleway', medium;
+	text-decoration: none;
+	overflow: hidden;
+	font-size: 13px;
+
+}
+
+a.nounderline:link
+{
+text-decoration:none;
+} 
+
+#vermasbanner{
+	border:2px solid white;
+	height: 35px;
+	width: 100px;
+	margin-top: 40px;
+	font-family: 'Raleway', medium;
+	margin-left: 70%;
+	font-weight: bold;
+	font-size: 14px;
+	
+
+}
+
+#vermasbanner p{
+	padding-top: 11%;
+	text-align: center;
+	color: white;
+}
+
+
+#bannerL{
+	float: left;
+	padding-top: 20%;
+	margin-left: 40px;
+	width: 40px;
+}
+
+#bannerR{
+	float: left;
+	padding-top: 20%;
+		width: 40px;
+		margin-left: 57%;
 }
