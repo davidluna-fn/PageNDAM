@@ -578,3 +578,63 @@ text-decoration:none;
 	background-color: #349CD1;
 	color: white;
 }
+
+#logovideo{
+	height: 435px;
+	width: 100%;
+	background-color: #383839;
+}
+#divdescripcion{
+	height: 240px;
+	width: 100%;
+	background-color: white;
+	font-family: 'Raleway', medium;
+}
+#divdescripcion p{
+	padding-top: 60px;
+	margin-left: 190px;
+	margin-right: 190px;
+	text-align: left;
+	font-size: 14px;
+}
+
+#divmv{
+	height: 340px;
+	width: 100%;
+	background-color: #383839;
+}
+
+#mision{
+	width: 50%;
+	height: 100%;
+	background-color: #383839;
+	float: left;
+	border-bottom: 1px solid white;
+}
+
+#mision p{
+	color: white;
+	float: right;
+	font-family: 'Raleway', medium;
+	font-size: 13px;
+	margin-top: -180px;
+	margin-left: 190px;
+	margin-right: 65px;
+}
+
+#vision{
+	width: 50%;
+	height: 100%;
+	background-color: #349CD1;
+	float: right;
+}
+
+#vision p{
+	color: white;
+	float: left;
+	font-family: 'Raleway', medium;
+	font-size: 13px;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-right: 200px;	
+}
