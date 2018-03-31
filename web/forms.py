@@ -7,4 +7,4 @@ class ContactoForm(forms.Form):
 	nombre  = forms.CharField(max_length=100,label='Nombre' )
 	numero  = forms.IntegerField()
 	correo  = forms.EmailField()
-	mensaje = forms.CharField(max_length=1000, widget=forms.Textarea)
+	mensaje = forms.CharField(max_length=100, widget=forms.Textarea)

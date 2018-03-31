@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +22,86 @@
     <!-- Custom styles for this template -->
     <!-- <link href="{% static 'css/carousel.css' %}" rel="stylesheet"> -->
     <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+  
+  <script type="text/javascript">
+    function showLightbox() {
+      document.getElementById('over').style.display='block';
+      document.getElementById('fade').style.display='block';
+    }
+    function hideLightbox() {
+      document.getElementById('over').style.display='none';
+      document.getElementById('fade').style.display='none';
+    }
+
+    function showLightboxLogin() {
+      document.getElementById('overLogin').style.display='block';
+      document.getElementById('fade').style.display='block';
+    }
+    function hideLightboxLogin() {
+      document.getElementById('overLogin').style.display='none';
+      document.getElementById('fade').style.display='none';
+    }
+  </script>
+
   </head>
+
   <body>
+
+  <div id="over" class="overbox">
+      <div id="contactodiv">
+          <div style="float: left;"><img src="{% static 'img/conctato.png' %}" alt="" height="350px;"></div>
+
+          <div style="float: left; left: 25%; top:25%;z-index:1003;">
+            <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
+              <ul style="text-decoration: none;">
+                <li>{% render_field formulario.nombre placeholder="  Nombre" %}</li>
+                <li>{% render_field formulario.numero placeholder="  Numero" %}</li>
+                <li>{% render_field formulario.correo placeholder="  Correo" %}</li>
+                <li>{% render_field formulario.mensaje placeholder=" Mensaje" id="textarea" %}</li>
+              </ul>
+      
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+
+          <a href="javascript:hideLightbox();"><div style="float: right;"><img src="{% static 'img/cerrarContacto.png' %}" alt="" height="50px;" ></div></a>
+        
+      </div>
+</div>
+<div id="fade" class="fadebox">&nbsp;</div>
+
+
+<div id="overLogin" class="overboxlogin">
+      <div id="logindiv">
+          <div style="float: left; margin-left: 30px;margin-top: 60px;">
+            <img src="{% static 'img/login.png' %}" alt="" width="120px;">
+          </div>
+          <a href="javascript:hideLightboxLogin();"><div style="float: right;"><img src="{% static 'img/cerrarContacto.png' %}" alt="" height="50px;" ></div></a>
+
+          <div>
+            <form id='form' method="post" action="" class="loginform">{% csrf_token %}
+              <ul style="text-decoration: none;">
+                <li>{% render_field form.username placeholder="  Usuario" %}</li>
+                <li>{% render_field form.password placeholder="  Contraseña" %}</li>
+              </ul>
+      
+              <button type="submit" class="btn btn-primary">INICIAR</button>
+            </form>
+          </div>
+
+          
+        
+      </div>
+</div>
+<div id="fade" class="fadebox">&nbsp;</div>
+
+
+
+
+
+
+
+
 
 <section id=contenedor>
   

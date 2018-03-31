@@ -146,5 +146,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'dflunan@gmail.com'
-EMAIL_HOST_PASSWORD = 'gameover1024'
+EMAIL_HOST_PASSWORD = 'gcpds1024'
 EMAIL_PORT = 587

@@ -5,6 +5,9 @@ from .forms import ContactoForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import RequestContext
 from django.core.mail import send_mail
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -14,20 +17,57 @@ from django.core.mail import send_mail
 
 
 def sobreNosotros(request):
-	return render(request,'sobreNosotros.html',{})
+    if request.method=='POST':
+        formulario = ContactoForm(request.POST)
+        form = AuthenticationForm(request, data=request.POST)
+
+        if formulario.is_valid():
+            titulo = 'Mensaje de contacto NDAM'
+            contenido = 'La persona: ' + formulario.cleaned_data['nombre'] +' envia el siguiente mensaje: \n'
+            contenido += formulario.cleaned_data['mensaje'] + '\n'
+            contenido += 'Comunicarse al correo: ' + formulario.cleaned_data['correo'] + '\n'
+            contenido += 'Telefono: '+ str(formulario.cleaned_data['numero']) + '\n'
+            send_mail(titulo,contenido,'dflunan@gmail.com',['dflunan@gmail.com'],fail_silently=False,)
+            return HttpResponseRedirect('/')
+
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+
+        if form.is_valid():
+            login(request, user)
+            return HttpResponseRedirect('/busqueda/')
+    else:
+        formulario = ContactoForm()
+        form = AuthenticationForm()
+        
+    return render(request,'sobreNosotros.html',{'formulario':formulario,'form':form})
 
 
 def contacto(request):
-	if request.method=='POST':
-		formulario = ContactoForm(request.POST)
-		if formulario.is_valid():
-			titulo = 'Mensaje de contacto NDAM'
-			contenido = 'La persona: ' + formulario.cleaned_data['nombre'] +' envia el siguiente mensaje: \n'
-			contenido += formulario.cleaned_data['mensaje'] + '\n'
-			contenido += 'Comunicarse al correo: ' + formulario.cleaned_data['correo'] + '\n'
-			contenido += 'Telefono: '+ str(formulario.cleaned_data['numero']) + '\n'
-			send_mail(titulo,contenido,'dflunan@gmail.com',['dflunan@gmail.com'],fail_silently=False,)
-			return HttpResponseRedirect('/')
-	else:
-		formulario = ContactoForm()
-	return render(request,'contacto.html',{'formulario':formulario})
+    if request.method=='POST':
+        formulario = ContactoForm(request.POST)
+        form = AuthenticationForm(request, data=request.POST)
+        
+        if formulario.is_valid():
+            titulo = 'Mensaje de contacto NDAM'
+            contenido = 'La persona: ' + formulario.cleaned_data['nombre'] +' envia el siguiente mensaje: \n'
+            contenido += formulario.cleaned_data['mensaje'] + '\n'
+            contenido += 'Comunicarse al correo: ' + formulario.cleaned_data['correo'] + '\n'
+            contenido += 'Telefono: '+ str(formulario.cleaned_data['numero']) + '\n'
+            send_mail(titulo,contenido,'dflunan@gmail.com',['dflunan@gmail.com'],fail_silently=False,)
+            return HttpResponseRedirect('/')
+
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+
+
+        if form.is_valid():
+            login(request, user)
+            return HttpResponseRedirect('busqueda/')
+    else:
+        formulario = ContactoForm()
+        form = AuthenticationForm()
+    return render(request,'contacto.html',{'formulario':formulario,'form':form})
