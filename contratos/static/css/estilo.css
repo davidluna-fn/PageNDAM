@@ -142,6 +142,7 @@ margin-left: 120px;
 margin-top: 0px;
 height: 65px;
 background-color: #353537;
+width: 1353px;
 }
 
 footer p{
@@ -637,4 +638,91 @@ text-decoration:none;
 	margin-top: 20px;
 	margin-left: 50px;
 	margin-right: 200px;	
+}
+
+
+/* ===============================================================================================  */
+/* Banner Experiencia publica */
+/* ===============================================================================================  */
+
+
+#bannerEpu{
+	display: grid;
+	grid-template-columns: 37% 63%;
+	grid-template-rows: 500px;
+}
+
+#imgPu{
+	grid-column: 1 / span 1;
+
+}
+
+#imgPu img{
+	height: 75%;
+}
+#imgPu p{
+	color: white;
+	margin-top: -9em;
+	font-family: 	'Raleway', medium;
+	font-size: 0.9em;
+	padding-left: 7.4em;
+	margin-right: -3em;
+	z-index: 234;
+}
+
+#bannerPu{
+	grid-column: 2 / span 2;
+}
+
+#bannerPu img{
+	width:100%;
+	height: 100%;
+
+}
+
+#divcar{
+	background-color: white;
+	padding-left: 150px;
+	padding-right: 150px;
+	padding-top: 50px;
+	width: 1053px;
+	display: inline-block;
+}
+#divcar h1{
+	font-family: 'Raleway', medium;
+	font-size: 40px;
+}
+
+.card{
+	height: 520px;
+	width: 320px;
+	float: left;
+	margin: 10px;
+	background: #383839;
+	color: white;
+		font-family: 'Raleway', medium;
+
+}
+
+.card img{
+	width: 100%;
+}
+
+.card-content{
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.card-content h3{
+	padding-bottom: 20px;
+	margin-top: 25px;
+}
+
+.card-content p {
+	font-size: 13px;
+}
+
+
+
+#pcard ul, li{
+	list-style: none;
 }
