@@ -1,640 +1,722 @@
+/* Core Styles */
 {% load static %}
 
-
-*{
-	margin:0px;
-	border:0px;
-	padding:0px;
-}
-
-#contenedor{
-	background: #353537;
-	height: 1050px;
-	margin-right: auto;
-	margin-left: auto;
-	width: 1353px;
-
-
-}
-
 body{
-	background: #353537;
-
+  background: #383839;
+  font-family: 'Raleway', sans-serif;
 }
 
-header, #banner{
-	background: #353537;
-	height: 100px;
-	color: white;
-	width: 1353px;
+img{
+  width: 100%;
 }
 
 
-#proyectosenventa{
-	height: 540px;
-	background-color: #353537;
-
+/* Header */
+.header-grid{
+  display: grid;
+  grid-template-columns: repeat(1,minmax(300px,auto)) repeat(auto-fit, minmax(50px,auto));
+  grid-template-rows: 100px; 
+  grid-auto-rows: 100px;
+  color: #FFF;
 }
 
-footer{
-	height: 290px;
-	background-color: #353537;
+.header-grid div{
+  font-weight: bold;
+  background-color: #383839;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 1em;
+  padding-top: 35%;
 }
 
-#logo3{
-	height: 520px;
-	width: 310px;
-	float: left;
-	margin-right: 25px;
+.header-grid li{
+  font-size: 2em;
+  padding: 0.1em;
+  list-style: none;
+  display: inline-block;
 }
 
-#proyectos{
-	height: 540px;
-	position: absolute;
-	margin-top:-35px;
-
+#header a{
+  text-decoration: none;
+  color: #FFF;
 }
 
-#proyecto1 {
-	background: #FFFFFF;
-	float: right;
-	width: 285px;
-	height: 520px;
-	display: inline-block;
-	margin-right: 120px;
+#redes-header{
+  padding-top: 10%;
 }
 
-#proyecto1 h3{
-	padding-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-font-weight: bold;
+#intranet p{
+  background: #A4A2A0;
+  width: 8em;
+  height: 30px;
+  text-align: center;
+  padding-top: 10%;
 }
 
-#proyecto1 p{
-		margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-	font-size: 14px;
+#experiencia-header:hover{
+  background: blue;
 }
 
 
-#proyecto2{
-	background: #FFFFFF;
-	float: right;
-	width: 285px;
-	height: 520px;
-	display: inline-block;
-	margin-right: 20px;
-}
-#proyecto2 h3{
-	padding-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-font-weight: bold;
+
+
+/* Footer */
+#footer{
+  grid-columns: 1 / -1; 
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
-#proyecto2 p{
-		margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-	font-size: 14px;
+.footer-grid{
+  display: grid;
+  grid-template-columns: repeat(4,minmax(200px,auto));
+  grid-gap:2px;
+  grid-template-rows: 60px  200px 60px;
+
 }
 
-#proyecto3{
-background: #FFFFFF;
-float: right;
-width: 285px;
-height: 520px;
-display: inline-block;
-margin-right: 20px;
+#espacio{
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
 }
-#proyecto3 h3{
-	padding-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-font-weight: bold;
+#sub-footer{
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
 }
 
-#proyecto3 p{
-		margin-left: 20px;
-	margin-right: 20px;
-	font-family: 'Raleway', medium;
-	font-size: 14px;
+.footer-grid div{
+  background-color: blue;
 }
 
-#subfooter{
-margin-right: 120px;
-margin-left: 120px;
-margin-top: 0px;
-height: 225px;
-background-color: #353537;
-border-top: 1px solid #FFFFFF;
-border-bottom: 1px solid #FFFFFF;
+@media screen and (max-width: 700px){
+  .header-grid{
+    display: grid;
+    grid-template-columns: repeat(1,minmax(300px,auto)) ;
+    grid-template-rows: 100px repeat(6,minmax(50px,auto)); 
+    grid-gap: 2px;
+    grid-auto-rows: 100px;
+  }
+  #header div{
+    text-align: center;
+  }
+
+  .footer-grid{
+    display: grid;
+    grid-template-columns: repeat(1,minmax(300px,auto));
+    grid-gap:2px;
+    grid-template-rows: 60px repeat(4,minmax(200px,auto)) 60px;
+  }
+  #footer{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #sub-footer{
+  grid-column: 1 / -1;
+  grid-row: 6 / 7;
+  }
+
+  .header-grid li{
+    margin-left: 3%;
+    margin-right: 10%;
+  }
+
+  #intranet{
+    background: #A4A2A0;
+    text-align: center;
+    padding-top: 10%;
+  }
+  #intranet p{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    padding-top: 0%;
+  }
+
+    
 }
 
-#subfooter2{
-margin-right: 120px;
-margin-left: 120px;
-margin-top: 0px;
-height: 65px;
-background-color: #353537;
+
+/*Home*/
+
+
+.content-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 500px;
+  grid-auto-rows: 500px;
+  grid-gap: 2px;
 }
 
-footer p{
-text-align: center;
-padding-top: 25px;
-color: white;
-}
-
-#logo1{
-background-color: #353537;
-width: 400px;
-height: 100px; 
-float: left;
-}
-
-#headermenu{
-height: 100px;
-background-color: #353537;
-width: 535px;
-float: left;
-}
-
-#redesheader{
-height: 100px;
-background-color: #31333C;
-width: 190px;	
-float: left;
-}
-
-#intranetheader{
-width: 110px;
-background-color: #98A4A2;
-height: 35px;
-margin-bottom: 0px;
-float: left;
-margin-top: 65px;
-}
-
-#intranetheader h5{
-color: white;
-text-align: center;
-margin-top: 10px;
-font-family: 'Raleway', medium;
-font-weight: bold;
-}
-
-#logo2{
-width: 310px;
-height: 225px;
-float: left;
-display: inline-block;
-
-} 
-
-header ul{
-list-style:none;
-overflow: hidden;
-}
-
-header li{
-	display: block;
-	padding: .9em;
-	text-decoration: none;
-	float: left;
-	font-size: 15px;
-	margin-top: 25px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-}
-
-#headerinicio{
-	width: 75px;
-	background-color: #349CD1;
-	text-align: center;
-	height: 120px;
-	margin-top: -40px;
-}
-#headerinicio p{
-	padding-top: 39px;
-}
-
-header ul li:hover ul {display: block;}
-header ul li:hover li {float: none;}
-header ul li ul {
-  position: absolute;
-  width: 130px;
-  display: none;
-  padding-top: 20px;
-  margin-left: -12px;
-}
-
-header ul li ul li { 
-  background: #353537; 
-  display: block; 
-  list-style: square inside;
-  margin-top:  0px; 
-  text-align: left;
-}
-
-header ul li ul li:hover {color: #349CD1;}
-
-
-
-
-
-
-
-#redesheader li{
-	display: block;
-	padding: .9em;
-	text-decoration: none;
-	float: left;
-	font-size: 15px;
-	margin-top: 22px;
-	width: 4%;
-}
-
-header a{
-	color: white;
-}
 
 #banner{
-	height: 620px;
-	    background-repeat: no-repeat;
-background-size: 100% 100%;
-width: 1353px;
+  grid-column: 1/-1;
+  grid-row: 1 /2 ;
+  background-color: green;
+  display: grid;
+  grid-template-rows: 400px;
+
 }
-
-
-#textobanner{
-	float: left;
-	margin-left: 60px;
-	margin-top: 230px;
-}
-
-#mapasitio{
-	width: 250px;
-	height: 225px;
-	margin-right: 15px;
-	color: white;
-	padding-top: 0px;
-	float: left;
+#projects{
+  grid-column: 1 /-1;
+    padding-right: 30px;
 
 }
 
-#mapasitio li {
-	text-decoration: none;
-	padding-left: 30px;
-		padding-top: 2px;
+.projects-grid{
+  display: grid;
+  grid-template-columns: 300px repeat(3,minmax(280px,281px));
+  grid-row: 500px;
+  grid-auto-rows: 500px;
+  grid-gap: 50px;
+}
 
+#projects div{
+  background-color: purple;
+}
+
+@media screen and (max-width: 700px) {
+  .projects-grid{
+    display: grid;
+    grid-template-columns: repeat(1,minmax(300px,auto));
+    grid-row: 500px;
+    grid-auto-rows: repeat(4,minmax(500px,500px));
+    grid-gap: 2px;
+  }
+  #projects{
+  grid-column: 1 /-1;
+  padding-right: 0px;
 
 }
 
-#mapasitio ul{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 2px;
-	padding-top: 20px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 13px;
+/* Sobre Nosotros*/
+
+#banner-sobrenosotros{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns:4fr 6fr;
+  grid-gap: 2px;
+  grid-auto-rows: 500px;
 }
-#mapasitio p{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 2px;
-	padding-top: 7px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 14px;
-	text-align: left;
+#banner-sobrenosotros div{
+  background: red
 }
 
-
-
-#footercontacto{
-
-	width: 250px;
-	height: 225px;
-	float: left;
-		margin-right: 15px;
-	color: white;
-	padding-top: 0px;
-
+#descripcion-sobrenosotros{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: 1fr;
+  background-color: purple;
 }
-
-#footercontacto li {
-	text-decoration: none;
-	padding-left: 30px;
-		padding-top: 2px;
-		padding-bottom: 3px;
-
-
+#mision-vision{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px;
+  grid-auto-rows: 300px;
+  grid-gap: 2px;
 }
-
-#footercontacto ul{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 2px;
-	padding-top: 20px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 13px;
-}
-#footercontacto p{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 15px;
-	padding-top: 7px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 14px;
-	text-align: left;
+#mision-vision div{
+  background: cyan;
 }
 
 
-#footerredes{
+@media screen and (max-width: 700px) {
+  #banner-sobrenosotros{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 500px 500px;
+    grid-gap: 2px;
+    grid-auto-rows: 500px;
+  }
+  #mision-vision{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px 300px;
+    grid-auto-rows: 300px;
+    grid-gap: 2px;
+  }
+}
 
-	width: 250px;
-	display: inline-block;
-	height: 225px;
+/* Experiencia privada*/
+
+
+#banner-eprivada{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns:4fr 6fr;
+  grid-gap: 2px;
+  grid-auto-rows: 400px;
+}
+#banner-eprivada div{
+  background: red;
+}
+
+#container-projects{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(300px,auto));
+  grid-auto-rows: 500px;
+  grid-gap: 2px;
+}
+
+#container-projects div{
+  background-color: green;
+}
+
+#eprojects{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+}
+
+@media screen and (max-width: 700px) {
+  #banner-eprivada{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 500px 500px;
+    grid-gap: 5px;
+    grid-auto-rows: 500px;
+  }
+  #eprojects{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 5%;
+  }
+  #container-projects{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(1,minmax(300px,auto));
+  grid-auto-rows: 500px;
+  grid-gap: 2px;
+  }
 
 }
 
-#footerredes li {
-	text-decoration: none;
-	padding-left: 12px;
-	padding-top: 2px;
-	padding-bottom: 3px;
-	display: block;
-	float: left;
+/* detalles Experiencia privada*/
 
-	
+#banner-pprivado{
+  grid-column: 1 / -1;
+  background: yellow;
+  height: 400px;
+}
+#content-img{
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 200px;
+  grid-gap: 2px;
+}
+
+#content-img div{
+  background-color: cyan;
+}
+
+#galeria-pprivado{
+  padding-top: 30px;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 300px;
+  grid-auto-rows: 300px;
+  grid-gap: 2px;
+}
+
+.item1 {
+  grid-area: 1 / 1 /  2 /  2;
+  background-color: blue;
+}
+.item2 {
+  grid-area: span 1 / span 2 / span 1 / span 3;
+  background-color: green;
+}
+.item3 {
+  grid-area:  2 / 3 /  4 / 4;
+  background-color: blue;
 }
 
 
 
-#footerredes ul{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 5px;
-	padding-top: 20px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 13px;
-}
-#footerredes p{
-	list-style:none;
-	overflow: hidden;
-	padding-left: 3	px;
-	padding-top: 7px;
-	font-family: 'Raleway', medium;
-	font-weight: bold;
-	font-size: 14px;
-	text-align: left;
+#galeria-pprivado div{
+  background-color: red;
 }
 
-#b1{
-	background-color: #009DD4;
-	color: white;
-	width: 100px;
-	height: 35px;
-	text-align: center;
-	margin-top: 15px;
-	margin-left: 160px;
-	
-}
+@media screen and (max-width: 700px) {
+  #galeria-pprivado{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns:1fr;
+    grid-template-rows: 500px ;
+    grid-gap: 5px;
+    grid-auto-rows: 500px;
+  }
+  #content-img{
+  padding-left: 0%;
+  padding-right: 0%;  
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px 200px;
+  grid-auto-rows: 200px;
+  grid-gap: 2px;
 
-#b1 p{
-	padding-top: 9px;
-	font-family: 'Raleway', medium;
-	text-decoration: none;
-	overflow: hidden;
-	font-size: 13px;
-
-}
-
-a.nounderline:link
-{
-text-decoration:none;
-} 
-
-#vermasbanner{
-	border:2px solid white;
-	height: 35px;
-	width: 100px;
-	margin-top: 40px;
-	font-family: 'Raleway', medium;
-	margin-left: 70%;
-	font-weight: bold;
-	font-size: 14px;
-	
+  }
+  .item1 {
+    grid-area: 1 / 1 /  2 /  2;
+    background-color: blue;
+  }
+  .item2 {
+  grid-area: 1 / 1 /  2 /  2;
+    background-color: blue;
+  }
+  .item3 {
+  grid-area: 1 / 1 /  2 /  2;
+    background-color: blue;
+  }
 
 }
 
-#vermasbanner p{
-	padding-top: 11%;
-	text-align: center;
-	color: white;
+/* Experiencia Publica */
+
+#banner-ppublica{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 2fr 3.5fr;
+  grid-template-row: 400px;
+  grid-auto-rows: 400px;
+  grid-gap: 2px;
+}
+
+#banner-ppublica div{
+  background-color: green;
+}
+
+#galeria-ppublico{
+  grid-column: 1 / -1;
+  background-color: yellow;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-rows: 200px;
+}
+
+#ppublicos{
+  grid-column: 1 / -1;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(4,300px);
+  grid-gap: 2px;
+}
+
+#ppublicos div{
+  background-color: purple; 
+}
+
+  .item1pp {
+    grid-area: 1 / 1 /  2 /  3;
+  }
+  .item2pp {
+  grid-area: 2 / 1 /  3 /  3;
+  }
+  .item3pp {
+  grid-area: 1 / 3 /  3 /  4;
+  }
+  .item4pp {
+    grid-area: 3 / 1 /  5 /  2;
+  }
+  .item5pp {
+  grid-area: 3 / 2 /  4 /  4;
+  }
+  .item6pp {
+  grid-area: 4 / 2 /  5 /  4;
+  }
+
+  #paginator{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px;
+    background-color: cyan;
+    margin-right: 35%;
+    margin-left: 35%;
+  }
+
+  @media screen and (max-width: 700px) {
+    #paginator{
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 50px;
+      background-color: cyan;
+      margin-right: 1%;
+      margin-left: 1%;
+    }
+    #galeria-ppublico{
+      grid-column: 1 / -1;
+      background-color: yellow;
+      margin-left: 1%;
+      margin-right: 1%;
+      display: grid;
+      grid-template-rows: 100px;
+    }
+
+    #banner-ppublica{
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-row: 400px;
+      grid-auto-rows: 400px;
+      grid-gap: 2px;
+    }
+    #ppublicos{
+      grid-column: 1 / -1;
+      margin-left: 1%;
+      margin-right: 1%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(auto-fit,minmax(500px,auto));
+      grid-auto-rows: 500px;
+      grid-gap: 2px;
+    }
+    .item1pp {
+        grid-area: 1 / 1 /  2 /  2;
+    }
+    .item2pp {
+      grid-area: 2 / 1 /  3 /  2;
+    }
+    .item3pp {
+      grid-area: 3 / 1 /  4 /  2;
+    }
+    .item4pp {
+        grid-area: 4 / 1 /  5 /  2;
+    }
+    .item5pp {
+      grid-area: 5 / 1 /  6 /  2;
+    }
+    .item6pp {
+      grid-area: 6 / 1 /  7 /  2;
+    }
 }
 
 
-#bannerL{
-	float: left;
-	padding-top: 20%;
-	margin-left: 40px;
-	width: 40px;
+/* Detalles expericencia publica */
+
+#banner-ppublico{
+  grid-column: 1 / -1;
+  background: cyan;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px;
+  grid-gap: 2px;
 }
 
-#bannerR{
-	float: left;
-	padding-top: 20%;
-		width: 40px;
-		margin-left: 57%;
+#descripcion-ppublico{
+  grid-column: 1/ -1;
+  background: purple;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 200px;
+  grid-gap: 2px;
 }
 
-.fadebox {
-	display: none;
-	position: absolute;
-	top: 0%;
-	left: 0%;
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	z-index:1001;
-	-moz-opacity: 0.8;
-	opacity:.80;
-	filter: alpha(opacity=80);
-}
-.overbox {
-	display: none;
-	position: absolute;
-	top: 25%;
-	left: 20%;
-	width: 70%;
-	height: 70%;
-	z-index:1002;
+#img-ppublico{
+  grid-column: 1 / -1;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(1fr,auto));
+  grid-template-columns: repeat(3,minmax(200px,auto));
+  grid-auto-rows: 300px;
+  grid-gap: 2px;
 }
 
-#contactodiv {
-	background-color: #383839;
-	height: 350px;
-	width: 785px;
-
+#img-ppublico div{
+  background-color: green;
 }
 
-.inputContacto ul li{
-		list-style:none;
-
+.item1-pu{
+  grid-area: 1 / 1 / 2 / 2;
 }
 
-.inputContacto ul li input[type=text]{
-	height: 30px;
-	width: 320px;
-	margin-bottom: 8px;
-	margin-top: 65px;
-	margin-left: 70px;
+.item2-pu{
+  grid-area: 1 / 2 / 2 / 4;
 }
 
-.inputContacto ul li input[type=number]{
-	height: 30px;
-	width: 320px;
-	margin-bottom: 8px;
-	margin-left: 70px;
-
-
+.item3-pu{
+  grid-area: 2 / 1 / 3 / 2;
 }
 
-.inputContacto ul li input[type=email]{
-	height: 30px;
-	width: 320px;
-	margin-bottom: 8px;
-	margin-left: 70px;
+.item4-pu{
+  grid-area: 2 / 2 / 3 / 3;
 }
 
-.inputContacto button{
-	background-color: #349CD1;
-	height: 30px;
-	width: 100px;
-	margin-top: 15px;
-	margin-left: 290px;
-	color: white;
-
+.item5-pu{
+  grid-area: 2 / 3 / 4 / 4;
 }
 
-#textarea{
-	height: 90px;
-	width: 320px;
-	margin-bottom: 8px;
-	margin-left: 70px;
+.item6-pu{
+  grid-area: 3 / 1 / 3 / 2;
 }
 
-.overboxlogin {
-	display: none;
-	position: absolute;
-	top: 20%;
-	left: 72.5%;
-	width: 70%;
-	height: 70%;
-	z-index:1002;
+.item7-pu{
+  grid-area: 3 / 2 / 4 / 3;
 }
 
-#logindiv {
-	background-color: #383839;
-	height: 345px;
-	width: 255px;
+@media screen and (max-width: 700px) {
+   #img-ppublico{
+      grid-column: 1 / -1;
+      margin-left: 1%;
+      margin-right: 1%;
+      display: grid;
+      grid-template-columns: repeat(1,minmax(1fr,auto));
+      grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+      grid-auto-rows: 300px;
+      grid-gap: 2px;
+    }
+    .item1-pu{
+      grid-area: 1 / 1 / 2 / 2;
+    }
 
+    .item2-pu{
+      grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .item3-pu{
+      grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .item4-pu{
+      grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .item5-pu{
+      grid-area: 5 / 1 / 6 / 2;
+    }
+
+    .item6-pu{
+      grid-area: 6 / 1 / 7 / 2;
+    }
+
+    .item7-pu{
+      grid-area: 7 / 1 / 8 / 2;
+    }
 }
 
-.loginform ul li{
-		list-style:none;
+/*Busqueda de contratos*/
 
-}
 
-.loginform input[type=text]{
-	height: 30px;
-	width: 180px;
-	margin-bottom: 20px;
-	margin-top: 30px;
-	margin-left: 35px;
-}
-
-.loginform input[type=password]{
-	height: 30px;
-	width: 180px;
-	margin-left: 35px;
-	margin-bottom: 20px;
+#barra-navegacion{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+  grid-template-rows: repeat(auto-fit,minmax(100px,100px));
+  grid-auto-rows: 100px;
+  grid-gap: 2px;  
 }
 
-.loginform button{
-	height: 30px;
-	width: 70px;
-	margin-left: 145px;
-	background-color: #349CD1;
-	color: white;
+#barra-navegacion div{
+  background: cyan;
 }
 
-#logovideo{
-	height: 435px;
-	width: 100%;
-	background-color: #383839;
-}
-#divdescripcion{
-	height: 240px;
-	width: 100%;
-	background-color: white;
-	font-family: 'Raleway', medium;
-}
-#divdescripcion p{
-	padding-top: 60px;
-	margin-left: 190px;
-	margin-right: 190px;
-	text-align: left;
-	font-size: 14px;
+#busqueda{
+  grid-column: 1 / -1;
+  display: grid;
+  margin-right: 10%;
+  margin-left: 10%;
+  grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+  grid-template-rows: repeat(auto-fit,minmax(200px,auto));
+  grid-auto-rows: minmax(200px,auto);
+  grid-gap: 2px;  
 }
 
-#divmv{
-	height: 340px;
-	width: 100%;
-	background-color: #383839;
+#busqueda div{
+  background: yellow;
 }
 
-#mision{
-	width: 50%;
-	height: 100%;
-	background-color: #383839;
-	float: left;
-	border-bottom: 1px solid white;
+
+#titulo-tabla{
+  grid-column: 1 / -1;
+  display: grid;
+  margin-right:5%; 
+  margin-left: 5%;
+  grid-template-columns:0.5fr 0.5fr 2.5fr 0.9fr 0.8fr 0.8fr 0.8fr ; 
+  grid-auto-rows: minmax(120px,auto);
+  grid-gap: 2px;
 }
 
-#mision p{
-	color: white;
-	float: right;
-	font-family: 'Raleway', medium;
-	font-size: 13px;
-	margin-top: -180px;
-	margin-left: 190px;
-	margin-right: 65px;
+#titulo-tabla div {
+  background-color: purple;
 }
 
-#vision{
-	width: 50%;
-	height: 100%;
-	background-color: #349CD1;
-	float: right;
+#contenido-tabla{
+  grid-column: 1 / -1;
+  display: grid;
+  margin-right:5%; 
+  margin-left: 5%;
+  grid-template-columns: 0.5fr 0.5fr 2.5fr 0.9fr 0.8fr 0.8fr 0.8fr ;
+  grid-auto-rows: minmax(120px,auto);
+  grid-gap: 2px;
 }
 
-#vision p{
-	color: white;
-	float: left;
-	font-family: 'Raleway', medium;
-	font-size: 13px;
-	margin-top: 20px;
-	margin-left: 50px;
-	margin-right: 200px;	
+#contenido-tabla div {
+  background-color: green;
+}
+
+@media screen and (max-width: 700px) {
+    #busqueda{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right: 1%;
+      margin-left: 1%;
+    }
+    #titulo-tabla{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right:1%; 
+      margin-left: 1%;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,minmax(20px,auto)); 
+      grid-auto-rows: minmax(20px,auto);
+      grid-gap: 2px;
+    }
+    #contenido-tabla{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right:1%; 
+      margin-left: 1%;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,minmax(20px,auto)); 
+      grid-auto-rows: minmax(20px,auto);
+      grid-gap: 2px;
+    }
+
+
+    .campo1-busqueda{
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    .campo2-busqueda{
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .campo3-busqueda{
+      grid-area: 2 / 1 / 3 / 4;
+    }
+    .campo4-busqueda{
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    .campo5-busqueda{
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    .campo6-busqueda{
+      grid-area: 3 / 2 / 4 / 3;
+    }
+    .campo7-busqueda{
+      grid-area: 3 / 3 / 4 / 4;
+    }
 }
