@@ -53,12 +53,53 @@ img{
   padding-top: 10%;
 }
 
-#experiencia-header:hover{
-  background: blue;
+#experiencia-header ul li {
+  font-size: 1em;
+  display: none;
 }
 
+#experiencia-header:hover ul li {
+  display: block;
+  margin-left: -70px;
+  width: 180px;
+  text-align: center;
+  height: 115px;
+  background: #383839;
+  margin-top: -80px;
+}
 
+#header-epublica{
+  background-color: #383839;
+  border-bottom: 1px solid #FFF;
+  margin-top: 0px;
+  margin-left: 20px;
+  height: 20px;
+  width: 140px;
+}
 
+#header-epublica p{
+ margin-top: 9px;
+}
+
+#header-epublica:hover{
+ color: #3492C3;
+}
+
+#header-eprivada{
+  background-color: #383839;
+  height: 10px;
+  display: block;
+  margin-top: -10px;
+  margin-left: 20px;
+  width: 140px;
+  border-bottom: 1px solid white;
+}
+#header-eprivada p{
+ margin-top: 20px;
+}
+#header-eprivada:hover{
+ color: #3492C3;
+}
 
 /* Footer */
 #footer{
@@ -131,7 +172,11 @@ img{
     text-align: center;
     padding-top: 0%;
   }
-
+  #experiencia-header:hover ul li {
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
     
 }
 
