@@ -6,7 +6,11 @@
 
 <!-- <section id="content" class='content-grid'>
  -->  <div id='banner'>
-    <img src="{{ banner.2.img_principal.url }}" width="100%;" >
+    <img id="fondo-banner" src="{{ banner.2.img_principal.url }}" width="100%;" >
+    <img id="texto-banner" src="{% static 'img/textobanner.png' %}">
+    <img id="btnL" src="{% static 'img/bannerL.png' %}" class="btn-banner">
+    <img id="btnR" src="{% static 'img/bannerR.png' %}" class="btn-banner">
+    <div id="vm-banner">VER MÁS</div>
   </div>
   <div id="projects" class="projects-grid" >
     <div style="background:#383839;">
@@ -16,19 +20,19 @@
         <img src="{{ projects.0.img_minatura.url }}" width="100%" >
         <h3>{{ projects.0.nombre }}</h3>
         <p>{{ projects.0.descripcion }}</p>
-        <div id="project-btn" style="background-color: #349CD1; margin-bottom: 50px;">VER MÁS</div>
+        <div class="project-btn"><p>VER MÁS</p></div>
     </div>
     <div class="projects-item">
         <img src="{{ projects.1.img_minatura.url }}" width="100%" >
         <h3>{{ projects.1.nombre }}</h3>
         <p>{{ projects.1.descripcion }}</p>
-        <div id="project-btn" style="background-color: #349CD1; margin-bottom: 50px;">VER MÁS</div>
+        <div class="project-btn"><p>VER MÁS</p></div>
     </div>
     <div class="projects-item">
         <img src="{{ projects.2.img_minatura.url }}" width="100%" >
         <h3>{{ projects.2.nombre }}</h3>
         <p>{{ projects.2.descripcion }}</p>
-        <div id="project-btn" style="background-color: #349CD1; margin-bottom: 50px;">VER MÁS</div>
+        <div class="project-btn""><p>VER MÁS</p></div>
     </div>
   </div>
 <!-- </section> -->

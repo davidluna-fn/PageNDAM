@@ -6,9 +6,9 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 
-img{
+/*img{
   width: 100%;
-}
+}*7
 
 
 /* Header */
@@ -25,8 +25,9 @@ img{
   background-color: #383839;
   background-repeat: no-repeat;
   background-size: cover;
-  font-size: 1em;
-  padding-top: 35%;
+  background-size: 100%;
+  font-size: 0.9em;
+  padding-top: 40px;
 }
 
 .header-grid li{
@@ -40,6 +41,11 @@ img{
   text-decoration: none;
   color: #FFF;
 }
+#header{
+    border-bottom: 0.5px solid white;
+
+}
+
 
 #redes-header{
   padding-top: 10%;
@@ -63,43 +69,37 @@ img{
   margin-left: -70px;
   width: 180px;
   text-align: center;
-  height: 115px;
+  height: 40px;
   background: #383839;
-  margin-top: -80px;
+  margin-top: 0px;
+  position: relative;
+  z-index: 1;
 }
 
 #header-epublica{
   background-color: #383839;
   border-bottom: 1px solid #FFF;
-  margin-top: 0px;
+  margin-top: -20px;
   margin-left: 20px;
-  height: 20px;
+  height: 40px;
   width: 140px;
-}
-
-#header-epublica p{
- margin-top: 9px;
-}
-
-#header-epublica:hover{
- color: #3492C3;
 }
 
 #header-eprivada{
   background-color: #383839;
-  height: 10px;
+  height: 40px;
   display: block;
-  margin-top: -10px;
+  margin-top: -20px;
   margin-left: 20px;
   width: 140px;
-  border-bottom: 1px solid white;
 }
-#header-eprivada p{
- margin-top: 20px;
+#header-epublica p, #header-eprivada p{
+  padding-top: 10px;
 }
-#header-eprivada:hover{
- color: #3492C3;
+#header-epublica:hover, #header-eprivada:hover{
+  color: #349CD1;
 }
+
 
 /* Footer */
 #footer{
@@ -114,8 +114,6 @@ img{
   grid-template-rows: 60px  230px 60px;
 
 }
-
-
 
 
 #espacio{
@@ -211,11 +209,19 @@ img{
     }
 
     .footer-ul li{
-      display: inline-block;
-      padding-right: 0px;
-      margin-left: -20px;
+      /*display: inline-block;}*/
+      padding-right: 20px;
+      padding-left:  0px;
       font-size: 2em;
       padding: 0;
+      float: left;
+    }
+
+    .footer-ul{
+      margin-left: -50px;
+    }
+    .footer-ul p {
+      padding-left: 50px;
     }
 
   .footer-grid p{
@@ -238,12 +244,46 @@ img{
   grid-row: 1 /2 ;
   background-color: green;
   display: grid;
+  grid-template-columns: auto;
   grid-template-rows: minmax(300px,auto);
+  position: relative;
+}
 
+#texto-banner{
+  position: absolute;
+  width: 25%;
+  margin-top: 37%;
+  margin-bottom:20%;
+  height: 20%;
+  margin-left: 10%;
+}
+
+.btn-banner{
+  position: absolute;
+  width: 4%;
+}
+#btnL{
+  margin-top: 48%;
+
+}
+#btnR{
+  margin-top: 48%;
+  right: 0px;
+}
+#vm-banner{
+  position: absolute;
+  border: 1px solid white;
+  color: white;
+  width: 100px;
+  text-align: center;
+  height: 30px;
+  padding-top: 10px;
+  margin-left: 30%;
+  margin-top: 60%;
 }
 #projects{
   grid-column: 1 /-1;
-    padding-right: 30px;
+    padding-right: 10%;
 
 }
 
@@ -251,9 +291,9 @@ img{
 
 .projects-grid{
   display: grid;
-  grid-template-columns: 380px repeat(3,minmax(330px,301px));
-  grid-row: 500px;
-  grid-auto-rows: 600px;
+  grid-template-columns: minmax(280px,auto) repeat(3,minmax(250px,auto));
+  grid-row: minmax(500px,auto);
+  grid-auto-rows: 500px;
   grid-gap: 50px;
 }
 
@@ -263,6 +303,24 @@ img{
 
 #projects div{
   background-color: white;
+  position: relative;
+}
+
+#projects div div{
+  background-color: #349CD1;
+  color: white;
+  height: 40px;
+  width: 130px;
+  position: absolute;
+  bottom:15px;
+  right:20px;
+}
+
+#projects div div p{
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  margin-top:10px;
 }
 
 #projects h3{
@@ -272,24 +330,17 @@ img{
 }
 #projects p{
   margin: 30px;
-  font-size: 1em;
+  font-size: 0.8em;
 }
-#project-btn{
-  background-color: #349CD1;
-  color: white;
-  width: 100px;
-  height: 30px;
-  margin-left: 190px;
-  text-align: center;
-  padding-top: 10px;
-}
+
 
 @media screen and (max-width: 700px) {
   .projects-grid{
     display: grid;
     grid-template-columns: repeat(1,minmax(300px,auto));
-    grid-row: 500px;
-    grid-auto-rows: repeat(4,minmax(600px,auto));
+    /*grid-row: 500px;*/
+    grid-auto-rows: auto repeat(3,minmax(650px,auto));
+    grid-auto-rows: minmax(650px,auto);
     grid-gap: 2px;
   }
   #projects{
@@ -300,8 +351,29 @@ img{
   .projects-item{
     margin-top: 0px;
   }
-  #banner img{
+  #fondo-banner{
     height: 300px;
+  }
+  #texto-banner{
+    margin-top: 100px;
+    height: 100px;
+    width: 40%;
+    margin-left: 60px;
+  }
+  .btn-banner{
+  position: absolute;
+  width: 10%;
+  }
+  #btnL{
+    margin-top: 45%;
+
+  }
+  #btnR{
+    margin-top: 45%;
+    right: 0px;
+  }
+  #vm-banner{
+    margin-top: 70%;
   }
 
 }
@@ -313,29 +385,77 @@ img{
   display: grid;
   grid-template-columns:4fr 6fr;
   grid-gap: 2px;
-  grid-auto-rows: 500px;
+  grid-auto-rows: 430px;
 }
 #banner-sobrenosotros div{
-  background: red
+  background: #383839;
 }
 
 #descripcion-sobrenosotros{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-rows: 200px;
+  grid-template-rows: 240px;
   grid-template-columns: 1fr;
-  background-color: purple;
+  background-color: white;
 }
 #mision-vision{
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px;
-  grid-auto-rows: 300px;
-  grid-gap: 2px;
+  grid-template-rows: 340px;
+  grid-auto-rows: 340px;
 }
-#mision-vision div{
-  background: cyan;
+
+
+
+#banner-sobrenosotros img{
+    width:60%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+#sn-video{
+  padding-top: 15%;
+}
+
+#descripcion-sobrenosotros p{
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 0.9em;
+  padding-top: 25%;
+}
+#mision-vision{
+  position: relative;
+}
+#mision{
+  background: #383839;
+}
+#mision img{
+  height: 90%;
+  margin-top: -20px;
+}
+#mision p{
+  color: white;
+  font-size: 0.9em;
+  margin-top: -23%;
+  margin-left: 28%;
+  margin-right: 10%;
+}
+#vision{
+  background: #349CD1;
+}
+
+#vision img{
+  height: 10%;
+  margin-top: 7%;
+  margin-left: 10%;
+}
+#vision p{
+  color: white;
+  font-size: 0.9em;
+  margin-top: 48px;
+  margin-left: 10%;
+  margin-right: 20%;
 }
 
 
@@ -344,7 +464,7 @@ img{
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns:1fr;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: auto 500px;
     grid-gap: 2px;
     grid-auto-rows: 500px;
   }
@@ -352,9 +472,50 @@ img{
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 300px 300px;
-    grid-auto-rows: 300px;
+    grid-template-rows: auto 300px;
+    grid-auto-rows: auto;
     grid-gap: 2px;
+  }
+  #banner-sobrenosotros img{
+    width:80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  #descripcion-sobrenosotros{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    background-color: white;
+  }
+  #descripcion-sobrenosotros p{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 0.8em;
+    padding-top: 10%;
+    margin-bottom: 30px;
+  }
+  #sn-video{
+    width: 100%;
+  }
+  #mision img{
+    width: 100%;
+    margin-top: -20px;
+  }
+  #mision p{
+    color: white;
+    font-size: 0.9em;
+    margin-top: -50%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  #vision p{
+    color: white;
+    font-size: 0.9em;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
   }
 }
 
@@ -838,3 +999,4 @@ img{
       grid-area: 3 / 3 / 4 / 4;
     }
 }
+
