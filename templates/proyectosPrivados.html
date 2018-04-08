@@ -1,31 +1,39 @@
 {% extends 'base.html' %}
 
-
+{% load static %}
 {% block content %}
 
 <div id="banner-eprivada">
-    <div id="logo">
-      logo
+    <div id="logo" style="background-image:url({% static 'img/logo-pprivada.png' %}); background-repeat: no-repeat;background-size: 90%; z-index: 234;">
+
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor inhendrerit in vulputate velit esse molestie consequat.</p>
     </div>
-    <div id=img-banner>
-      img
+    <div id=img-banner style="background-image:url({% static 'img/img-epriv.png' %}); background-repeat: no-repeat;background-size: 100% 100%; z-index: -234;">
     </div>
 </div>
+
+
 <div id="eprojects">
-  PROYECTOS EN VENTA
+  <h2>PROYECTOS EN VENTA</h2>
   <div id="container-projects">
-    <div>asd</div>
-    <div>ads</div>
-    <div>asd</div>
-     <div>asd</div>
-    <div>ads</div>
-    <div>asd</div>
+    {% for proyecto in pPrivado %}
+    <div>
+      <img style="width: 100%;" src="{{proyecto.img_minatura.url }}">
+      <div id='btn-vm'>
+          <p>VER MÁS</p>
+      </div>
+      <h3>{{ proyecto.nombre }}</h3>
+      <p>{{ proyecto.descripcion }}</p>
+    </div>
+    {% endfor %}
   </div>
 </div>
+
+<div id="paginator-content">
 <div id='paginator'>
   
 </div>
-
+</div>
 
 <!-- 
 <style type="text/css" media="screen">
