@@ -19,9 +19,9 @@
     {% for proyecto in pPrivado %}
     <div>
       <img style="width: 100%;" src="{{proyecto.img_minatura.url }}">
-      <div id='btn-vm'>
-          <p>VER MÁS</p>
-      </div>
+      <a href="{{ proyecto.get_absolute_url }}">
+        <div id='btn-vm'><p>VER MÁS</p></div>
+      </a>
       <h3>{{ proyecto.nombre }}</h3>
       <p>{{ proyecto.descripcion }}</p>
     </div>
