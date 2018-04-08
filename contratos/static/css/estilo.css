@@ -863,6 +863,7 @@ body{
   grid-template-columns: repeat(3,0.33fr);
   grid-template-rows: repeat(4,300px);
   grid-gap: 20px;
+  padding-bottom: 20px;
 }
 #ppublicos a{
   text-decoration: none;
@@ -1049,18 +1050,52 @@ body{
   background: cyan;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 400px;
-  grid-gap: 2px;
+  grid-template-rows: 430px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 #descripcion-ppublico{
   grid-column: 1/ -1;
-  background: purple;
+  background: var(--gris-oscuro);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 200px;
+  grid-template-rows: 215px;
   grid-gap: 2px;
+  color: var(--blanco-claro);
+  position: relative;
 }
+
+#descripcion-ppublico h1{
+    font-size: 2.5em;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    height: 50px;
+}
+#descripcion-ppublico h4{
+    font-size: 0.9em;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: -100px;
+    padding-bottom: 10px;
+}
+#descripcion-ppublico div{
+  background-color: var(--azul);
+  color: var(--blanco-claro);
+  height: 30px;
+  width: 160px;
+  text-align: center;
+  top: 20px;
+  right: 0px;
+  position: absolute;
+}
+#descripcion-ppublico div h5{
+  margin-top: 8px;
+}
+
+
+
 
 #img-ppublico{
   grid-column: 1 / -1;
@@ -1070,11 +1105,12 @@ body{
   grid-template-columns: repeat(3,minmax(1fr,auto));
   grid-template-columns: repeat(3,minmax(200px,auto));
   grid-auto-rows: 300px;
-  grid-gap: 2px;
+  grid-gap: 20px;
 }
 
 #img-ppublico div{
-  background-color: green;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .item1-pu{
@@ -1114,7 +1150,14 @@ body{
       grid-template-columns: repeat(1,minmax(1fr,auto));
       grid-template-columns: repeat(auto-fit,minmax(300px,auto));
       grid-auto-rows: 300px;
-      grid-gap: 2px;
+      grid-gap: 20px;
+    }
+    #descripcion-ppublico h1{
+      font-size: 2.5em;
+      margin-left: 10%;
+      margin-bottom: 30px;
+      margin-top: 50px;
+      height: 50px;
     }
     .item1-pu{
       grid-area: 1 / 1 / 2 / 2;

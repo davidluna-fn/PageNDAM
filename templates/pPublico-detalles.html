@@ -4,22 +4,23 @@
 
 {% block content %}
 
-<div id="banner-ppublico">
-    banner-img
+<div id="banner-ppublico" style="background-image: url({{ pPublico.img_principal.url }});">
 </div>
 
 <div id="descripcion-ppublico">
-    descripcion
+    <h1>{{ pPublico.nombre }}</h1>
+    <h4>{{ pPublico.descripcion }}</h4>
+    <div> <h5>< Ver otros proyectos</div></h5>
 </div>
 
 <div id="img-ppublico">
-    <div class="item1-pu"> asd</div>
-    <div class="item2-pu"> asd</div>
-    <div class="item3-pu"> asd</div>
-    <div class="item4-pu"> asd</div>
-    <div class="item5-pu"> asd</div>
-    <div class="item6-pu"> asd</div>
-    <div class="item7-pu"> asd</div>
+    <div class="item1-pu" style="background-image: url({{ pPublico.img1.url }});"> </div>
+    <div class="item2-pu" style="background-image: url({{ pPublico.img2.url }});"> </div>
+    <div class="item3-pu" style="background-image: url({{ pPublico.img3.url }});"> </div>
+    <div class="item4-pu" style="background-image: url({{ pPublico.img4.url }});"> </div>
+    <div class="item5-pu" style="background-image: url({{ pPublico.img5.url }});"> </div>
+    <div class="item6-pu" style="background-image: url({{ pPublico.img6.url }});"> </div>
+    <div class="item7-pu" style="background-image: url({{ pPublico.img7.url }});"> </div>
 </div>
 
 
