@@ -4,25 +4,70 @@
 
 {% block content %}
 
+<div id='banner-ppublica'>
+  <div id="logo-ppublica" style="background-image: url({% static 'img/logo-ppublica.png' %})"> 
+    <h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed  diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</h5>
+  </div>
+  <div id="banner-ppublica" style="background-image: url({% static 'img/banner-ppublica.png' %})">  </div>
+</div>
+
+<div id='galeria-ppublico'>
+  <h1>GALERÍA</h1>
+</div>
+
+<div id="ppublicos">
+  <div class="item1pp img-h" style="background-image: url({{ pPublico.0.img_minatura.url }});">
+    <h4>{{ pPublico.0.nombre }}</h4>
+    <h5>{{ pPublico.0.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.0.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+  <div class="item2pp img-h" style="background-image: url({{ pPublico.1.img_minatura.url }});">
+    <h4>{{ pPublico.1.nombre }}</h4>
+    <h5>{{ pPublico.1.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.1.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+  <div class="item3pp img-v" style="background-image: url({{ pPublico.2.img_minatura.url }});">
+    <h4>{{ pPublico.2.nombre }}</h4>
+    <h5>{{ pPublico.2.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.2.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+  <div class="item4pp img-v" style="background-image: url({{ pPublico.3.img_minatura.url }});">
+    <h4>{{ pPublico.3.nombre }}</h4>
+    <h5>{{ pPublico.3.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.3.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+  <div class="item5pp img-h" style="background-image: url({{ pPublico.4.img_minatura.url }});">
+    <h4>{{ pPublico.4.nombre }}</h4>
+    <h5>{{ pPublico.4.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.4.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+  <div class="item6pp img-h" style="background-image: url({{ pPublico.5.img_minatura.url }});">
+    <h4>{{ pPublico.5.nombre }}</h4>
+    <h5>{{ pPublico.5.descripcion }}</h5>
+    <div class="btn-vm">
+      <a href="{{ pPublico.5.get_absolute_url }}"><h3>VER MÁS</h3></a>
+    </div>
+  </div>
+</div>
+
+<div id="paginator-content" style="background-color: var(--gris-oscuro)">
+<div id='paginator'>
+</div>
+</div>
 
 
 
-<!-- <div class="container marketing" style="margin-top: 100px;">
-      <div class="row">
-       {% for proyecto in pPublico %}
 
-        <div class="col-lg-4">
-
-          <img class="rounded-circle" src="{{ proyecto.img_minatura.url }}" alt="Generic placeholder image" width="140" height="140">
-          <h2>{{ proyecto.nombre }}</h2>
-          <p>{{ proyecto.descripcion }}</p>
-          <p><a class="btn btn-secondary" href="{{ proyecto.get_absolute_url }}" role="button">View details &raquo;</a></p>
-        </div>
-        {% endfor %}
-
-      </div>
-
-  </div> -->
 
 
 {% endblock %}

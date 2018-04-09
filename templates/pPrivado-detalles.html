@@ -1,8 +1,49 @@
 {% extends 'base.html' %}
 
+{% load static %}
 
 {% block content %}
+<div id="banner-pprivado" style="background-image:url({{ pPrivado.img_principal.url }}); ">
+    <div> <p>< Ver otros proyectos</p></div>
+</div>
+<div id="content-galeria-pprivada">
+<div id="content-img">
+    <div id="nd-pprivado">
+  <h1>{{ pPrivado.nombre }}</h1>
+  <h5>{{ pPrivado.descripcion }}</h5>
+</div>
+    <div id="ap-pprivado">
+        <div>
+            <ul>
+                <li>Tipo de propiedad:</li>
+                <li>Área desde:</li>
+                <li>Ubicación:</li>
+                <li>Tipo de negocio:</li>
+                <li>Parqueadero:</li>
+                <li>Parqueadero visitantes:</li>
+                <li>Año:</li>
+                <li>Zonas verdes:</li>
+            </ul>
+        </div>
+        <div id="content-areas">
+            <div><img src="{% static 'img/area1.png' %}"></div>
+            <div><img src="{% static 'img/area2.png' %}"></div>
+            <div><img src="{% static 'img/area3.png' %}"></div>
+        </div>
+    </div>
+</div>
+    <div id="galeria-pprivado">
+        <div class="item1" style="background-image: url({{ pPrivado.img1.url }})"></div>
+        <div class="item2" style="background-image: url({{ pPrivado.img2.url }})"></div>
+        <div class="item3" style="background-image: url({{ pPrivado.img3.url }})"></div>
+        <div class="item4" style="background-image: url({{ pPrivado.img4.url }})"></div>
+        <div class="item5" style="background-image: url({{ pPrivado.img5.url }})"></div>
+        <div class="item6" style="background-image: url({{ pPrivado.img6.url }})"></div>
+        <div class="item7" style="background-image: url({% static 'img/img-galeria.png' %})"></div>
+    </div>
+</div>
 
+<!-- 
 <style type="text/css" media="screen">
     h1 {
     color: #fff;
@@ -155,6 +196,6 @@ Vitae auctor eu augue ut lectus arcu bibendum. Turpis egestas integer eget aliqu
 Vitae auctor eu augue ut lectus arcu bibendum. Turpis egestas integer eget aliquet nibh praesent tristique magna. Vel pretium lectus quam id leo in. Eu volutpat odio facilisis mauris sit amet massa vitae. Hac habitasse platea dictumst quisque sagittis purus sit amet. Morbi tristique senectus et netus et malesuada fames. Sit amet nulla facilisi morbi tempus iaculis urna id <volutpat class=""></volutpat></p></div>
 
 </div>
-
+ -->
 
 {% endblock %}

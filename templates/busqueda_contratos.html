@@ -4,106 +4,138 @@
 
 
 {% block content %}
+<div id="barra-navegacion">
+    <div id="title-busqueda"><h1>BÚSQUEDA</h1></div>
+    <div id="btn-logout">
+      <a href="{% url 'logout' %}">
+        <h5>CERRAR SESIÓN</h5>
+      </a>
+    </div>  
+</div>                    
+
+<form>
+<div id="busqueda">
+    <div>
+      <ul>
+        <li>{{ filterqs.form.numero.label_tag }}</li>
+        <li>{% render_field filterqs.form.numero class="form-control" %}</li>
+        <li>Palabra clave:</li>
+        <li>{% render_field filterqs.form.objeto class="form-control" %}</li>
+        <li>Fecha de terminación menor a:</li>
+        <li>{% render_field filterqs.form.fecha_terminacion_lt class="form-control date-picker" %}</li>
+        <li>Fecha de terminación mayor a:</li>
+        <li>{% render_field filterqs.form.fecha_terminacion_gt class="form-control date-picker" %}</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>{{ filterqs.form.departamento.label_tag }}</li>
+        <li>{% render_field filterqs.form.departamento class="form-control" %}</li>
+        <li>{{ filterqs.form.municipio.label_tag }}</li>
+        <li>{% render_field filterqs.form.municipio class="form-control" %}</li>
+        <li>Valor ejecutado menor a:</li>
+        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+        <li>Valor ejecutado mayor a:</li>
+        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>{{ filterqs.form.year.label_tag }}</li>
+        <li>{% render_field filterqs.form.year class="form-control date-picker-year" %}</li>
+        <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
+        <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipo-obra"%}</li>
+        <li>
+          <div id="btn-generar-reporte" >
+            <button name='pdf' type="submit">
+               <h5>GENERAR REPORTE</h5>
+            </button>
+          </div>
+          <div id="btn-buscar">
+            <button type="submit" class="btn btn-primary">
+              <h5>BUSCAR</h5>
+            </button>
+          </div>
+        </li>
+        <li>
+          <div id="btn-limpiar">
+            <button type="submit" class="btn btn-primary">
+                <h5>LIMPIAR</h5>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+</div>
+</form>
+
+<div id="content-tabla">
+<div id="titulo-tabla">
+  <div class="campo1-busqueda"><h5>No.</h5></div>
+  <div class="campo2-busqueda"><h5>AÑO</h5></div>
+  <div class="campo3-busqueda"><h5>OBJETIVO</h5></div>
+  <div class="campo4-busqueda"><h5>VALOR EN SM</h5></div>
+  <div class="campo5-busqueda"><h5>CONTRATO</h5></div>
+  <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
+  <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div>
+</div>
 
 
-<!--   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>  -->
+{% for contrato in filter %}
+  
+<div id="contenido-tabla">
 
-<!--     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
-
-
- <!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
-
-<form method="get">
-
-
-
-<div >
-
-
-    <div class="well" style="background-color: gray; padding-left: 10px;padding-right: 10px; padding-top: 10px; border: black solid; border-bottom: 0px">
-
-      <h4 style="margin-top: 0;">Filtrar</h4>
-      <div class="row"  >
-        <div class="form-group col-sm-4 col-md-3">
-          {{ filterqs.form.numero.label_tag }}
-          {% render_field filterqs.form.numero class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          {{ filterqs.form.year.label_tag }}
-          {% render_field filterqs.form.year class="form-control date-picker-year" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          {{ filterqs.form.departamento.label_tag }}
-          {% render_field filterqs.form.departamento class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          {{ filterqs.form.municipio.label_tag }}
-          {% render_field filterqs.form.municipio class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <B>Palabra clave:</B>
-          {% render_field filterqs.form.objeto class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          {{ filterqs.form.tipo_de_obra.label_tag }}
-          {% render_field filterqs.form.tipo_de_obra class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <B>Valor ejecutado menor a:</B>
-          {% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <B>Valor ejecutado mayor a:</B>
-          {% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <B>Fecha de terminación menor a:</B>
-          {% render_field filterqs.form.fecha_terminacion_lt class="form-control date-picker" %}
-        </div>
-        <div class="form-group col-sm-4 col-md-3">
-          <B>Fecha de terminación mayor a:</B>
-            <div class="form-group" style="text-shadow: 0px 0px;">
-          {% render_field filterqs.form.fecha_terminacion_gt class="form-control date-picker" %}
-        </div>
-
-
-        <script type="text/javascript">
-            $(function () {
-                $('.date-picker').datepicker({
-                  format: 'yyyy-mm-dd'
-                }
-                );
-            });
-        </script>
-
-         <script type="text/javascript">
-        $(function () {
-            $('.date-picker-year').datepicker({
-                minViewMode: 2,
-                format: 'yyyy'
-            });
-        });</script>
-
-
-      </div>
-
-
-  </form>
-
+  <div class="campo1-busqueda"><p>{{ contrato.numero }}</p></div>
+  <div class="campo2-busqueda"><p>{{ contrato.year }}</p></div>
+  <div class="campo3-busqueda">
+    <p style="text-align: left;">
+      <a href="{{ contrato.get_absolute_url }}">
+        {{ contrato.objeto }}
+      </a>
+    </p>
+  </div>
+  <div class="campo4-busqueda"><p>{{ contrato.valor_en_sm}}</p></div>
+  <div class="campo5-busqueda">
+    <p>
+      {% if contrato.contrato == '' %}
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
+  <div class="campo6-busqueda">
+    <p>
+      {% if contrato.acta_liquidacion == '' %} 
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
+  <div class="campo7-busqueda">
+    <p>
+      {% if contrato.acta_recibo_final == '' %} 
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
 
 </div>
+
+{% endfor %}
+
+<div id="content-paginator2">
+  <div id="paginator">
+    
+  </div>
+</div>
+</div>
+
+
+<!-- 
 
 <div style = "padding: 10; height: 100px;">
   <div class="btm" style = "float: left">
@@ -153,7 +185,7 @@
         </tr>
       {% endfor %}
     </tbody>
-  </table>
+  </table> --> 
 <!--
 {% if filter.has_other_pages %}
     <nav aria-label="Topics pagination" class="mb-4">
@@ -196,6 +228,6 @@
     </nav>
   {% endif %}
 -->
-</div>
+<!-- </div> -->
 
 {% endblock %}

@@ -1,21 +1,89 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
 {% block content %}
 
 
-<div id='bannerEpu'>
-  <div id="imgPu">
-        <img src="{% static 'img/experienciaprivada.png' %}" alt="">
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
-  </div>
-  <div id="bannerPu">
-      <img src="https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=architecture-building-driveway-186077.jpg&fm=jpg" alt="asdas" >;
-  </div>
+<div id="banner-eprivada">
+    <div id="logo" style="background-image:url({% static 'img/logo-pprivada.png' %}); background-repeat: no-repeat;background-size: 90%; z-index: 234;">
 
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor inhendrerit in vulputate velit esse molestie consequat.</p>
+    </div>
+    <div id=img-banner style="background-image:url({% static 'img/img-epriv.png' %}); background-repeat: no-repeat;background-size: 100% 100%; z-index: -234;">
+    </div>
 </div>
 
+
+<div id="eprojects">
+  <h2>PROYECTOS EN VENTA</h2>
+  <div id="container-projects">
+    {% for proyecto in pPrivado %}
+    <div>
+      <img style="width: 100%;" src="{{proyecto.img_minatura.url }}">
+      <a href="{{ proyecto.get_absolute_url }}">
+        <div id='btn-vm'><p>VER MÁS</p></div>
+      </a>
+      <h3>{{ proyecto.nombre }}</h3>
+      <p>{{ proyecto.descripcion }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div id="paginator-content">
+<div id='paginator'>
+  
+</div>
+</div>
+
+<!-- 
+<style type="text/css" media="screen">
+      .galeria img {
+        width: 500px;
+        height: 500px;
+    }
+</style>
+
+
+<div class="container marketing" style="margin-top: 50px;">
+
+  
+     {% for proyecto in pPrivado %}
+{% if proyecto.id|divisibleby:"2" %}
+     <hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">{{ proyecto.nombre }}</h2>
+          <p class="lead">{{ proyecto.descripcion }}</p>
+        </div>
+        <div class="col-md-5 galeria">
+          <a href="{{ proyecto.get_absolute_url }}">
+          <img style="width: 500; height: 500;" class="featurette-image img-fluid mx-auto"  alt="Generic placeholder image" src="{{ proyecto.img_minatura.url }}">
+          </a>
+        </div>
+      </div>
+      
+{% else %}
+<hr class="featurette-divider">
+      <div class="row featurette">
+        <div class="col-md-7 push-md-5">
+          <h2 class="featurette-heading">{{ proyecto.nombre }} </h2>
+          <p class="lead">{{ proyecto.descripcion }}</p>
+        </div>
+        <div class="col-md-5 pull-md-7 galeria">
+          <a href="{{ proyecto.get_absolute_url }}">
+          <img class="featurette-image img-fluid mx-auto" src="{{ proyecto.img_minatura.url }}" alt="Generic placeholder image">
+        </a>
+        </div>
+      </div>
+
+
+
+      {% endif %}
+
+      
+
+
+     {% endfor %}
 
 <div id='divcar'>
 

@@ -14,64 +14,75 @@
 
     <title>Contructora NDAM</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/"> -->
-
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"> -->
-
-    <!-- Custom styles for this template -->
-    <!-- <link href="{% static 'css/carousel.css' %}" rel="stylesheet"> -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
     <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
   
   <script type="text/javascript">
     function showLightbox() {
-      document.getElementById('over').style.display='block';
-      document.getElementById('fade').style.display='block';
+      document.getElementById('fade').style.display='grid';
+
     }
     function hideLightbox() {
-      document.getElementById('over').style.display='none';
       document.getElementById('fade').style.display='none';
     }
 
     function showLightboxLogin() {
-      document.getElementById('overLogin').style.display='block';
-      document.getElementById('fade').style.display='block';
+      document.getElementById('fade-login').style.display='grid';
     }
     function hideLightboxLogin() {
-      document.getElementById('overLogin').style.display='none';
-      document.getElementById('fade').style.display='none';
+      document.getElementById('fade-login').style.display='none';
     }
   </script>
 
   </head>
 
-  <body>
+  <body >
 
-  <div id="over" class="overbox">
-      <div id="contactodiv">
-          <div style="float: left;"><img src="{% static 'img/conctato.png' %}" alt="" height="350px;"></div>
+<div id="fade" class="fadebox">
+  <div  id="contacto" >
+    <div id="contacto-logo" style="background-image:url({% static 'img/conctato.png' %}) "></div>
+    <div>
+       <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
+        <ul style="text-decoration: none;">
+          <li>{% render_field formulario.nombre placeholder="  Nombre" %}</li>
+          <li>{% render_field formulario.numero placeholder="  Numero" %}</li>
+          <li>{% render_field formulario.correo placeholder="  Correo" %}</li>
+          <li>{% render_field formulario.mensaje placeholder=" Mensaje" id="textarea" %}</li>
+        </ul>
 
-          <div style="float: left; left: 25%; top:25%;z-index:1003;">
-            <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
-              <ul style="text-decoration: none;">
-                <li>{% render_field formulario.nombre placeholder="  Nombre" %}</li>
-                <li>{% render_field formulario.numero placeholder="  Numero" %}</li>
-                <li>{% render_field formulario.correo placeholder="  Correo" %}</li>
-                <li>{% render_field formulario.mensaje placeholder=" Mensaje" id="textarea" %}</li>
-              </ul>
-      
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
-
-          <a href="javascript:hideLightbox();"><div style="float: right;"><img src="{% static 'img/cerrarContacto.png' %}" alt="" height="50px;" ></div></a>
-        
-      </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <a href="javascript:hideLightbox();">
+        <div id="cerrar-contacto">
+          <img src="{% static 'img/cerrarContacto.png' %}">
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
-<div id="fade" class="fadebox">&nbsp;</div>
 
 
-<div id="overLogin" class="overboxlogin">
+<div id="fade-login">
+  <div id="login">
+    <div>
+      <img id="img-login" src="{% static 'img/login.png' %}">
+    </div>
+    <form id='form' method="post" action="" class="loginform">{% csrf_token %}
+      <ul style="text-decoration: none;">
+        <li>{% render_field form.username placeholder="  Usuario" %}</li>
+        <li>{% render_field form.password placeholder="  Contraseña" %}</li>
+      </ul>
+      <button id="btn-login" type="submit" class="btn btn-primary">INICIAR</button>
+    </form>
+    <a href="javascript:hideLightboxLogin();">
+      <div>
+        <img id="cerrar-login" src="{% static 'img/cerrarContacto.png' %}">
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- <div id="overLogin" class="overboxlogin">
       <div id="logindiv">
           <div style="float: left; margin-left: 30px;margin-top: 60px;">
             <img src="{% static 'img/login.png' %}" alt="" width="120px;">
@@ -87,13 +98,10 @@
       
               <button type="submit" class="btn btn-primary">INICIAR</button>
             </form>
-          </div>
-
-          
-        
+          </div>        
       </div>
-</div>
-<div id="fade" class="fadebox">&nbsp;</div>
+</div> -->
+<!-- <div id="fade" class="fadebox">&nbsp;</div> -->
 
 
 
@@ -102,9 +110,6 @@
 
 
 
-
-<section id=contenedor>
-  
 {% include 'includes/header.html' %}  
 
 
@@ -113,19 +118,16 @@
 
 {% include 'includes/footer.html' %}  
 
-</section>
+<!-- 
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+
     <script src="{% static 'js/holder.min.js' %}"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+
+    <script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script> -->
   </body>
 </html>

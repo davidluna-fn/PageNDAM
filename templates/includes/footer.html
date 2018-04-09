@@ -1,52 +1,43 @@
-    {% load static %}
+{% load static %}
+<footer id='footer' class="footer-grid">
+    <div id='espacio'>
+    </div>
+    <div style="background-image: url({% static 'img/nda2.png' %});">
+    </div>
+    <div>
+      <p>Mapa del Sitio</p>
+        <ul>
+            <li>Inicio</li>
+            <li>Sobre Nosotros</li>
+            <li>Experiencia Pública</li>
+            <li>Experiencia Privada</li>
+            <li>Contacto</li>
+            <li>Intranet</li>
+        </ul>
+    </div>
+    <div id="contacto-footer">
+        <p>Contacto</p>
+        <ul>
+            <li><i class="fas fa-globe"></i></i>  Dirección</li>
+            <li><i class="fas fa-envelope"></i>  correondam@gmail.com</li>
+            <li><i class="fas fa-phone-square"></i> Teléfono</li>
+        </ul>
+    </div> 
 
-<footer>
-    <div id="subfooter">
-    	<div id=logo2>
-    		<img src="{% static 'img/nda2.png' %}" alt="" width="310px">
-    	</div>
-    	<div id=mapasitio>
-    		<br>
-       		<ul>
-    			<li><p>Mapa del sitio<p></li>
-    		</ul>
-    		<ul>
-    			<li>Inicio</li>
-    			<li>Sobre Nosotros</li>
-    			<li>Experiencia Pública</li>
-    			<li>Experiencia Privada</li>
-    			<li>Contacto</li>
-    			<li>Intranet</li>
-    		</ul>
-    		
-    	</div>
-
-    	<div id=footercontacto>
-    		<br>
-       		<ul>
-    			<li><p>  Contacto<p></li>
-    		</ul>
-    		<ul>
-    			<li><img src="{% static 'img/lg1.png' %}" alt="">  Dirección</li>
-    			<li><img src="{% static 'img/lg2.png' %}" alt="">  correondam@gmail.com</li>
-    			<li><img src="{% static 'img/lg3.png' %}" alt="">  Teléfono</li>
-    		</ul>
-    	</div>
-    	<div id=footerredes>
-    		 <br>
-       		<ul>
-    			<li><p>  Nuestras redes<p></li>
-    		</ul>
-    		    <ul>
-        <a href="{% url 'index' %}"><li><img src="{% static 'img/insta.png' %}" alt="" width="35px"> </li></a>
-        <a href="{% url 'sobreNosotros' %}"><li><img src="{% static 'img/fb.png' %}" alt="" width="35px"> </li></a>
-        <a href=""><li><img src="{% static 'img/twitter.png' %}" alt="" width="35px"> </li></a>
-      </ul>
-    	</div>
+    <div class="footer-ul">
+        <p>Nuestras redes</p>
+        <ul>
+            <li><i class="fab fa-instagram"></i></li>
+            <li><i class="fab fa-facebook-square"></i></li>
+            <li><i class="fab fa-twitter-square"></i></li>
+        </ul>
     </div>
 
-    <div id="subfooter2">
-    	<p>NDAM Constructora Copyright 2018</p>	
+    <div id='sub-footer'>
+        NDAM Constructora Copyright 2018   
     </div>
-    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </footer>

@@ -4,6 +4,43 @@
 
 {% block content %}
 
+<!-- <section id="content" class='content-grid'>
+ -->  <div id='banner'>
+    <img id="fondo-banner" src="{{ banner.2.img_principal.url }}" width="100%;" >
+    <img id="texto-banner" src="{% static 'img/textobanner.png' %}">
+    <img id="btnL" src="{% static 'img/bannerL.png' %}" class="btn-banner">
+    <img id="btnR" src="{% static 'img/bannerR.png' %}" class="btn-banner">
+    <div id="vm-banner">VER MÁS</div>
+  </div>
+  <div id="projects" class="projects-grid" >
+    <div style="background:#383839;">
+      <img src="{% static 'img/logo3.png' %}" width="100%" style="margin-top: -30px;" >    
+    </div>
+    <div class="projects-item">
+        <img src="{{ projects.0.img_minatura.url }}" width="100%" >
+        <h3>{{ projects.0.nombre }}</h3>
+        <p>{{ projects.0.descripcion }}</p>
+        <div class="project-btn"><p>VER MÁS</p></div>
+    </div>
+    <div class="projects-item">
+        <img src="{{ projects.1.img_minatura.url }}" width="100%" >
+        <h3>{{ projects.1.nombre }}</h3>
+        <p>{{ projects.1.descripcion }}</p>
+        <div class="project-btn"><p>VER MÁS</p></div>
+    </div>
+    <div class="projects-item">
+        <img src="{{ projects.2.img_minatura.url }}" width="100%" >
+        <h3>{{ projects.2.nombre }}</h3>
+        <p>{{ projects.2.descripcion }}</p>
+        <div class="project-btn""><p>VER MÁS</p></div>
+    </div>
+  </div>
+<!-- </section> -->
+
+
+
+
+<!-- 
 <div id="banner" style="background-image: url({{ banner.2.img_principal.url }})">
   <a href="" title=""><div id="bannerL"><img src="{% static 'img/bannerL.png' %}" alt="" width="40px" height="40px"> </div></a>
   <div  id="textobanner">
@@ -37,7 +74,7 @@
             <a href="" class="nounderline"><div id='b1'><p>VER MÁS</p></div></a>
     </article>
   </div>
-</section>
+</section> -->
 
 
 
