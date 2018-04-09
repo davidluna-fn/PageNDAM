@@ -3,63 +3,107 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<div class="DivBody">
-<table class="table table-bordered">
-  <tr>
-    <th>Numero:</th>
-    <td>{{ contrato.numero }}</td>
-  </tr>
-  <tr>
-    <th>Año:</th>
-    <td>{{ contrato.year }}</td>
-  </tr>
-  <tr>
+
+<div id="content-detalles-contrato">
+  <div id="btn-detalles-contrato">
+    <div id="btn-regresar"> <h4> < Regresar a Búsqueda</h4> </div>
+    <div id="btn-cerrar-sesion"> <h4> CERRAR SESIÓN</h4> </div>
+  </div>  
+  <div id="information-contrato">
+    <div class="title-detalles"><h5>NÚMERO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.numero }}</h5></div>
+    <div class="title-detalles"><h5>AÑO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.year }}</h5></div>
+    <div class="title-detalles"><h5>NÚMERO EN PROPONENTE</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.numero_en_proponente }}</h5></div>
+    <div class="title-detalles"><h5>OBJETO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.objeto }}</h5></div>
+    <div class="title-detalles"><h5>TIPO DE OBRA</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.tipo_de_obra }}</h5></div>
+    <div class="title-detalles"><h5>ENTIDAD CONTRATANTE</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.entidad_contratante }}</h5></div>
+    <div class="title-detalles"><h5>VALOR EJECUTADO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.valor_ejecutado }}</h5></div>
+    <div class="title-detalles"><h5>PLAZO EN DIAS</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.plazo_en_dias }}</h5></div>
+    <div class="title-detalles"><h5>FECHA TERMINACIÓN</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.fecha_terminacion }}</h5></div>
+    <div class="title-detalles"><h5>VALOR EN SM</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.valor_en_sm }}</h5></div>
+    <div class="title-detalles"><h5>PORCENTAJE PARTICIPACIÓN</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.porcentaje_participacion }}</h5></div>
+    <div class="title-detalles"><h5>VALOR EN SM PARTICIPACIÓN</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.valor_en_sm_participacion }}</h5></div>
+    <div class="title-detalles"><h5>DEPARTAMENTO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.departamento }}</h5></div>
+    <div class="title-detalles"><h5>MUNICIPIO</h5></div>
+    <div class="contrato-information"><h5>{{ contrato.municipio }}</h5></div>
+    <div class="title-detalles"><h5>CONTRATO</h5></div>
+    <div class="contrato-information"><h5>asd</h5></div>
+    <div class="title-detalles"><h5>ADICIONAL 1</h5></div>
+    <div class="contrato-information"><h5>das</h5></div>
+    <div class="title-detalles"><h5>ACTA RECIBO FINAL</h5></div>
+    <div class="contrato-information"><h5>asd</h5></div>
+    <div class="title-detalles"><h5>ACTA LIQUIDACION</h5></div>
+    <div class="contrato-information"><h5>ada</h5></div>
+    <div class="title-detalles"><h5>CERTIFICACION DE OBRA</h5></div>
+    <div class="contrato-information"><h5>ads</h5></div>
+    <div class="title-detalles"><h5>CERTIFICACION DIRECTOR</h5></div>
+    <div class="contrato-information"><h5>sd</h5></div>
+    <div class="title-detalles"><h5>ACUERDO CONSORCIAL</h5></div>
+    <div class="contrato-information"><h5>ads</h5></div>
+  </div>
+</div>
+
+{% endblock %}
+<!-- <div class="DivBody">
+
     <th>Numero en proponente:</th>
-    <td>{{ contrato.numero_en_proponente }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Objeto:</th>
-    <td>{{ contrato.objeto }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Tipo de obra:</th>
-    <td>{{ contrato.tipo_de_obra }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Entidad contratante:</th>
-    <td>{{ contrato.entidad_contratante }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Valor ejecutado:</th>
-    <td>{{ contrato.valor_ejecutado }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Plazo en dias:</th>
-    <td>{{ contrato.plazo_en_dias }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Fecha terminación:</th>
-    <td>{{ contrato.fecha_terminacion }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Valor en sm:</th>
-    <td>{{ contrato.valor_en_sm }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Porcentaje participación:</th>
-    <td>{{ contrato.porcentaje_participacion }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Valor en sm participación:</th>
-    <td>{{ contrato.valor_en_sm_participacion }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Departamento:</th>
-    <td>{{ contrato.departamento }}</td>
+    <td></td>
   </tr>
   <tr>
     <th>Municipio:</th>
-    <td>{{ contrato.municipio }}</td>
+    <td></td>
   </tr>
 
   
@@ -141,4 +185,4 @@
 
 </div>
 
-{% endblock %}
+ -->
