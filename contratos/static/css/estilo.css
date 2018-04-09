@@ -1382,41 +1382,48 @@ body{
 }
 #tipo-obra{
   width: 265px;
+  text-decoration: none;
+  background-color: var(--blanco-claro);
+  height: 30px;
 }
-#btn-generar-reporte{
+#btn-generar-reporte button{
   float: left;
   border: 1px solid var(--blanco-claro);
   height: 30px;
   width: 150px;
   text-align: center;
   margin: 5px;
+  background-color: var(--gris-oscuro);
+  color:var(--blanco-claro);
 }
 #btn-generar-reporte h5{
   margin-top: 6px;
 }
 
-#btn-buscar{
+#btn-buscar button{
   float: left;
   background-color: var(--azul);
   height: 31px;
   width: 101px;
   margin: 5px;
   text-align: center;
+  color:var(--blanco-claro);
 }
 #btn-buscar h5{
   margin-top: 8px;
 }
 
-#btn-limpiar{
+#btn-limpiar button{
   height: 30px;
   background-color: var(--naranja);
   width: 101px;
-  margin-top: 45px;
-  margin-left: 168px;
+  margin-top: 5px;
+  margin-left: 165px;
   text-align: center;
+  color:var(--blanco-claro);
 }
 #btn-limpiar h5{
-  padding-top: 8px;
+  margin-top: 7px;
 }
 #content-tabla{
   background-color: var(--blanco-claro);
