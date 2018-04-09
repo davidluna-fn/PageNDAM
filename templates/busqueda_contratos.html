@@ -4,65 +4,135 @@
 
 
 {% block content %}
-<a class="btn btn-primary"  href="{% url 'logout' %}" >cerrar sesion</a>
 <div id="barra-navegacion">
-    <div>logo</div>
-    <div>bonton</div>  
-</div>
-
+    <div id="title-busqueda"><h1>BÚSQUEDA</h1></div>
+    <div id="btn-logout">
+      <a href="{% url 'logout' %}">
+        <h5>CERRAR SESIÓN</h5>
+      </a>
+    </div>  
+</div>                    
+          
 <div id="busqueda">
-    <div>asdasd</div>
-    <div>sad</div>
-    <div>asdaa</div>
+    <div>
+      <ul>
+        <li>{{ filterqs.form.numero.label_tag }}</li>
+        <li>{% render_field filterqs.form.numero class="form-control" %}</li>
+        <li>Palabra clave:</li>
+        <li>{% render_field filterqs.form.objeto class="form-control" %}</li>
+        <li>Fecha de terminación menor a:</li>
+        <li>{% render_field filterqs.form.fecha_terminacion_lt class="form-control date-picker" %}</li>
+        <li>Fecha de terminación mayor a:</li>
+        <li>{% render_field filterqs.form.fecha_terminacion_gt class="form-control date-picker" %}</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>{{ filterqs.form.departamento.label_tag }}</li>
+        <li>{% render_field filterqs.form.departamento class="form-control" %}</li>
+        <li>{{ filterqs.form.municipio.label_tag }}</li>
+        <li>{% render_field filterqs.form.municipio class="form-control" %}</li>
+        <li>Valor ejecutado menor a:</li>
+        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+        <li>Valor ejecutado mayor a:</li>
+        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>{{ filterqs.form.year.label_tag }}</li>
+        <li>{% render_field filterqs.form.year class="form-control date-picker-year" %}</li>
+        <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
+        <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipo-obra"%}</li>
+        <li>
+          <div id="btn-generar-reporte"><h5>GENERAR REPORTE</h5></div>
+          <div id="btn-buscar"><h5>BUSCAR</h5></div>
+        </li>
+        <li><div id="btn-limpiar"><h5>LIMPIAR</h5></div></li>
+      </ul>
+    </div>
+</div>
+<div id="content-tabla">
+<div id="titulo-tabla">
+  <div class="campo1-busqueda"><h5>No.</h5></div>
+  <div class="campo2-busqueda"><h5>AÑO</h5></div>
+  <div class="campo3-busqueda"><h5>OBJETIVO</h5></div>
+  <div class="campo4-busqueda"><h5>VALOR EN SM</h5></div>
+  <div class="campo5-busqueda"><h5>CONTRATO</h5></div>
+  <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
+  <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div>
 </div>
 
-<div id="titulo-tabla">
-  <div class="campo1-busqueda">No</div>
-  <div class="campo2-busqueda">año</div>
-  <div class="campo3-busqueda">objecto</div>
-  <div class="campo4-busqueda">valor en sm</div>
-  <div class="campo5-busqueda">contrato</div>
-  <div class="campo6-busqueda">acta de liquidacion</div>
-  <div class="campo7-busqueda">acta de recibo final</div>
-</div>
+<!--  <tbody style="border: black solid; border: black solid;">
+      {% for contrato in filter %}
+        <tr style="color: gray;text-shadow: 0px 0px;">
+          <td style="border: black solid;">{{ contrato.numero }}</td>
+          <td style="border: black solid;">{{ contrato.year }}</td>
+          <th style="border: black solid;"><a href="{{ contrato.get_absolute_url }}" style="color: gray; text-shadow: 0px 0px;"> {{ contrato.objeto }}</a></th>
+          <th style="border: black solid;">{{ contrato.valor_en_sm}}</th>
+          <th style="border: black solid;">{% if contrato.contrato == '' %} No {% else %} Si {% endif %}</th>
+          <th style="border: black solid;">{% if contrato.acta_liquidacion == '' %} No {% else %} Si {% endif %}</th>
+          <th style="border: black solid;">{% if contrato.acta_recibo_final == '' %} No {% else %} Si {% endif %}</th>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody> -->
+
+{% for contrato in filter %}
   
 <div id="contenido-tabla">
 
-  <div class="campo1-busqueda">12</div>
-  <div class="campo2-busqueda">2018</div>
-  <div class="campo3-busqueda">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrudexerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</div>
-  <div class="campo4-busqueda">100-000-000</div>
-  <div class="campo5-busqueda">s1</div>
-  <div class="campo6-busqueda">s1</div>
-  <div class="campo7-busqueda">s1</div>
+  <div class="campo1-busqueda"><p>{{ contrato.numero }}</p></div>
+  <div class="campo2-busqueda"><p>{{ contrato.year }}</p></div>
+  <div class="campo3-busqueda">
+    <p style="text-align: left;">
+      <a href="{{ contrato.get_absolute_url }}">
+        {{ contrato.objeto }}
+      </a>
+    </p>
+  </div>
+  <div class="campo4-busqueda"><p>{{ contrato.valor_en_sm}}</p></div>
+  <div class="campo5-busqueda">
+    <p>
+      {% if contrato.contrato == '' %}
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
+  <div class="campo6-busqueda">
+    <p>
+      {% if contrato.acta_liquidacion == '' %} 
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
+  <div class="campo7-busqueda">
+    <p>
+      {% if contrato.acta_recibo_final == '' %} 
+        No 
+      {% else %} 
+        Si 
+      {% endif %}
+    </p>
+  </div>
 
 </div>
 
-<div id="contenido-tabla">
+{% endfor %}
 
-  <div class="campo1-busqueda">12</div>
-  <div class="campo2-busqueda">2018</div>
-  <div class="campo3-busqueda">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrudexerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</div>
-  <div class="campo4-busqueda">100-000-000</div>
-  <div class="campo5-busqueda">s1</div>
-  <div class="campo6-busqueda">s1</div>
-  <div class="campo7-busqueda">s1</div>
-
+<div id="content-paginator2">
+  <div id="paginator">
+    
+  </div>
 </div>
-
-<div id="contenido-tabla">
-
-  <div class="campo1-busqueda">12</div>
-  <div class="campo2-busqueda">2018</div>
-  <div class="campo3-busqueda">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, seddiam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrudexerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo</div>
-  <div class="campo4-busqueda">100-000-000</div>
-  <div class="campo5-busqueda">s1</div>
-  <div class="campo6-busqueda">s1</div>
-  <div class="campo7-busqueda">s1</div>
-
 </div>
-
-
 
 
 
