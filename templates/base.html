@@ -19,53 +19,70 @@
   
   <script type="text/javascript">
     function showLightbox() {
-      document.getElementById('over').style.display='block';
-      document.getElementById('fade').style.display='block';
+      document.getElementById('fade').style.display='grid';
+
     }
     function hideLightbox() {
-      document.getElementById('over').style.display='none';
       document.getElementById('fade').style.display='none';
     }
 
     function showLightboxLogin() {
-      document.getElementById('overLogin').style.display='block';
-      document.getElementById('fade').style.display='block';
+      document.getElementById('fade-login').style.display='grid';
     }
     function hideLightboxLogin() {
-      document.getElementById('overLogin').style.display='none';
-      document.getElementById('fade').style.display='none';
+      document.getElementById('fade-login').style.display='none';
     }
   </script>
 
   </head>
 
-  <body>
-<!-- 
-  <div id="over" class="overbox">
-      <div id="contactodiv">
-          <div style="float: left;"><img src="{% static 'img/conctato.png' %}" alt="" height="350px;"></div>
+  <body >
 
-          <div style="float: left; left: 25%; top:25%;z-index:1003;">
-            <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
-              <ul style="text-decoration: none;">
-                <li>{% render_field formulario.nombre placeholder="  Nombre" %}</li>
-                <li>{% render_field formulario.numero placeholder="  Numero" %}</li>
-                <li>{% render_field formulario.correo placeholder="  Correo" %}</li>
-                <li>{% render_field formulario.mensaje placeholder=" Mensaje" id="textarea" %}</li>
-              </ul>
-      
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
+<div id="fade" class="fadebox">
+  <div  id="contacto" >
+    <div id="contacto-logo" style="background-image:url({% static 'img/conctato.png' %}) "></div>
+    <div>
+       <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
+        <ul style="text-decoration: none;">
+          <li>{% render_field formulario.nombre placeholder="  Nombre" %}</li>
+          <li>{% render_field formulario.numero placeholder="  Numero" %}</li>
+          <li>{% render_field formulario.correo placeholder="  Correo" %}</li>
+          <li>{% render_field formulario.mensaje placeholder=" Mensaje" id="textarea" %}</li>
+        </ul>
 
-          <a href="javascript:hideLightbox();"><div style="float: right;"><img src="{% static 'img/cerrarContacto.png' %}" alt="" height="50px;" ></div></a>
-        
-      </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+      <a href="javascript:hideLightbox();">
+        <div id="cerrar-contacto">
+          <img src="{% static 'img/cerrarContacto.png' %}">
+        </div>
+      </a>
+    </div>
+  </div>
 </div>
-<div id="fade" class="fadebox">&nbsp;</div>
 
 
-<div id="overLogin" class="overboxlogin">
+<div id="fade-login">
+  <div id="login">
+    <div>
+      <img id="img-login" src="{% static 'img/login.png' %}">
+    </div>
+    <form id='form' method="post" action="" class="loginform">{% csrf_token %}
+      <ul style="text-decoration: none;">
+        <li>{% render_field form.username placeholder="  Usuario" %}</li>
+        <li>{% render_field form.password placeholder="  Contraseña" %}</li>
+      </ul>
+      <button id="btn-login" type="submit" class="btn btn-primary">INICIAR</button>
+    </form>
+    <a href="javascript:hideLightboxLogin();">
+      <div>
+        <img id="cerrar-login" src="{% static 'img/cerrarContacto.png' %}">
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- <div id="overLogin" class="overboxlogin">
       <div id="logindiv">
           <div style="float: left; margin-left: 30px;margin-top: 60px;">
             <img src="{% static 'img/login.png' %}" alt="" width="120px;">
@@ -81,13 +98,10 @@
       
               <button type="submit" class="btn btn-primary">INICIAR</button>
             </form>
-          </div>
-
-          
-        
+          </div>        
       </div>
-</div>
-<div id="fade" class="fadebox">&nbsp;</div> -->
+</div> -->
+<!-- <div id="fade" class="fadebox">&nbsp;</div> -->
 
 
 

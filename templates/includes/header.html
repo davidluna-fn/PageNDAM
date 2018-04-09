@@ -36,9 +36,9 @@
     </div>
       <div id="intranet">
         {% if user.is_authenticated %}
-          <a href="{% url 'busqueda_contratos' %}"></a><p>INTRANET</p>
+          <a href="{% url 'busqueda_contratos' %}"><p>INTRANET</p></a>
         {% else %}
-          <a href="javascript:showLightboxLogin();"></a><p>INTRANET</p> 
+          <a href="javascript:showLightboxLogin();"><p>INTRANET</p></a> 
         {% endif %}
       </div>
     

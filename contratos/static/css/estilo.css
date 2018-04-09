@@ -11,6 +11,7 @@ body{
   --gris-claro:#A4A4A4;
   --blanco-oscuro:#F2F2F2;
   --blanco-claro:#FFFFFF;
+  opacity: 1;
 
 }
 
@@ -107,6 +108,134 @@ body{
 #header-epublica:hover, #header-eprivada:hover{
   color: #349CD1;
 }
+
+
+/* Contacto */
+
+#fade{
+  grid-column: 1 / -1;
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-color: var(--gris-oscuro);
+  position: absolute;
+  z-index: 1224233;
+  opacity: 0.7;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 0.2fr 0.6fr 0.2fr;
+  grid-template-rows: 0.2fr 0.6fr 0.2fr;
+  display: none;
+}
+
+#contacto{
+  grid-column: 2 / 3;
+  grid-row:  2 / 3;
+  background-color: var(--gris-oscuro);
+  opacity: initial;
+  display: grid;
+  position: relative;
+  grid-template-columns: 0.4fr 0.6fr;
+}
+#contacto-logo{
+  background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+#contacto input[type=text]{
+  width: 300px;
+}
+#contacto input[type=number]{
+  width: 300px;
+}
+#contacto input[type=email]{
+  width: 300px;
+}
+#contacto button{
+  color: var(--blanco-claro);
+  background-color: var(--azul);
+  cursor: pointer;
+  height: 30px;
+  text-decoration: none;
+  margin:0px;
+  margin-left: 292px;
+}
+
+#textarea{
+  width: 305px;
+  height: 80px;
+  margin-left: 2px;
+}
+#contacto ul{
+  margin-top: 30px;
+}
+#contacto li{
+  list-style: none;
+  padding: 2px;
+}
+
+
+
+#cerrar-contacto{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+#cerrar-contacto img{
+  width: 40px;
+}
+
+
+#fade-login{
+  grid-column: 1 / -1;
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-color: var(--gris-oscuro);
+  position: absolute;
+  z-index: 1224233;
+  opacity: 0.7;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 0.7fr 0.2fr 0.1fr;
+  grid-template-rows: 50px 0.7fr ;
+  display: none;
+}
+
+#login{
+  grid-column: 2 / 3;
+  grid-row:  2 / 3;
+  background-color: var(--gris-oscuro);
+  opacity: initial;
+}
+#login ul{
+  margin-top: 40px;
+}
+#login li{
+  list-style: none;
+  padding-bottom: 20px;
+}
+#btn-login{
+  background-color: var(--azul);
+  color: var(--blanco-claro);
+  height: 30px;
+  margin-left: 60%;
+}
+#cerrar-login{
+  width: 40px;
+  position: absolute;
+  top:50px;
+  right: 10%;
+}
+
+#img-login{
+  width: 50%;
+  margin-left: 10%;
+  margin-top: 20%;
+}
+
+
+
+
+
 
 
 /* Footer */
