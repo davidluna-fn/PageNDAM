@@ -13,7 +13,7 @@
     </div>  
 </div>                    
 
-<form>
+<form id="form-busqueda">
 <div id="busqueda">
     <div>
       <ul>
@@ -59,8 +59,8 @@
         </li>
         <li>
           <div id="btn-limpiar">
-            <button type="submit" class="btn btn-primary">
-                <h5>LIMPIAR</h5>
+            <button type="button" onclick="resetform()" class="btn btn-primary">
+                <h5> LIMPIAR </h5>
             </button>
           </div>
         </li>
@@ -94,7 +94,9 @@
       </a>
     </p>
   </div>
-  <div class="campo4-busqueda"><p>{{ contrato.valor_en_sm}}</p></div>
+  <div class="campo4-busqueda">
+    <p>{{ contrato.valor_en_sm_participacion }}  </p>
+  </div>
   <div class="campo5-busqueda">
     <p>
       {% if contrato.contrato == '' %}

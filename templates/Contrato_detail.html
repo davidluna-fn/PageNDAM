@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% load widget_tweaks %}
+    {% load static %}
 
 {% block content %}
 
 <div id="content-detalles-contrato">
   <div id="btn-detalles-contrato">
-    <div id="btn-regresar"> <h4> < Regresar a Búsqueda</h4> </div>
-    <div id="btn-cerrar-sesion"> <h4> CERRAR SESIÓN</h4> </div>
+    <div id="btn-regresar"> <h4><a href="{% url 'busqueda_contratos' %}">< Regresar a Búsqueda </a></h4> </div>
+    <div id="btn-cerrar-sesion"> <h4><a href="{% url 'logout' %}">CERRAR SESIÓN</a></h4> </div>
   </div>  
   <div id="information-contrato">
     <div class="title-detalles"><h5>NÚMERO</h5></div>
@@ -32,81 +33,174 @@
     <div class="contrato-information"><h5>{{ contrato.valor_en_sm }}</h5></div>
     <div class="title-detalles"><h5>PORCENTAJE PARTICIPACIÓN</h5></div>
     <div class="contrato-information"><h5>{{ contrato.porcentaje_participacion }}</h5></div>
-    <div class="title-detalles"><h5>VALOR EN SM PARTICIPACIÓN</h5></div>
-    <div class="contrato-information"><h5>{{ contrato.valor_en_sm_participacion }}</h5></div>
     <div class="title-detalles"><h5>DEPARTAMENTO</h5></div>
     <div class="contrato-information"><h5>{{ contrato.departamento }}</h5></div>
     <div class="title-detalles"><h5>MUNICIPIO</h5></div>
     <div class="contrato-information"><h5>{{ contrato.municipio }}</h5></div>
+    
+
+    {% if user.groups.all.0.name != "Cliente_No_Autorizado" %}
+        <div class="title-detalles"><h5>CONTRATO</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.contrato != ''  %}
+                <img src="{% static 'img/file.png' %}" height="30vh">&nbsp; 
+                <a href="{{ contrato.contrato.url }}">Descargar</a> 
+            {% else %}
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              <span id="no-file"> Archivo no disponible </span>  
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ADICIONAL 1</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.adicional1 != ''  %}
+                <img src="{% static 'img/file.png' %}" height="30vh">&nbsp;
+                <a href="{{ contrato.adicional1 }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>  
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ADICIONAL 2</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.adicional2 != ''  %}
+                <img src="{% static 'img/file.png' %}" height="30vh">&nbsp;            
+                <a href="{{ contrato.adicional1 }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>  
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACTA RECIBO FINAL</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.acta_recibo_final != '' %}
+                <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
+                <a href="{{ contrato.acta_recibo_final }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>  
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACTA LIQUIDACION</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.acta_liquidacion != '' %}
+                <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
+                <a href="{{ contrato.acta_liquidacion }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>  
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>CERTIFICACION DE OBRA</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.certificacion_de_obra != '' %}
+                <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
+                <a href="{{ contrato.certificacion_de_obra }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>            
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>CERTIFICACION DIRECTOR</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.certificacion_director != '' %}
+                <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;        
+                <a href="{{ contrato.certificacion_director }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span>              
+            {% endif %}
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACUERDO CONSORCIAL</h5></div>
+        <div class="contrato-information">
+          <h5>
+            {% if contrato.acuerdo_consorcial != '' %}
+                <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;                    
+                <a href="{{ contrato.acuerdo_consorcial }}">Descargar</a>
+            {% else %}
+                <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+                <span id="no-file"> Archivo no disponible </span> 
+            {% endif %}
+          </h5>
+        </div>
+    {% else %}
     <div class="title-detalles"><h5>CONTRATO</h5></div>
-    <div class="contrato-information"><h5>asd</h5></div>
-    <div class="title-detalles"><h5>ADICIONAL 1</h5></div>
-    <div class="contrato-information"><h5>das</h5></div>
-    <div class="title-detalles"><h5>ACTA RECIBO FINAL</h5></div>
-    <div class="contrato-information"><h5>asd</h5></div>
-    <div class="title-detalles"><h5>ACTA LIQUIDACION</h5></div>
-    <div class="contrato-information"><h5>ada</h5></div>
-    <div class="title-detalles"><h5>CERTIFICACION DE OBRA</h5></div>
-    <div class="contrato-information"><h5>ads</h5></div>
-    <div class="title-detalles"><h5>CERTIFICACION DIRECTOR</h5></div>
-    <div class="contrato-information"><h5>sd</h5></div>
-    <div class="title-detalles"><h5>ACUERDO CONSORCIAL</h5></div>
-    <div class="contrato-information"><h5>ads</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ADICIONAL 1</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ADICIONAL 2</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACTA RECIBO FINAL</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACTA LIQUIDACION</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>CERTIFICACION DE OBRA</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>CERTIFICACION DIRECTOR</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+        <div class="title-detalles"><h5>ACUERDO CONSORCIAL</h5></div>
+        <div class="contrato-information">
+          <h5>
+              <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
+              Usted no está autorizado
+          </h5>
+        </div>
+    {% endif %}
   </div>
 </div>
 
 {% endblock %}
 <!-- <div class="DivBody">
 
-    <th>Numero en proponente:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Objeto:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Tipo de obra:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Entidad contratante:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Valor ejecutado:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Plazo en dias:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Fecha terminación:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Valor en sm:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Porcentaje participación:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Valor en sm participación:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Departamento:</th>
-    <td></td>
-  </tr>
-  <tr>
-    <th>Municipio:</th>
-    <td></td>
-  </tr>
-
-  
+   
 
   {% if user.groups.all.0.name != "Cliente_No_Autorizado" %}
 

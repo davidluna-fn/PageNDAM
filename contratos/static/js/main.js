@@ -42,3 +42,8 @@ function hideLightboxLogin() {
   document.getElementById('overLogin').style.display='none';
   document.getElementById('fade').style.display='none';
 }
+
+function resetform() {
+    document.getElementById("form-busqueda").reset();
+}
+

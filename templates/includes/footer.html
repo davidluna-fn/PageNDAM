@@ -7,12 +7,16 @@
     <div>
       <p>Mapa del Sitio</p>
         <ul>
-            <li>Inicio</li>
-            <li>Sobre Nosotros</li>
-            <li>Experiencia Pública</li>
-            <li>Experiencia Privada</li>
-            <li>Contacto</li>
-            <li>Intranet</li>
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'sobreNosotros' %}">Sobre Nosotros</a></li>
+            <li><a href="{% url 'proyectosPublicos' %}">Experiencia Pública</a></li>
+            <li><a href="{% url 'proyectosPrivados' %}">Experiencia Privada</a></li>
+            <li><a href="javascript:showLightbox();">Contacto</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'busqueda_contratos' %}">Intranet</a></li>
+            {% else %}
+                <li><a href="javascript:showLightboxLogin();">Intranet</a></li>
+            {% endif %}
         </ul>
     </div>
     <div id="contacto-footer">
@@ -27,9 +31,9 @@
     <div class="footer-ul">
         <p>Nuestras redes</p>
         <ul>
-            <li><i class="fab fa-instagram"></i></li>
-            <li><i class="fab fa-facebook-square"></i></li>
-            <li><i class="fab fa-twitter-square"></i></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
         </ul>
     </div>
 

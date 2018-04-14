@@ -147,6 +147,9 @@ body{
 #contacto input[type=number]{
   width: 300px;
 }
+#contacto input[type=email]{
+  width: 300px;
+}
 
 #contacto button{
   color: var(--blanco-claro);
@@ -242,7 +245,10 @@ body{
   padding-left: 10%;
   padding-right: 10%;
 }
-
+  #footer a{
+    text-decoration: none;
+    color: var(--blanco-claro);
+  }
 .footer-grid{
   display: grid;
   grid-template-columns: repeat(4,minmax(250px,auto));
@@ -308,6 +314,8 @@ body{
     padding-left: 0px;
     padding-right: 0px;
   }
+
+
   #sub-footer{
   grid-column: 1 / -1;
   grid-row: 6 / 7;
@@ -397,6 +405,7 @@ body{
   position: absolute;
   width: 4%;
 }
+
 #btnL{
   margin-top: 48%;
 
@@ -416,13 +425,22 @@ body{
   margin-left: 30%;
   margin-top: 60%;
 }
+
+#vm-banner a{
+  text-decoration: none;
+  color: var(--blanco-claro);
+
+}
 #projects{
   grid-column: 1 /-1;
     padding-right: 10%;
 
 }
 
-
+.project-btn a{
+  text-decoration: none;
+  color: var(--blanco-claro);
+}
 
 .projects-grid{
   display: grid;
@@ -781,20 +799,25 @@ body{
   z-index: -2;
 }
 
-#banner-pprivado div{
+#volver-pprivado{
   right: 0px;
   position: absolute;
   background-color: var(--azul);
   color: var(--blanco-claro);
   height: 30px;  
-  margin-top: 50px;
+  margin-top: -400px;
+  z-index: 2;
 }
 
-#banner-pprivado div p{
+#volver-pprivado p{
   padding-left: 20px;
   padding-right: 20px;
   font-weight: bold;  
   margin-top: 5px;
+}
+#descripcion-ppublico a{
+  text-decoration: none;
+  color: var(--blanco-claro);
 }
 
 #nd-pprivado{
@@ -1567,6 +1590,16 @@ body{
   border: 1px solid var(--gris-oscuro);
 }
 
+#btn-regresar  a{
+  text-decoration: none;
+  color: var(--blanco-claro);
+}
+
+#btn-cerrar-sesion  a{
+  text-decoration: none;
+  color: var(--gris-oscuro);
+}
+
 #btn-regresar{
   background-color: var(--gris-oscuro);
   color: var(--blanco-claro);
@@ -1594,6 +1627,14 @@ margin-bottom: 20px;
 }
 #btn-cerrar-sesion h4{
   margin-top: 5px;
+}
+#information-contrato a{
+  text-decoration: none;
+  color: var(--azul);
+}
+
+#no-file{
+  color: var(--naranja);
 }
 
 @media screen and (max-width: 700px) {
