@@ -10,7 +10,7 @@ class AdminContrato(admin.ModelAdmin):
 				 [u'Descripción',{'fields':['entidad_contratante',
 				 										 'tipo_de_obra','objeto',
 				 										 ('plazo_en_dias','fecha_terminacion')]}],
-				 [u'Infomración economica',{'fields':[('valor_ejecutado','valor_en_sm'),
+				 [u'Infomración economica',{'fields':[('valor_ejecutado'),
 				 									  ('porcentaje_participacion',
 				 									  	'valor_en_sm_participacion')]}],
 				 [u'Archivos', {'fields':[('contrato','acuerdo_consorcial'),
@@ -20,7 +20,7 @@ class AdminContrato(admin.ModelAdmin):
 				]
 
 
-	list_display  		= ['numero','year','departamento','municipio','objeto','valor_en_sm']
+	list_display  		= ['numero','year','departamento','municipio','objeto']
 	list_filter   		= ['year','departamento','municipio','valor_ejecutado','tipo_de_obra']
 	list_display_links 	= ['objeto'] 
 	#list_editable = ['objeto']

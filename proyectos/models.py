@@ -16,10 +16,6 @@ class ProyectoPrivado(models.Model):
 	img4 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	img5 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	img6 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img7 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img8 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img9 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img10 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	def get_absolute_url(self):
 		return "/pPrivado/%i/" % self.id
 
@@ -36,8 +32,5 @@ class ProyectoPublico(models.Model):
 	img5 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	img6 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	img7 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img8 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img9 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
-	img10 		= models.FileField(upload_to='img_proyectos/',blank=True, null=True)
 	def get_absolute_url(self):
 		return "/pPublico/%i/" % self.id	

@@ -24,7 +24,6 @@ class Contrato(models.Model):
 	valor_ejecutado				= models.DecimalField(max_digits=12, decimal_places=2,verbose_name=u'Valor ejecutado')
 	plazo_en_dias				= models.IntegerField(verbose_name=u'Plazo en días')
 	fecha_terminacion			= models.DateField(auto_now=False, auto_now_add=False,verbose_name=u'Fecha de terminación')
-	valor_en_sm 				= models.DecimalField(max_digits=12, decimal_places=2,verbose_name=u'Valor en salarios mínimos')
 	porcentaje_participacion 	= models.DecimalField(max_digits=3, decimal_places=2,verbose_name=u'Porcentaje de participación')
 	valor_en_sm_participacion	= models.DecimalField(max_digits=12, decimal_places=2,verbose_name=u'Valor en SM segun participación')
 	departamento				= models.CharField(max_length=200,verbose_name=u'Departamento')
