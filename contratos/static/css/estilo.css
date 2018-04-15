@@ -39,6 +39,15 @@ body{
   padding-top: 40px;
 }
 
+
+
+#header a:hover{
+  color: var(--azul);
+}
+#experiencia-header:hover{
+ color: var(--azul); 
+}
+
 .header-grid li{
   font-size: 2em;
   padding: 0.1em;
@@ -67,6 +76,13 @@ body{
   text-align: center;
   padding-top: 10%;
 }
+
+#intranet p:hover{
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+}
+
+
 
 #experiencia-header ul li {
   font-size: 1em;
@@ -358,6 +374,12 @@ body{
     text-decoration: none;
     color: var(--blanco-claro);
   }
+
+    #footer div a:hover{
+    color: var(--azul);
+  }
+
+
 .footer-grid{
   display: grid;
   grid-template-columns: repeat(4,minmax(250px,auto));
@@ -518,8 +540,11 @@ body{
 
 #btnL{
   margin-top: 48%;
-
 }
+#btnL:hover{
+  content: url({% static 'img/bannerL2.png' %});
+}
+
 #btnR{
   margin-top: 48%;
   right: 0px;
@@ -539,8 +564,18 @@ body{
 #vm-banner a{
   text-decoration: none;
   color: var(--blanco-claro);
-
 }
+#vm-banner:hover {
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+}
+
+#vm-banner:hover a{
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+}
+
+
 #projects{
   grid-column: 1 /-1;
     padding-right: 10%;
@@ -551,6 +586,8 @@ body{
   text-decoration: none;
   color: var(--blanco-claro);
 }
+
+
 
 .projects-grid{
   display: grid;
@@ -577,6 +614,14 @@ body{
   position: absolute;
   bottom:15px;
   right:20px;
+}
+
+#projects div div:hover{
+  color: var(--blanco-oscuro);
+  background: var(--gris-claro);
+}
+#projects div div:hover a{
+  color: var(--blanco-oscuro);
 }
 
 #projects div div p{
@@ -859,6 +904,12 @@ body{
   font-size: 0.8em;
 }
 
+#container-projects div div:hover{
+  background: var(--blanco-claro);
+    color: var(--gris-oscuro);
+}
+
+
 #eprojects{
   padding-left: 10%;
   padding-right: 10%;
@@ -925,6 +976,15 @@ body{
   font-weight: bold;  
   margin-top: 5px;
 }
+#volver-pprivado a{
+  text-decoration: none;
+  color: var(--blanco-claro);
+}
+
+#volver-pprivado:hover{
+  background: var(--gris-claro);
+}
+
 #descripcion-ppublico a{
   text-decoration: none;
   color: var(--blanco-claro);
@@ -1149,6 +1209,12 @@ body{
   right: 20px;
 }
 
+#ppublicos div div:hover{
+  background-color: var(--gris-claro);
+}
+
+
+
 .btn-vm h3{
   font-weight: bold;
   margin-top: 8px;
@@ -1313,7 +1379,6 @@ body{
   grid-template-rows: 430px;
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 #descripcion-ppublico{
@@ -1326,6 +1391,14 @@ body{
   color: var(--blanco-claro);
   position: relative;
 }
+
+#descripcion-ppublico div:hover{
+    background: var(--blanco-claro);
+}
+#descripcion-ppublico div:hover a{
+    color: var(--gris-oscuro);
+}
+
 
 #descripcion-ppublico h1{
     font-size: 2.5em;
@@ -1477,6 +1550,15 @@ body{
   margin-top: 30px;
   text-align: center;
 }
+#btn-logout:hover{
+  background: var(--gris-oscuro);
+  border: 1px solid var(--gris-oscuro);
+}
+#btn-logout:hover a{
+  color: var(--blanco-claro);
+} 
+
+
 #btn-logout h5{
   margin-top: 10px;
 }
@@ -1531,9 +1613,16 @@ body{
   margin-top: 6px;
 }
 
+#btn-generar-reporte button:hover{
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+}
+
+
 #btn-buscar button{
   float: left;
   background-color: var(--azul);
+  border:1px solid var(--azul);
   height: 31px;
   width: 101px;
   margin: 5px;
@@ -1543,10 +1632,17 @@ body{
 #btn-buscar h5{
   margin-top: 8px;
 }
+#btn-buscar button:hover{
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+  border:1px solid var(--blanco-claro);
+}
+
 
 #btn-limpiar button{
   height: 30px;
   background-color: var(--naranja);
+  border: 1px solid var(--naranja);
   width: 101px;
   margin-top: 5px;
   margin-left: 165px;
@@ -1556,6 +1652,13 @@ body{
 #btn-limpiar h5{
   margin-top: 7px;
 }
+
+#btn-limpiar button:hover{
+  background: var(--blanco-claro);
+  color: var(--gris-oscuro);
+  border:1px solid var(--blanco-claro);
+}
+
 #content-tabla{
   background-color: var(--blanco-claro);
   padding-top: 10px;
@@ -1705,10 +1808,23 @@ body{
   color: var(--blanco-claro);
 }
 
+#btn-regresar:hover{
+  background: var(--azul);
+}
+
 #btn-cerrar-sesion  a{
   text-decoration: none;
   color: var(--gris-oscuro);
 }
+
+#btn-cerrar-sesion:hover {
+  background: var(--azul);
+  border: 1px solid var(--azul);
+}
+#btn-cerrar-sesion:hover a{
+  color: var(--blanco-claro);
+}
+
 
 #btn-regresar{
   background-color: var(--gris-oscuro);
@@ -1746,6 +1862,11 @@ margin-bottom: 20px;
 #no-file{
   color: var(--naranja);
 }
+
+.title-detalles:hover{
+  background: var(--azul);
+}
+
 
 @media screen and (max-width: 700px) {
   #content-detalles-contrato{

@@ -4,8 +4,7 @@
 
 {% block content %}
 
-<!-- <section id="content" class='content-grid'>
- -->  <div id='banner' style="background-image: url({{ banner.2.img_principal.url }});">
+<div id='banner' style="background-image: url({{ banner.2.img_principal.url }});">
     <img id="texto-banner" src="{% static 'img/textobanner.png' %}">
     <img id="btnL" src="{% static 'img/bannerL.png' %}" class="btn-banner">
     <img id="btnR" src="{% static 'img/bannerR.png' %}" class="btn-banner">
@@ -34,48 +33,6 @@
         <div class="project-btn"><a href="{{ projects.2.get_absolute_url }}"><p>VER MÁS</p></a></div>
     </div>
   </div>
-<!-- </section> -->
-
-
-
-
-<!-- 
-<div id="banner" style="background-image: url({{ banner.2.img_principal.url }})">
-  <a href="" title=""><div id="bannerL"><img src="{% static 'img/bannerL.png' %}" alt="" width="40px" height="40px"> </div></a>
-  <div  id="textobanner">
-    <img src="{% static 'img/textobanner.png' %}" alt="" width="350px">
-    <a href="" title="" class="nounderline"><div id=vermasbanner> <p>VER MÁS</p> </div></a>
-  </div>
-  <a href="" title=""><div id="bannerR"><img src="{% static 'img/bannerR.png' %}" alt="" width="40px" height="40px"> </div></a>
-</div>
-
-<section id="proyectosenventa">
-  <div id=proyectos>
-    <article id="logo3">
-      <img src="{% static 'img/logo3.png' %}" alt="" width="310px">
-    </article>
-    <article id="proyecto1">
-      <img src="{{ projects.1.img_minatura.url }}" width="285px" alt="">
-      <h3>{{ projects.1.nombre }}</h3><br>
-      <p>{{ projects.1.descripcion }}</p>
-      <a href="" class="nounderline"><div id='b1'><p>VER MÁS</p></div></a>
-    </article>
-    <article id="proyecto2">
-            <img src="{{ projects.0.img_minatura.url }}" width="285px" alt="">
-            <h3>{{ projects.0.nombre }}</h3><br>
-            <p>{{ projects.0.descripcion }}</p>
-            <a href="" class="nounderline"><div id='b1'><p>VER MÁS</p></div></a>
-    </article>
-    <article id="proyecto3">
-            <img src="{{ projects.2.img_minatura.url }}" width="285px" alt="">
-            <h3>{{ projects.2.nombre }}</h3><br>
-            <p>{{ projects.2.descripcion }}</p>
-            <a href="" class="nounderline"><div id='b1'><p>VER MÁS</p></div></a>
-    </article>
-  </div>
-</section> -->
-
-
 
 {% endblock %}
  
