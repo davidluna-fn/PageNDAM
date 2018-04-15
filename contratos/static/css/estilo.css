@@ -169,11 +169,18 @@ body{
 #contacto button{
   color: var(--blanco-claro);
   background-color: var(--azul);
+  border: 1px solid var(--azul);
   cursor: pointer;
   height: 30px;
   text-decoration: none;
   margin:0px;
   margin-left: 292px;
+}
+
+#contacto button:hover{
+  color: var(--gris-oscuro);
+  background: var(--blanco-claro);
+  border: 1px solid var(--blanco-claro);
 }
 
 #textarea{
@@ -285,10 +292,18 @@ body{
 }
 #btn-login{
   background-color: var(--azul);
+  border: 1px solid var(--azul);;
   color: var(--blanco-claro);
   height: 30px;
   margin-left: 60%;
 }
+
+#btn-login:hover{
+  color: var(--gris-oscuro);
+  background: var(--blanco-claro);
+  border: 1px solid var(--blanco-claro);
+}
+
 #cerrar-login{
   width: 40px;
   position: absolute;
