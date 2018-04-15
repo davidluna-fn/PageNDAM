@@ -44,7 +44,7 @@
 
 <div id="fade" class="fadebox">
   <div  id="contacto" >
-    <div id="contacto-logo" style="background-image:url({% static 'img/conctato.png' %}) "></div>
+    <div id="contacto-logo" style="background-image:url({% static 'img/conctato.png' %}); opacity: 1;"></div>
     <div>
        <form id='formulario' method="post" action="" class="inputContacto" >{% csrf_token %}
         <ul style="text-decoration: none;">
@@ -66,6 +66,10 @@
 </div>
 
 
+
+
+
+
 <div id="fade-login">
   <div id="login">
     <div>
@@ -85,32 +89,6 @@
     </a>
   </div>
 </div>
-
-<!-- <div id="overLogin" class="overboxlogin">
-      <div id="logindiv">
-          <div style="float: left; margin-left: 30px;margin-top: 60px;">
-            <img src="{% static 'img/login.png' %}" alt="" width="120px;">
-          </div>
-          <a href="javascript:hideLightboxLogin();"><div style="float: right;"><img src="{% static 'img/cerrarContacto.png' %}" alt="" height="50px;" ></div></a>
-
-          <div>
-            <form id='form' method="post" action="" class="loginform">{% csrf_token %}
-              <ul style="text-decoration: none;">
-                <li>{% render_field form.username placeholder="  Usuario" %}</li>
-                <li>{% render_field form.password placeholder="  Contraseña" %}</li>
-              </ul>
-      
-              <button type="submit" class="btn btn-primary">INICIAR</button>
-            </form>
-          </div>        
-      </div>
-</div> -->
-<!-- <div id="fade" class="fadebox">&nbsp;</div> -->
-
-
-
-
-
 
 
 

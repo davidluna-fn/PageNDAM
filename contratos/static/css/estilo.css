@@ -116,10 +116,9 @@ body{
   grid-column: 1 / -1;
   height: calc(100vh - 100px);
   width: 100%;
-  background-color: var(--gris-oscuro);
+  background-color: rgba(53,53,55,0.8);
   position: absolute;
   z-index: 1224233;
-  opacity: 0.7;
   margin-top: 100px;
   display: grid;
   grid-template-columns: 0.2fr 0.6fr 0.2fr;
@@ -130,7 +129,7 @@ body{
 #contacto{
   grid-column: 2 / 3;
   grid-row:  2 / 3;
-  background-color: var(--gris-oscuro);
+  background-color: rgba(53,53,55,1) ;
   opacity: initial;
   display: grid;
   position: relative;
@@ -184,16 +183,71 @@ body{
 #cerrar-contacto img{
   width: 40px;
 }
+@media screen and (max-width: 700px){
+    #fade{
+      grid-column: 1 / -1;
+      height: auto;
+      width: 100%;
+      background-color: rgba(53,53,55,0.8);
+      position: absolute;
+      z-index: 1224233;
+      margin-top: 400px;
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 100px auto 100px;
+      display: none;
+    }
+
+    #contacto{
+      grid-column: 1 / -1;
+      grid-row:  2 / 3;
+      background-color: rgba(53,53,55,1) ;
+      opacity: initial;
+      display: grid;
+      position: relative;
+      grid-template-rows: 100vw auto;
+      padding-bottom: 20px;
+    }
+    #contacto-logo{
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      background-repeat: no-repeat;
+      background-size: 90%;
+    }
+
+    #cerrar-contacto{
+      position: absolute;
+      top: 0px;
+      right: 10px;
+    }
+
+    #contacto input[type=text]{
+      width: 90%;
+    }
+    #contacto input[type=number]{
+      width: 90%;
+    }
+    #contacto input[type=email]{
+      width: 90%;
+    }
+    #textarea{
+      width: 91%
+    }
 
 
+}
+
+
+
+
+/* Intranet */
 #fade-login{
   grid-column: 1 / -1;
   height: calc(100vh - 100px);
   width: 100%;
-  background-color: var(--gris-oscuro);
+  background-color: rgba(53,53,55,0.8) ;
   position: absolute;
   z-index: 1224233;
-  opacity: 0.7;
   margin-top: 100px;
   display: grid;
   grid-template-columns: 0.7fr 0.2fr 0.1fr;
@@ -204,8 +258,7 @@ body{
 #login{
   grid-column: 2 / 3;
   grid-row:  2 / 3;
-  background-color: var(--gris-oscuro);
-  opacity: initial;
+  background-color: rgba(53,53,55,1.0);
 }
 #login ul{
   margin-top: 40px;
@@ -234,7 +287,63 @@ body{
 }
 
 
+@media screen and (max-width: 700px){
+    #fade-login{
+      grid-column: 1 / -1;
+      height: auto;
+      width: 100%;
+      background-color: rgba(53,53,55,0.8) ;
+      position: absolute;
+      z-index: 1224233;
+      margin-top: 400px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100px auto 100px ;
+      display: none;
+    }
 
+    #login{
+      grid-column: 1 / -1;
+      grid-row:  2 / 3;
+      background-color: rgba(53,53,55,1.0);
+      padding-bottom: 30px;
+    }
+    #login ul{
+      margin-top: 40px;
+    }
+    #login li{
+      list-style: none;
+      padding-bottom: 20px;
+    }
+    #btn-login{
+      background-color: var(--azul);
+      color: var(--blanco-claro);
+      height: 30px;
+      margin-left: 60%;
+    }
+    #cerrar-login{
+      width: 40px;
+      position: absolute;
+      top:100px;
+      right: 2%;
+    }
+
+    #img-login{
+      width: 50%;
+      margin-left: 10%;
+      margin-top: 20%;
+    }
+
+    #id_username{
+      width: 90%;
+    }
+    #id_password{
+      width: 90%;
+    }
+
+
+
+}
 
 
 
@@ -385,11 +494,12 @@ body{
 #banner{
   grid-column: 1/-1;
   grid-row: 1 /2 ;
-  background-color: green;
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: minmax(300px,auto);
+  grid-template-rows: minmax(300px, 90vh );
   position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #texto-banner{
