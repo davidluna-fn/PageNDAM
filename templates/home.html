@@ -4,11 +4,17 @@
 
 {% block content %}
 
-<div id='banner' style="background-image: url({{ banner.2.img_principal.url }});">
-    <img id="texto-banner" src="{% static 'img/textobanner.png' %}">
+<div class="w3-display-container">
+    <img class="mySlides" src="{{ banner.0.img_principal.url }}" style="width:100%">
+    <img class="mySlides" src="{{ banner.1.img_principal.url }}" style="width:100%">
+    <img class="mySlides" src="{{ banner.2.img_principal.url }}" style="width:100%">
+    <button class="btn-banner-slide w3-display-left"  onclick="plusDivs(-1)">&#10094;</button>
+    <button class="btn-banner-slide w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+<!--     <img id="texto-banner" src="{% static 'img/textobanner.png' %}">
     <img id="btnL" src="{% static 'img/bannerL.png' %}" class="btn-banner">
     <img id="btnR" src="{% static 'img/bannerR.png' %}" class="btn-banner">
-    <div id="vm-banner"><a href="{{ banner.2.get_absolute_url}} "> VER MÁS </a></div>
+    <div id="vm-banner"><a href="{{ banner.2.get_absolute_url}} "> VER MÁS </a></div> -->
   </div>
   <div id="projects" class="projects-grid" >
     <div style="background:#383839;">
