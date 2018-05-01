@@ -472,7 +472,7 @@ width:0px;height:0px;outline:0px;
 
 
   #intranet{
-    background: #A4A2A0;
+    background: var(--gris-claro);
     text-align: center;
     padding-top: 10%;
   }
@@ -545,14 +545,42 @@ width:0px;height:0px;outline:0px;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
-#texto-banner{
+#home-banner{
+  position: relative;
+}
+#home-banner div{
+  color: var(--blanco-claro);
   position: absolute;
-  width: 25%;
-  margin-top: 37%;
-  margin-bottom:20%;
+  top: 60%;
+  left: 30%;
+  border: 2px solid var(--blanco-claro);
+  padding: 1px 15px 1px 15px;
+  font-weight: bold;
+  height: 40px;
+  text-align: center;
+}
+#home-banner div p{
+  margin-top: 6px;
+}
+
+#home-banner a{
+  text-decoration: none;
+ }
+#home-banner div:hover{
+  background-color: var(--blanco-claro);
+  color: var(--gris-oscuro);
+ }
+
+.text-banner{
+  position: absolute;
+  z-index: 23;
+  transform: 10% 50%;
+  margin-top: -35%;
+  left: 10%
+}
+.text-banner{
+  width: 30%;
   height: 20%;
-  margin-left: 10%;
 }
 
 .btn-banner{
@@ -671,6 +699,13 @@ width:0px;height:0px;outline:0px;
     grid-auto-rows: auto repeat(3,minmax(650px,auto));
     grid-auto-rows: minmax(650px,auto);
     grid-gap: 2px;
+  }
+  .text-banner{
+    position: absolute;
+    z-index: 23;
+    transform: 10% 50%;
+    margin-top: -35%;
+    left: 15%
   }
   #projects{
   grid-column: 1 /-1;
