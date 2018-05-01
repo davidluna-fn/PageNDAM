@@ -763,7 +763,7 @@ width:0px;height:0px;outline:0px;
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .projects-grid{
     display: grid;
     grid-template-columns: 1fr;
