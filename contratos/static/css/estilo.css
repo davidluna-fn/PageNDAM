@@ -665,6 +665,7 @@ width:0px;height:0px;outline:0px;
   right:20px;
 }
 
+
 #projects div div:hover{
   color: var(--blanco-oscuro);
   background: var(--gris-claro);
