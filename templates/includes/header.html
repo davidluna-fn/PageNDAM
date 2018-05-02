@@ -1,6 +1,45 @@
     {% load static %}
 
-<header id="header" class="header-grid">
+
+<div class="topnav" id="myTopnav">
+  <span id="logo-topnav" >
+    <img src="{% static 'img/nda1.png' %}">
+  </span>
+  <a href="{% url 'index' %}"> INICIO</a>
+  <a href="{% url 'sobreNosotros' %}">SOBRE NOSOTROS</a>
+  <a href="#about">EXPERIENCIA</a>
+  <a href="javascript:showLightbox();">CONTACTO</a>
+  <div id="redes-h">
+        <ul style="padding: 0px;margin:0px;">
+          <a href="">
+            <li>
+                <h2 id="h2-header">
+                  <i class="fab fa-instagram"></i>
+                </h2>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <h2 id="h2-header" >
+                <i class="fab fa-facebook-square"></i>
+              </h2>
+            </li>
+          </a>
+          <a href="">
+            <li>
+              <h2  id="h2-header">
+                <i class="fab fa-twitter-square"></i>
+              </h2>
+            </li>
+          </a>
+      </ul>
+  </div>&nbsp;&nbsp;
+  <a href="#about" ><div id=intranet-h>INTRANET</div></a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+
+<!-- <header id="header" class="header-grid">
     <div style="background-image: url({% static 'img/nda1.png' %})">
     </div>
     <div>
@@ -43,8 +82,8 @@
           <a href="javascript:showLightboxLogin();"><p>INTRANET</p></a> 
         {% endif %}
       </div>
-<!--     <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="responsive_navbar()">&#9776;</a> -->
-</header>
+
+</header> -->
 
 
 
