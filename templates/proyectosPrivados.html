@@ -20,7 +20,7 @@
   <div id="container-projects">
     {% for proyecto in pPrivado %}
     <div>
-      <img style="width: 100%;" src="{{proyecto.img_minatura.url }}">
+      <img src="{{proyecto.img_minatura.url }}">
       <a href="{{ proyecto.get_absolute_url }}">
         <div id='btn-vm'><p>VER MÁS</p></div>
       </a>

@@ -1145,7 +1145,9 @@ width:0px;height:0px;outline:0px;
   background: var(--blanco-claro);
     color: var(--gris-oscuro);
 }
-
+  #container-projects img{
+    width: 100%;
+  }
 
 #eprojects{
   padding-left: 10%;
@@ -1153,14 +1155,84 @@ width:0px;height:0px;outline:0px;
   padding-top: 5%;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1200px) {
+#banner-eprivada{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns:0.5fr 0.5fr;
+  grid-template-rows: minmax(520px,auto);
+  grid-gap: 2px;
+  grid-auto-rows: 465px;
+  position: relative;
+}
+  #banner-eprivada p{
+    color: var(--blanco-claro);
+    font-size: 0.85em;
+    padding-top: 55%;
+    margin-left: 10%;
+    margin-right: 10%; 
+    z-index: 21;
+  }
+  #container-projects img{
+    width: 50vw;
+  }
+
+  #container-projects h3{
+  top:30px;
+  left: 55%;
+  position: absolute;
+}
+
+#container-projects p{
+  position: absolute;
+  top: 120px;
+  left: 55%;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+  
+
+  #container-projects div div{
+  color: var(--blanco-claro);
+  background: var(--azul);
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  width: 130px;
+  text-align: center;
+  height: 35px;
+ }
+#container-projects div div p{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+ }
+
+
+  #eprojects{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 5%;
+  }
+  #container-projects{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(1,minmax(500px,auto));
+  grid-auto-rows: minmax(300px,auto);
+  grid-gap: 6px;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
   #banner-eprivada{
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns:1fr;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: minmax(auto,70vh) minmax(auto,50vh);
     grid-gap: 5px;
-    grid-auto-rows: 500px;
+    grid-auto-rows: minmax(auto,70vh);
   }
   #banner-eprivada p{
     color: var(--blanco-claro);
@@ -1169,6 +1241,9 @@ width:0px;height:0px;outline:0px;
     margin-left: 10%;
     margin-right: 10%; 
     z-index: 21;
+  }
+  #container-projects img{
+    width: 100%;
   }
   #eprojects{
     padding-left: 1%;
@@ -1180,7 +1255,7 @@ width:0px;height:0px;outline:0px;
   display: grid;
   grid-template-columns: repeat(1,minmax(300px,auto));
   grid-auto-rows: minmax(500px,auto);
-  grid-gap: 2px;
+  grid-gap: 6px;
   }
 
 }
