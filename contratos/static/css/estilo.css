@@ -872,6 +872,7 @@ width:0px;height:0px;outline:0px;
   grid-template-rows: 240px;
   grid-template-columns: 1fr;
   background-color: white;
+  padding-bottom: 5%;
 }
 #mision-vision{
   grid-column: 1 / -1;
@@ -891,12 +892,13 @@ width:0px;height:0px;outline:0px;
 
 #sn-video{
   padding-top: 15%;
+  height:85%;
 }
 
 #descripcion-sobrenosotros p{
   padding-left: 15%;
   padding-right: 15%;
-  font-size: 0.9em;
+  /*font-size: 0.9em;*/
   padding-top: 25%;
 }
 #mision-vision{
@@ -934,11 +936,71 @@ width:0px;height:0px;outline:0px;
 }
 
 
+@media screen and (max-width: 1200px) {
+  #banner-sobrenosotros{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2px;
+    grid-auto-rows: auto;
+  }
+  #mision-vision{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(auto,80vh) auto;
+    grid-auto-rows: auto;
+    grid-gap: 5px;
+  }
+  #banner-sobrenosotros img{
+    width:80%;
+    margin-left: 10%;
+    margin-top: 10%;
+  }
+  #descripcion-sobrenosotros{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    background-color: white;
+  }
+  #descripcion-sobrenosotros p{
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 0.8em;
+    padding-top: 10%;
+    margin-bottom: 30px;
+  }
+  #sn-video{
+    width: 100%;
+  }
+  #mision img{
+    width: 80vh;
+    margin-top: 0px;
+  }
+  #mision p{
+    color: white;
+    margin-top: -35vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+
+  }
+  #vision p{
+    color: white;
+    font-size: 0.9em;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 30px;
+  }
+}
 
 
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
   #banner-sobrenosotros{
     grid-column: 1 / -1;
     display: grid;
@@ -951,9 +1013,9 @@ width:0px;height:0px;outline:0px;
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 300px;
+    grid-template-rows: auto auto;
     grid-auto-rows: auto;
-    grid-gap: 2px;
+    grid-gap: 5px;
   }
   #banner-sobrenosotros img{
     width:80%;
@@ -997,6 +1059,9 @@ width:0px;height:0px;outline:0px;
     margin-bottom: 30px;
   }
 }
+
+
+
 
 /* Experiencia privada*/
 
