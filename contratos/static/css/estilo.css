@@ -2847,9 +2847,11 @@ outline: none;
   position: absolute;
   right: 10px;
   top: 40px;
+  text-align: center;
 }
 #btn-cerrar-sesion h5{
   margin-top: 5px;
+
 }
 #information-contrato a{
   text-decoration: none;
