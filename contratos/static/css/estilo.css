@@ -2990,6 +2990,27 @@ outline: none;
   float: left;
 }
 
+
+#h-insta{
+  position: absolute;
+  top: 20px;
+  padding: 0px;
+}
+#h-fb{
+  position: absolute;
+  top: 20px;
+  padding: 0px;
+}
+#h-twitter{
+  position: absolute;
+  top: 20px;
+  padding: 0px;
+
+}
+
+
+
+
 #redes-h{
   float: left;
 }

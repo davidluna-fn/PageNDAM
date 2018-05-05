@@ -11,7 +11,17 @@
     <button class="btn-banner-slide w3-display-left"  onclick="plusDivs(-1)">&#10094;</button>
     <button  class="btn-banner-slide w3-display-right" onclick="plusDivs(1)" >&#10095;</button>
     <img class="text-banner" src="{% static 'img/textobanner.png' %}">
-    <div >
+    <div class="mySlides-link">
+        <a href="{{ banner.0.get_absolute_url}} ">
+            <p>VER MÁS </p>
+        </a>
+    </div>
+    <div class="mySlides-link">
+        <a href="{{ banner.1.get_absolute_url}} ">
+            <p>VER MÁS </p>
+        </a>
+    </div>
+    <div class="mySlides-link">
         <a href="{{ banner.2.get_absolute_url}} ">
             <p>VER MÁS </p>
         </a>
