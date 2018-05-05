@@ -2376,7 +2376,7 @@ width:0px;height:0px;outline:0px;
   position: absolute;
   right: 10%;
   height: 35px;
-  width: 150px;
+  width: 190px;
   margin-top: 30px;
   text-align: center;
 }
@@ -2387,10 +2387,23 @@ width:0px;height:0px;outline:0px;
 #btn-logout:hover a{
   color: var(--blanco-claro);
 } 
+#busqueda input[type=text]{
+  width: 25vw;
+}
+#busqueda input[type=number]{
+  width: 25vw;
+}
+#tipoObra{
+  width: 25vw;
+  text-decoration: none;
+  background-color: var(--blanco-claro);
+  height: 30px;
+}
 
 
 #btn-logout h5{
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 200px
 }
 
 #title-busqueda{
@@ -2403,8 +2416,8 @@ width:0px;height:0px;outline:0px;
   display: grid;
   margin-right: 10%;
   margin-left: 10%;
-  grid-template-columns: repeat(auto-fit,minmax(300px,auto));
-  grid-template-rows: repeat(auto-fit,minmax(350px,auto));
+  grid-template-columns: repeat(3,minmax(300px,auto));
+  grid-template-rows: repeat(1,minmax(350px,auto));
   grid-auto-rows: minmax(350px,auto); 
   color: var(--blanco-claro);
 }
@@ -2417,18 +2430,8 @@ width:0px;height:0px;outline:0px;
 #busqueda li{
   padding: 3px;
 }
-#busqueda input[type=text]{
-  width: 255px;
-}
-#busqueda input[type=number]{
-  width: 255px;
-}
-#tipo-obra{
-  width: 265px;
-  text-decoration: none;
-  background-color: var(--blanco-claro);
-  height: 30px;
-}
+
+
 #btn-generar-reporte button{
   float: left;
   border: 1px solid var(--blanco-claro);
@@ -2439,8 +2442,10 @@ width:0px;height:0px;outline:0px;
   background-color: var(--gris-oscuro);
   color:var(--blanco-claro);
 }
-#btn-generar-reporte h5{
-  margin-top: 6px;
+#btn-generar-reporte p{
+  margin-top: 5px;
+  width: 180px;
+  margin-left: -24px;
 }
 
 #btn-generar-reporte button:hover{
@@ -2459,8 +2464,8 @@ width:0px;height:0px;outline:0px;
   text-align: center;
   color:var(--blanco-claro);
 }
-#btn-buscar h5{
-  margin-top: 8px;
+#btn-buscar p{
+  margin-top: 5px;
 }
 #btn-buscar button:hover{
   background: var(--blanco-claro);
@@ -2479,8 +2484,8 @@ width:0px;height:0px;outline:0px;
   text-align: center;
   color:var(--blanco-claro);
 }
-#btn-limpiar h5{
-  margin-top: 7px;
+#btn-limpiar p{
+  margin-top: 5px;
 }
 
 #btn-limpiar button:hover{
@@ -2490,7 +2495,7 @@ width:0px;height:0px;outline:0px;
 }
 
 #content-tabla{
-  background-color: var(--blanco-claro);
+  background-color: var(--blanco-oscuro);
   padding-top: 10px;
 }
 #titulo-tabla{
@@ -2534,18 +2539,47 @@ width:0px;height:0px;outline:0px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
-#contenido-tabla div {
+/*#contenido-tabla div {
   background-color: var(--blanco-oscuro);
+  border:1px solid var(--gris-oscuro);
+}*/
+
+.campo1-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo2-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo3-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo4-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo5-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo6-busqueda{
+  border:1px solid var(--gris-oscuro);
+}
+.campo7-busqueda{
   border:1px solid var(--gris-oscuro);
 }
 
-@media screen and (max-width: 700px) {
+
+
+
+@media screen and (max-width: 1200px) {
     #busqueda{
       grid-column: 1 / -1;
       display: grid;
       margin-right: 1%;
       margin-left: 1%;
+      grid-template-columns: repeat(2,minmax(300px,auto));
+      grid-template-rows: repeat(2,minmax(350px,auto));
+      grid-auto-rows: minmax(350px,auto); 
     }
+
     #titulo-tabla{
       grid-column: 1 / -1;
       display: grid;
@@ -2564,7 +2598,103 @@ width:0px;height:0px;outline:0px;
       grid-template-columns: repeat(3,1fr);
       grid-template-rows: repeat(3,minmax(20px,auto)); 
       grid-auto-rows: minmax(20px,auto);
+      grid-gap: 0px;
+    }
+
+    #busqueda input[type=text]{
+      width: 40vw;
+    }
+    #busqueda input[type=number]{
+      width: 40vw;
+    }
+    #tipoObra{
+      width: 40vw;
+      text-decoration: none;
+      background-color: var(--blanco-claro);
+      height: 30px;
+    }
+    .campo1-busqueda{
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    .campo2-busqueda{
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .campo3-busqueda{
+      grid-area: 2 / 1 / 3 / 4;
+    }
+    .campo4-busqueda{
+      grid-area: 1 / 3 / 2 / 4;
+    }
+    .campo5-busqueda{
+      grid-area: 3 / 1 / 4 / 2;
+      border-bottom: 5px solid var(--naranja);
+
+    }
+    .campo6-busqueda{
+      grid-area: 3 / 2 / 4 / 3;
+      border-bottom: 5px solid var(--naranja);
+
+    }
+    .campo7-busqueda{
+      grid-area: 3 / 3 / 4 / 4;
+      border-bottom: 5px solid var(--naranja);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+
+    #busqueda{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right: 1%;
+      margin-left: 1%;
+      grid-template-columns: repeat(1,minmax(300px,auto));
+      grid-template-rows: repeat(auto-fit,minmax(350px,auto));
+      grid-auto-rows: minmax(350px,auto); 
+    }
+
+    #btn-logout{
+      border: 1px solid var(--blanco-claro);
+      position: absolute;
+      right: 1%;
+      height: 35px;
+      width: 190px;
+      bottom: 1%;
+      text-align: center;
+    }
+    #titulo-tabla{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right:1%; 
+      margin-left: 1%;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,minmax(20px,auto)); 
+      grid-auto-rows: minmax(20px,auto);
       grid-gap: 2px;
+    }
+
+    #busqueda input[type=text]{
+      width: 80vw;
+    }
+    #busqueda input[type=number]{
+      width: 80vw;
+    }
+    #tipoObra{
+      width: 80vw;
+      text-decoration: none;
+      background-color: var(--blanco-claro);
+      height: 30px;
+    }
+    #contenido-tabla{
+      grid-column: 1 / -1;
+      display: grid;
+      margin-right:1%; 
+      margin-left: 1%;
+      grid-template-columns: repeat(3,1fr);
+      grid-template-rows: repeat(3,minmax(20px,auto)); 
+      grid-auto-rows: minmax(20px,auto);
+      grid-gap: 0px;
     }
 
 

@@ -35,34 +35,32 @@
         <li>{% render_field filterqs.form.municipio class="form-control" %}</li>
         <li>Valor ejecutado menor a:</li>
         <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
-        <li>Valor ejecutado mayor a:</li>
-        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+        <li>{{ filterqs.form.year.label_tag }}</li>
+        <li>{% render_field filterqs.form.year class="form-control date-picker-year" %}</li>
       </ul>
     </div>
     <div>
       <ul>
-        <li>{{ filterqs.form.year.label_tag }}</li>
-        <li>{% render_field filterqs.form.year class="form-control date-picker-year" %}</li>
         <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
-        <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipo-obra"%}</li>
+        <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipoObra" %}</li>
 <!--         <li>{{ filterqs.form.valor.label_tag }}</li>
         <li>{% render_field filterqs.form.valor class="form-control" id="valor" %}</li> -->
         <li>
           <div id="btn-generar-reporte" >
             <button name='pdf' type="submit">
-               <h5>GENERAR REPORTE</h5>
+               <p>GENERAR REPORTE</p>
             </button>
           </div>
           <div id="btn-buscar">
             <button type="submit" class="btn btn-primary">
-              <h5>BUSCAR</h5>
+              <p>BUSCAR</p>
             </button>
           </div>
         </li>
         <li>
           <div id="btn-limpiar">
             <button type="button" onclick="resetform()" class="btn btn-primary">
-                <h5> LIMPIAR </h5>
+                <p> LIMPIAR </p>
             </button>
           </div>
         </li>
