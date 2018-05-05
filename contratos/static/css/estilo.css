@@ -14,9 +14,14 @@ body{
   opacity: 1;
 
 }
-a:focus {
-width:0px;height:0px;outline:0px;
+
+a {
+outline: none;
 }
+
+
+
+
 
 /* Header */
 .header-grid{
@@ -81,46 +86,6 @@ width:0px;height:0px;outline:0px;
 
 
 
-#experiencia-header ul li {
-  font-size: 1em;
-  display: none;
-}
-
-#experiencia-header:hover ul li {
-  display: block;
-  margin-left: -70px;
-  width: 180px;
-  text-align: center;
-  height: 40px;
-  background: #383839;
-  margin-top: 0px;
-  position: relative;
-  z-index: 1;
-}
-
-#header-epublica{
-  background-color: #383839;
-  border-bottom: 1px solid #FFF;
-  margin-top: -20px;
-  margin-left: 20px;
-  height: 40px;
-  width: 140px;
-}
-
-#header-eprivada{
-  background-color: #383839;
-  height: 40px;
-  display: block;
-  margin-top: -20px;
-  margin-left: 20px;
-  width: 140px;
-}
-#header-epublica p, #header-eprivada p{
-  padding-top: 10px;
-}
-#header-epublica:hover, #header-eprivada:hover{
-  color: #349CD1;
-}
 
 
 /* Contacto */
@@ -2990,7 +2955,7 @@ width:0px;height:0px;outline:0px;
 .topnav {
   overflow: hidden;
   background-color: var(--gris-oscuro);
-  
+ height: 100px;
 }
 
 .topnav a {
@@ -3002,6 +2967,16 @@ width:0px;height:0px;outline:0px;
   text-decoration: none;
   font-weight: bold;
 }
+
+/*.topnav a:activate{
+  text-decoration: none;
+  text-transform: none;
+}*/
+
+/*a:focus {
+  width:0px;height:0px;outline:0px;
+}*/
+
 .topnav a:hover {
   color: var(--azul);
 }
@@ -3105,4 +3080,62 @@ width:0px;height:0px;outline:0px;
   margin-top: -10px;
   margin-left: 20px;
   padding: 0px;
+}
+
+#exp-header{
+  color: var(--blanco-claro);
+  font-weight: bold;
+  height: 100px;
+  float: left;
+  padding-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px; 
+  width: 140px;
+}
+#exp-header:hover{
+  color: var(--azul);
+  font-weight: bold;
+  float: left;
+}
+
+
+#exp-header ul li {
+  font-size: 1em;
+  display: none;
+  width: 160px;
+}
+#exp-header:hover ul li {
+  font-size: 1em;
+  display: inline-block;
+}
+
+
+#header-epublica{
+  border-bottom: 1px solid #FFF;
+  width: 140px;
+  margin-left: -70px;
+  margin-top: -80px;
+  position: absolute;
+  z-index: 12312;
+}
+
+#header-eprivada{
+  height: 60px;
+  width: 140px;
+  position: absolute;
+  z-index: 1231;
+  margin-left: -70px;
+  margin-top: -140px;
+  background-color: var(--gris-oscuro);
+}
+#header-eprivada p{
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+#header-epublica p{
+  padding-top: 10px;
+}
+#header-epublica:hover, #header-eprivada:hover{
+  color: #349CD1;
 }

@@ -7,7 +7,21 @@
   </span>
   <a href="{% url 'index' %}"> INICIO</a>
   <a href="{% url 'sobreNosotros' %}">SOBRE NOSOTROS</a>
-  <a href="#about">EXPERIENCIA</a>
+  <div id="exp-header">
+    EXPERIENCIA
+    <ul>
+      <a href="{% url 'proyectosPublicos' %}">
+        <li>
+          <div id='header-epublica' style="padding-top: 0px;"><p>PÚBLICA</p></div>
+        </li>
+      </a>
+      <a href="{% url 'proyectosPrivados' %}">
+        <li>
+          <div id='header-eprivada' style="padding-top: 0px;"><p>PRIVADA</p></div>
+        </li>
+      </a>
+    </ul>
+  </div>
   <a href="javascript:showLightbox();">CONTACTO</a>
   <div id="redes-h">
         <ul style="padding: 0px;margin:0px;">
@@ -34,23 +48,16 @@
           </a>
       </ul>
   </div>&nbsp;&nbsp;
-  <a href="#about" ><div id=intranet-h>INTRANET</div></a>
+  {% if user.is_authenticated %}
+    <a href="{% url 'busqueda_contratos' %}" ><div id=intranet-h>INTRANET</div></a>
+  {% else %}
+    <a href="javascript:showLightboxLogin();" ><div id=intranet-h>INTRANET</div></a>
+  {% endif %}
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
 
 
-<!-- <header id="header" class="header-grid">
-    <div style="background-image: url({% static 'img/nda1.png' %})">
-    </div>
-    <div>
-        <a href="{% url 'index' %}">INICIO</a>
-    </div>
-
-    <div>
-      <a href="{% url 'sobreNosotros' %}">SOBRE NOSOTROS</a>
-    </div>
-    
-    <div id='experiencia-header'>
+<!--     <div id='experiencia-header'>
       EXPERIENCIA
       <ul>
       <a href="{% url 'proyectosPublicos' %}">
@@ -65,24 +72,7 @@
       </a>
       </ul>
     </div>
-    <div>
-      <a href="javascript:showLightbox();">CONTACTO</a>
-    </div>
-    <div id="redes-header">
-      <ul>
-        <a href=""><li><i class="fab fa-instagram"></i></li></a>
-        <a href=""><li><i class="fab fa-facebook-square"></i></li></a>
-        <a href=""><li><i class="fab fa-twitter-square"></i></li></a>
-      </ul>
-    </div>
-      <div id="intranet">
-        {% if user.is_authenticated %}
-          <a href="{% url 'busqueda_contratos' %}"><p>INTRANET</p></a>
-        {% else %}
-          <a href="javascript:showLightboxLogin();"><p>INTRANET</p></a> 
-        {% endif %}
-      </div>
-
+    
 </header> -->
 
 
