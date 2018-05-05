@@ -943,7 +943,7 @@ outline: none;
   background: #383839;
 }
 #mision img{
-  height: 90%;
+  height: minmax(auto,400px);
   margin-top: -20px;
 }
 #mision p{
