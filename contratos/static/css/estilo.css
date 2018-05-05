@@ -119,13 +119,13 @@ outline: none;
 }
 
 #contacto input[type=text]{
-  width: 300px;
+  width: 80%;
 }
 #contacto input[type=number]{
-  width: 300px;
+  width: 80%;
 }
 #contacto input[type=email]{
-  width: 300px;
+  width: 80%;
 }
 
 #contacto button{
@@ -146,9 +146,9 @@ outline: none;
 }
 
 #textarea{
-  width: 305px;
+  width: 80%;
   height: 80px;
-  margin-left: 2px;
+  margin-left: 1px;
 }
 #contacto ul{
   margin-top: 30px;
@@ -168,7 +168,24 @@ outline: none;
 #cerrar-contacto img{
   width: 40px;
 }
-@media screen and (max-width: 700px){
+
+@media screen and (max-width: 1200px){
+  #fade{
+  grid-column: 1 / -1;
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-color: rgba(53,53,55,0.8);
+  position: absolute;
+  z-index: 1224233;
+  margin-top: 400px;
+  display: grid;
+  grid-template-columns: 10px 1fr 10px;
+  grid-template-rows: 0.2fr 0.6fr 0.2fr;
+  display: none;
+}
+}
+
+@media screen and (max-width: 600px){
     #fade{
       grid-column: 1 / -1;
       height: auto;
@@ -207,16 +224,16 @@ outline: none;
     }
 
     #contacto input[type=text]{
-      width: 90%;
+      width: 80vw;
     }
     #contacto input[type=number]{
-      width: 90%;
+      width: 80vw;
     }
     #contacto input[type=email]{
-      width: 90%;
+      width: 80vw;
     }
     #textarea{
-      width: 91%
+      width: 80vw;
     }
 
 
@@ -280,7 +297,7 @@ outline: none;
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 1200px){
     #fade-login{
       grid-column: 1 / -1;
       height: auto;
@@ -2940,11 +2957,10 @@ outline: none;
     padding-right: 5%;
     background-color: var(--blanco-oscuro);
     border: 1px solid var(--gris-oscuro);
+    
   }
 
 }
-
-
 
 
 

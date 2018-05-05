@@ -1,17 +1,21 @@
   
 function showLightbox() {
   document.getElementById('fade').style.display='grid';
+  document.getElementById('h-contacto').style.backgroundColor="#01A9DB";
 
 }
 function hideLightbox() {
   document.getElementById('fade').style.display='none';
+  document.getElementById('h-contacto').style.backgroundColor="#353537";
 }
 
 function showLightboxLogin() {
   document.getElementById('fade-login').style.display='grid';
+  document.getElementById('intranet-h').style.backgroundColor="#01A9DB";
 }
 function hideLightboxLogin() {
   document.getElementById('fade-login').style.display='none';
+  document.getElementById('intranet-h').style.backgroundColor="#A4A4A4";
 }
 function resetform() {
 document.getElementById("form-busqueda").reset();
@@ -48,4 +52,10 @@ function myFunction() {
     } else {
         x.className = "topnav";
     }
+}
+
+function headerActive(id){
+ document.getElementById(id).style.backgroundColor = "#01A9DB";
+ document.getElementById(id).style.marginBottom = "-20px;";
+ document.getElementById(id).style.marginBottom = "";
 }
