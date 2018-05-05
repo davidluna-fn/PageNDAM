@@ -2958,6 +2958,10 @@ outline: none;
  height: 100px;
 }
 
+.topnav h1{
+  margin-top: -20px;
+}
+
 .topnav a {
   float: left;
   display: block;
@@ -2968,65 +2972,6 @@ outline: none;
   font-weight: bold;
 }
 
-/*.topnav a:activate{
-  text-decoration: none;
-  text-transform: none;
-}*/
-
-/*a:focus {
-  width:0px;height:0px;outline:0px;
-}*/
-
-.topnav a:hover {
-  color: var(--azul);
-}
-
-
-
-.topnav .icon {
-  display: none;
-}
-
-@media screen and (max-width: 1200px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-
-  .topnav div:not(:first-child) {display: none;}
-  .topnav div.icon {
-    float: right;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-    .topnav.responsive div {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-
-}
-
-@media screen and (max-width: 600px) {
-  #logo-topnav{
-    width: 90%;
-  }
-}
 
 .topnav img{
   height: 100px;
@@ -3138,4 +3083,174 @@ outline: none;
 }
 #header-epublica:hover, #header-eprivada:hover{
   color: #349CD1;
+}
+
+.topnav a:hover {
+  color: var(--azul);
+}
+
+
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav div:not(:first-child) {display: none;}
+  .topnav div.icon {
+    float: right;
+    display: block;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .topnav.responsive {
+    position: relative;
+    height: 400px;
+    float: none;
+  }
+
+#menu-responsive{
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+#header-epublica{
+  border-right: 1px solid #FFF;
+  border-bottom: 0px solid #FFF;
+  width: 140px;
+  left: 150px;
+  top: 75px;
+  height: 30px;
+  position: absolute;
+  z-index: 12312;
+}
+
+#header-eprivada{
+  height: 60px;
+  width: 140px;
+  position: absolute;
+  z-index: 1231;
+  top: 125px;
+  left: 310px;
+  height: 30px;
+  background-color: var(--gris-oscuro);
+}
+#header-eprivada p{
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#header-epublica p{
+  margin-left: 55px;
+  margin-top: -5px;
+}
+.topnav a {
+  float: none;
+  display: block;
+  padding: 0px 0px;
+}
+  #h-inicio{
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    height: 30px;
+    padding: 0px;
+
+  }
+  #h-sobrenosotros{
+    position: absolute;
+    left: 30px;
+    top: 160px;
+    height: 30px;
+    padding: 0px;
+  }
+  #exp-header{
+    position: absolute;
+    left: 30px;
+    top: 200px;
+    height: 30px;
+    padding: 0px;
+    width: 100%;
+  }
+  #h-contacto{
+    position: absolute;
+    left: 30px;
+    top: 240px;
+    height: 30px;
+    padding: 0px;
+  }
+  #redes-h{
+    position: absolute;
+    left: 10px;
+    top: 220px;
+    padding: 0px;
+  }
+  #h-insta{
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    padding: 0px;
+  }
+  #h-fb{
+    position: absolute;
+    left: 70px;
+    top: 40px;
+    padding: 0px;
+  }
+  #h-twitter{
+    position: absolute;
+    left: 120px;
+    top: 40px;
+    height: 30px;
+    padding: 0px;
+
+  }
+
+  #intranet-h {
+    top:400px;
+    left: 30px;
+    top: 330px;
+  }
+  
+
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 12321312;
+    display: block;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+    z-index: 12321312;
+  }
+    .topnav.responsive div {
+    float: none;
+    display: block;
+    text-align: left;
+    z-index: 12321312;
+  }
+
+
+}
+
+@media screen and (max-width: 600px) {
+  #logo-topnav{
+    width: 80%;
+  }
+
 }

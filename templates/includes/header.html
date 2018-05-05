@@ -5,12 +5,12 @@
   <span id="logo-topnav" >
     <img src="{% static 'img/nda1.png' %}">
   </span>
-  <a href="{% url 'index' %}"> INICIO</a>
-  <a href="{% url 'sobreNosotros' %}">SOBRE NOSOTROS</a>
+  <a id="h-inicio" href="{% url 'index' %}"> INICIO</a>
+  <a id="h-sobrenosotros" href="{% url 'sobreNosotros' %}">SOBRE NOSOTROS</a>
   <div id="exp-header">
     EXPERIENCIA
     <ul>
-      <a href="{% url 'proyectosPublicos' %}">
+      <a  href="{% url 'proyectosPublicos' %}">
         <li>
           <div id='header-epublica' style="padding-top: 0px;"><p>PÚBLICA</p></div>
         </li>
@@ -22,26 +22,26 @@
       </a>
     </ul>
   </div>
-  <a href="javascript:showLightbox();">CONTACTO</a>
+  <a id="h-contacto" href="javascript:showLightbox();">CONTACTO</a>
   <div id="redes-h">
         <ul style="padding: 0px;margin:0px;">
           <a href="">
             <li>
-                <h2 id="h2-header">
+                <h2 id="h-insta">
                   <i class="fab fa-instagram"></i>
                 </h2>
             </li>
           </a>
           <a href="">
             <li>
-              <h2 id="h2-header" >
+              <h2 id="h-fb" >
                 <i class="fab fa-facebook-square"></i>
               </h2>
             </li>
           </a>
           <a href="">
             <li>
-              <h2  id="h2-header">
+              <h2  id="h-twitter">
                 <i class="fab fa-twitter-square"></i>
               </h2>
             </li>
@@ -53,29 +53,8 @@
   {% else %}
     <a href="javascript:showLightboxLogin();" ><div id=intranet-h>INTRANET</div></a>
   {% endif %}
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  <a href="javascript:void(0);" id="menu-responsive"  class="icon" onclick="myFunction()"><h1>&#9776;</h1></a>
 </div>
-
-
-<!--     <div id='experiencia-header'>
-      EXPERIENCIA
-      <ul>
-      <a href="{% url 'proyectosPublicos' %}">
-        <li>
-          <div id='header-epublica' style="padding-top: 0px;"><p>PÚBLICA</p></div>
-        </li>
-      </a>
-      <a href="{% url 'proyectosPrivados' %}">
-        <li>
-          <div id='header-eprivada' style="padding-top: 0px;"><p>PRIVADA</p></div>
-        </li>
-      </a>
-      </ul>
-    </div>
-    
-</header> -->
-
-
 
 
 
