@@ -17,9 +17,7 @@ function hideLightboxLogin() {
   document.getElementById('fade-login').style.display='none';
   document.getElementById('intranet-h').style.backgroundColor="#A4A4A4";
 }
-function resetform() {
-document.getElementById("form-busqueda").reset();
-}
+
 
 
 var slideIndex = 1;
@@ -59,3 +57,4 @@ function headerActive(id){
  document.getElementById(id).style.marginBottom = "-20px;";
  document.getElementById(id).style.marginBottom = "";
 }
+

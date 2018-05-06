@@ -18,7 +18,13 @@ body{
 a {
 outline: none;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
+input[type=number] { -moz-appearance:textfield; }
 
 
 
@@ -950,7 +956,6 @@ outline: none;
 #descripcion-sobrenosotros p{
   padding-left: 15%;
   padding-right: 15%;
-  /*font-size: 0.9em;*/
   padding-top: 25%;
 }
 #mision-vision{
@@ -960,8 +965,8 @@ outline: none;
   background: #383839;
 }
 #mision img{
-  height: minmax(auto,400px);
   margin-top: -20px;
+  width: 49%;
 }
 #mision p{
   color: white;
