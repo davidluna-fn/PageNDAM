@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 
 class ProyectoPrivado(models.Model):
+	id = models.AutoField(primary_key=True)
 	nombre 			= models.CharField(max_length=200,verbose_name=u'Nombre')
 	descripcion 	= models.CharField(max_length=200,verbose_name=u'Descripción')
 	img_minatura 	= models.ImageField(upload_to = 'img_proyectos/',verbose_name=u'Imagen principal')

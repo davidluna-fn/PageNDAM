@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n(_z^7@*$0e$8#-j94$4hpzzh$9$@fqledirve6cp=wgejuxj8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+DEBUG = False
+ADMINS = [('david', 'dflunan@gmail.com')]
+ALLOWED_HOSTS = ['www.constructorandam.com','constructorandam.com']
+FILE_UPLOAD_PERMISSIONS = 0x644
 
 # Application definition
 
@@ -75,6 +75,17 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.request",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+)
+
 WSGI_APPLICATION = 'page.wsgi.application'
 
 
@@ -83,10 +94,10 @@ WSGI_APPLICATION = 'page.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':'mysql_cymysql',
-        'NAME': 'NDAM',
-        'USER':'root',
-        'PASSWORD':'',
+        'ENGINE':'django.db.backends.mysql',
+        'NAME': 'ndam',
+        'USER':'dflunan',
+        'PASSWORD':'gameover1024',
         'HOST':'localhost',
         'PORT':'3306'
     }
@@ -129,10 +140,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
+STATIC_ROOT = '/home/dflunan/webapps/static_static/'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+MEDIA_ROOT = '/home/dflunan/webapps/media_media/'
 MEDIA_URL  = '/media/' 
 
 LOGIN_REDIRECT_URL = 'busqueda_contratos'
