@@ -20,7 +20,16 @@
   <div id="container-projects">
     {% for proyecto in pPrivado %}
     <div>
-      <img src="{{proyecto.img_minatura.url }}">
+      <img src="{{ proyecto.img_minatura.url }}">
+
+      {% if proyecto.resaltar %}
+        <section class="mensaje">
+          <p style="margin-left: 10px; margin-top: 10px;">
+            {{ proyecto.plus_mensaje }}
+          </p>
+        </section>
+      {% endif %}
+      
       <a href="{{ proyecto.get_absolute_url }}">
         <div id='btn-vm'><p>VER MÁS</p></div>
       </a>

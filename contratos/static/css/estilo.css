@@ -1178,6 +1178,7 @@ input[type=number] { -moz-appearance:textfield; }
   width: 130px;
   text-align: center;
   height: 30px;
+  z-index: 1234;
  }
 #container-projects div div p{
   margin-top: 8px;
@@ -3337,4 +3338,64 @@ input[type=number] { -moz-appearance:textfield; }
 .pagination-number:active{
   background: var(--azul);
   padding-bottom: 6px;
+}
+
+.mensaje{
+  background-color: var(--naranja);
+  color: var(--blanco-claro);
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 50px;
+  margin: -50px;
+  margin-left: 0px;
+  font-size: 1.6em;
+  font-weight: bold;
+  text-align: left;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  .mensaje{
+    background-color: var(--naranja);
+    color: var(--blanco-claro);
+    position: absolute;
+    z-index: 1;
+    width: 50vw;
+    height: 50px;
+    margin: -50px;
+    margin-left: 0px;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  #container-projects div section p{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .mensaje{
+    background-color: var(--naranja);
+    color: var(--blanco-claro);
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    margin: -50px;
+    margin-left: 0px;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  #container-projects div section p{
+    position: absolute;
+    left: 10px;
+    top: 0px;
+  }
 }

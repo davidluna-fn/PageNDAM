@@ -16,14 +16,14 @@
     <div id="ap-pprivado">
         <div>
             <ul>
-                <li>Tipo de propiedad:</li>
-                <li>Área desde:</li>
-                <li>Ubicación:</li>
-                <li>Tipo de negocio:</li>
-                <li>Parqueadero:</li>
-                <li>Parqueadero visitantes:</li>
-                <li>Año:</li>
-                <li>Zonas verdes:</li>
+                <li>Tipo de propiedad: {{ pPrivado.tipo_propiedad }}</li>
+                <li>Área desde: {{ pPrivado.area }}</li>
+                <li>Ubicación: {{ pPrivado.ubicacion }}</li>
+                <li>Tipo de negocio: {{ pPrivado.tipo_negocio }}</li>
+                <li>Parqueadero: {% if pPrivado.parqueadero %} Si {% else %} No {% endif %}</li>
+                <li>Parqueadero visitantes: {% if pPrivado.parqueadero_visitantes %} Si {% else %} No {% endif %}</li>
+                <li>Año: {{ pPrivado.year }}</li>
+                <li>Zonas verdes: {% if pPrivado.zonas_verdes %} Si {% else %} No {% endif %}</li>
             </ul>
         </div>
         <div id="content-areas">
