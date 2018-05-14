@@ -31,13 +31,13 @@ def search(request):
 
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(contrato_filter.qs, 100)
+    paginator = Paginator(contrato_filter.qs, 10)
     try:
-        cto_filter = paginator.page(page)
+        cto_filter = paginator.get_page(page)
     except PageNotAnInteger:
-        cto_filter = paginator.page(1)
+        cto_filter = paginator.get_page(page(1))
     except EmptyPage:
-        cto_filter = paginator.page(paginator.num_pages)
+        cto_filter = paginator.get_page(page(paginator.num_pages))
 
     for i in cto_filter:
         i.valor_en_sm_participacion = round(i.valor_ejecutado /vsm[str(i.year)],2)

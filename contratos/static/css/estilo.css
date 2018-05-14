@@ -1852,10 +1852,10 @@ input[type=number] { -moz-appearance:textfield; }
     grid-template-columns: 1fr;
     grid-template-rows: 30px;
     background-color: var(--gris-oscuro);
-    margin-right: 40%;
     margin-left: 40%;
   }
-  @media screen and (max-width: 1200px) {
+  @media screen
+   and (max-width: 1200px) {
     #banner-ppublica{
       grid-column: 1 / -1;
       display: grid;
@@ -1947,6 +1947,14 @@ input[type=number] { -moz-appearance:textfield; }
       background-color: var(--gris-claro);
     }
 
+    #paginator{
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 30px;
+      background-color: var(--gris-oscuro);
+      margin-left: 30%;
+    }
 
 
     .btn-vm h3{
@@ -2014,15 +2022,6 @@ input[type=number] { -moz-appearance:textfield; }
         background: var(--blanco-claro);
         padding-bottom: 30px;
       }
-      #paginator{
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 30px;
-        background-color: var(--gris-oscuro);
-        margin-right: 40%;
-        margin-left: 40%;
-      }
   }
 
 
@@ -2034,6 +2033,15 @@ input[type=number] { -moz-appearance:textfield; }
       grid-template-rows: repeat(2,minmax(auto,120vw));
       position: relative;
       z-index: -123;
+    }
+
+    #paginator{
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 30px;
+      background-color: var(--gris-oscuro);
+      margin-left: 15%;
     }
 
     #banner-ppublica div{
@@ -2188,15 +2196,7 @@ input[type=number] { -moz-appearance:textfield; }
         background: var(--blanco-claro);
         padding-bottom: 30px;
       }
-      #paginator{
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 30px;
-        background-color: var(--gris-oscuro);
-        margin-right: 40%;
-        margin-left: 40%;
-      }
+
 }
 
 
@@ -3297,4 +3297,44 @@ input[type=number] { -moz-appearance:textfield; }
     width: 80%;
   }
 
+}
+
+
+/*____________________________________________________________________________*/
+/*  paginator  */
+/*____________________________________________________________________________*/
+
+.pagination{
+  color: var(--blanco-claro);
+  font-size: 1.5em;
+}
+.pagination a{
+  text-decoration: none;
+}
+.pagination-action{
+  background: var(--azul);
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.pagination-action:hover{
+  background: var(--gris-claro);
+}
+
+.pagination-number{
+  padding-right: 5px;
+  padding-left: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.pagination-number:hover{
+  background: var(--gris-claro);
+}
+
+.pagination-number:active{
+  background: var(--azul);
+  padding-bottom: 6px;
 }

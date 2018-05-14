@@ -244,107 +244,40 @@ function resetform(form) {
 
 {% endfor %}
 
+
+
 <div id="content-paginator2">
-  <div id="paginator">
-    
+  <div id="paginator" class="pagination" style="display: inline-block;">
+
+      {% if filter.has_previous %}
+            <a class="pagination-action" href="?page=1" > 
+              <i class="fas fa-angle-double-left"></i>
+            </a>
+            <a class="pagination-action" href="?page={{ filter.previous_page_number }}">
+              <i class="fas fa-angle-left"></i>
+            </a>
+      {% endif %}
+
+      {% for num in filter.paginator.page_range %}
+        {% if filter.number == num %}
+            <a class="pagination-number pagination-current">{{ num }}</a>
+        {% elif num > filter.number|add:'-3' and num < filter.number|add:'3' %}
+            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if filter.has_next %}
+        <a class="pagination-action" href="?page={{ filter.next_page_number }}"> 
+          <i class="fas fa-angle-right"></i>
+        </a>
+        <a class="pagination-action" href="?page={{ filter.paginator.num_pages }}">
+          <i class="fas fa-angle-double-right"></i>
+        </a>
+      {% endif %}
+
   </div>
 </div>
 </div>
 
-
-<!-- 
-
-<div style = "padding: 10; height: 100px;">
-  <div class="btm" style = "float: left">
-      <button type="submit" class="btn btn-primary">
-        <span class="glyphicon glyphicon-search"></span> Buscar
-      </button>
-      </div>
-      <div class="btm" style = "float: left">
-        <button name='pdf' type="submit" class="btn btn-primary" >
-        <span class="glyphicon "></span> Generar Reporte
-      </button>
-      </div>
-      <div class="btm" style = "float: left">
-      <a class="btn btn-primary"  href="{% url 'logout' %}" >cerrar sesion</a>
-      </div>
-    </div>
-</div>
-
-
-
-  <table class="table table-bordered" style="border: black solid;">
-    <thead style="border: black solid;">
-      <tr style="color: #018DAC; text-shadow: 0px 0px;">
-        <th style="border: black solid;">Número</th>
-        <th style="border: black solid;">Año</th>
-        <th style="border: black solid;">Objeto</th>
-        <th style="border: black solid;">Valor en SM</th>
-        <th style="border: black solid;">Contrato</th>
-        <th style="border: black solid;">Acta de liquidación</th>
-        <th style="border: black solid;">Acta de Recibo final</th>
-      </tr>
-    </thead>
-    <tbody style="border: black solid; border: black solid;">
-      {% for contrato in filter %}
-        <tr style="color: gray;text-shadow: 0px 0px;">
-          <td style="border: black solid;">{{ contrato.numero }}</td>
-          <td style="border: black solid;">{{ contrato.year }}</td>
-          <th style="border: black solid;"><a href="{{ contrato.get_absolute_url }}" style="color: gray; text-shadow: 0px 0px;"> {{ contrato.objeto }}</a></th>
-          <th style="border: black solid;">{{ contrato.valor_en_sm}}</th>
-          <th style="border: black solid;">{% if contrato.contrato == '' %} No {% else %} Si {% endif %}</th>
-          <th style="border: black solid;">{% if contrato.acta_liquidacion == '' %} No {% else %} Si {% endif %}</th>
-          <th style="border: black solid;">{% if contrato.acta_recibo_final == '' %} No {% else %} Si {% endif %}</th>
-        </tr>
-      {% empty %}
-        <tr>
-          <td colspan="5">No data</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table> --> 
-<!--
-{% if filter.has_other_pages %}
-    <nav aria-label="Topics pagination" class="mb-4">
-      <ul class="pagination">
-        {% if filter.has_previous %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ filter.previous_page_number }}">Previous</a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-            <span class="page-link">Previous</span>
-          </li>
-        {% endif %}
-
-        {% for page_num in filter.paginator.page_range %}
-          {% if filter.number == page_num %}
-            <li class="page-item active">
-              <span class="page-link">
-                {{ page_num }}
-                <span class="sr-only">(current)</span>
-              </span>
-            </li>
-          {% else %}
-            <li class="page-item">
-              <a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a>
-            </li>
-          {% endif %}
-        {% endfor %}
-
-        {% if filter.has_next %}
-          <li class="page-item">
-            <a class="page-link" href="?page={{ filter.next_page_number }}">Next</a>
-          </li>
-        {% else %}
-          <li class="page-item disabled">
-            <span class="page-link">Next</span>
-          </li>
-        {% endif %}
-      </ul>
-    </nav>
-  {% endif %}
--->
-<!-- </div> -->
 
 {% endblock %}
