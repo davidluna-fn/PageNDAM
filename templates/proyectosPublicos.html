@@ -16,53 +16,98 @@
 </div>
 
 <div id="ppublicos">
-  <div class="item1pp img-h" style="background-image: url({{ pPublico.0.img_minatura.url }});">
-    <h4>{{ pPublico.0.nombre }}</h4>
-    <h5>{{ pPublico.0.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.0.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% if pPublico.0  %}
+    <div class="item1pp img-h" style="background-image: url({{ pPublico.0.img_minatura.url }});">
+      <h4>{{ pPublico.0.nombre }}</h4>
+      <h5>{{ pPublico.0.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.0.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
-  <div class="item2pp img-h" style="background-image: url({{ pPublico.1.img_minatura.url }});">
-    <h4>{{ pPublico.1.nombre }}</h4>
-    <h5>{{ pPublico.1.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.1.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% endif %}
+
+  {% if pPublico.1  %}
+    <div class="item2pp img-h" style="background-image: url({{ pPublico.1.img_minatura.url }});">
+      <h4>{{ pPublico.1.nombre }}</h4>
+      <h5>{{ pPublico.1.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.1.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
-  <div class="item3pp img-v" style="background-image: url({{ pPublico.2.img_minatura.url }});">
-    <h4>{{ pPublico.2.nombre }}</h4>
-    <h5>{{ pPublico.2.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.2.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% endif %}
+
+  {% if pPublico.2  %}
+    <div class="item3pp img-v" style="background-image: url({{ pPublico.2.img_minatura.url }});">
+      <h4>{{ pPublico.2.nombre }}</h4>
+      <h5>{{ pPublico.2.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.2.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
-  <div class="item4pp img-v" style="background-image: url({{ pPublico.3.img_minatura.url }});">
-    <h4>{{ pPublico.3.nombre }}</h4>
-    <h5>{{ pPublico.3.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.3.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% endif %}
+
+  {% if pPublico.3  %}
+    <div class="item4pp img-v" style="background-image: url({{ pPublico.3.img_minatura.url }});">
+      <h4>{{ pPublico.3.nombre }}</h4>
+      <h5>{{ pPublico.3.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.3.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
-  <div class="item5pp img-h" style="background-image: url({{ pPublico.4.img_minatura.url }});">
-    <h4>{{ pPublico.4.nombre }}</h4>
-    <h5>{{ pPublico.4.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.4.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% endif %}
+
+  {% if pPublico.4  %}
+    <div class="item5pp img-h" style="background-image: url({{ pPublico.4.img_minatura.url }});">
+      <h4>{{ pPublico.4.nombre }}</h4>
+      <h5>{{ pPublico.4.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.4.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
-  <div class="item6pp img-h" style="background-image: url({{ pPublico.5.img_minatura.url }});">
-    <h4>{{ pPublico.5.nombre }}</h4>
-    <h5>{{ pPublico.5.descripcion }}</h5>
-    <div class="btn-vm">
-      <a href="{{ pPublico.5.get_absolute_url }}"><h3>VER MÁS</h3></a>
+  {% endif %}
+
+  {% if pPublico.5  %}
+    <div class="item6pp img-h" style="background-image: url({{ pPublico.5.img_minatura.url }});">
+      <h4>{{ pPublico.5.nombre }}</h4>
+      <h5>{{ pPublico.5.descripcion }}</h5>
+      <div class="btn-vm">
+        <a href="{{ pPublico.5.get_absolute_url }}"><h3>VER MÁS</h3></a>
+      </div>
     </div>
-  </div>
+  {% endif %}
 </div>
 
-<div id="paginator-content" style="background-color: var(--gris-oscuro)">
-<div id='paginator'>
-</div>
+<div id="paginator-content2">
+  <div id="paginator" class="pagination" style="display: inline-block;">
+
+      {% if pPublico.has_previous %}
+            <a class="pagination-action" href="?page=1" > 
+              <i class="fas fa-angle-double-left"></i>
+            </a>
+            <a class="pagination-action" href="?page={{ pPublico.previous_page_number }}">
+              <i class="fas fa-angle-left"></i>
+            </a>
+      {% endif %}
+
+      {% for num in pPublico.paginator.page_range %}
+        {% if pPublico.number == num %}
+            <a class="pagination-number pagination-current">{{ num }}</a>
+        {% elif num > pPublico.number|add:'-3' and num < pPublico.number|add:'3' %}
+            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if pPublico.has_next %}
+        <a class="pagination-action" href="?page={{ pPublico.next_page_number }}"> 
+          <i class="fas fa-angle-right"></i>
+        </a>
+        <a class="pagination-action" href="?page={{ pPublico.paginator.num_pages }}">
+          <i class="fas fa-angle-double-right"></i>
+        </a>
+      {% endif %}
+
+  </div>
+  
 </div>
 
 

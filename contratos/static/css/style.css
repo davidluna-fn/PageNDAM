@@ -163,3 +163,14 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
+
+/*____________________________________________________________________________*/
+/*  paginator  */
+/*____________________________________________________________________________*/
+
+#paginator a{
+  width: 30px;
+  height: 30px;
+  float: left;
+  color: var(--blanco-claro);
+}

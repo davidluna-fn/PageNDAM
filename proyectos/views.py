@@ -9,12 +9,25 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 # Create your views here.
 
 def p_privado(request):
-    objs = ProyectoPrivado.objects.all()
+    objs = ProyectoPrivado.objects.filter().order_by('-id')
+
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(objs, 6)
+    try:
+        objs = paginator.get_page(page)
+    except PageNotAnInteger:
+        objs = paginator.get_page(page(1))
+    except EmptyPage:
+        objs = paginator.get_page(page(paginator.num_pages))
+
+
     
     if request.method=='POST':
         formulario = ContactoForm(request.POST)
@@ -47,7 +60,17 @@ def p_privado(request):
     return render(request,'proyectosPrivados.html',context)
 
 def p_publico(request):
-    objs = ProyectoPublico.objects.all()
+    objs = ProyectoPublico.objects.filter().order_by('-id')
+
+    page = request.GET.get('page', 1)
+
+    paginator = Paginator(objs, 6)
+    try:
+        objs = paginator.get_page(page)
+    except PageNotAnInteger:
+        objs = paginator.get_page(page(1))
+    except EmptyPage:
+        objs = paginator.get_page(page(paginator.num_pages))
 
     if request.method=='POST':
         formulario = ContactoForm(request.POST)

@@ -32,9 +32,36 @@
 </div>
 
 <div id="paginator-content">
-<div id='paginator'>
+  <div id="paginator" class="pagination" style="display: inline-block;">
+
+      {% if pPrivado.has_previous %}
+            <a class="pagination-action" href="?page=1" > 
+              <i class="fas fa-angle-double-left"></i>
+            </a>
+            <a class="pagination-action" href="?page={{ pPrivado.previous_page_number }}">
+              <i class="fas fa-angle-left"></i>
+            </a>
+      {% endif %}
+
+      {% for num in pPrivado.paginator.page_range %}
+        {% if pPrivado.number == num %}
+            <a class="pagination-number pagination-current">{{ num }}</a>
+        {% elif num > pPrivado.number|add:'-3' and num < pPrivado.number|add:'3' %}
+            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if pPrivado.has_next %}
+        <a class="pagination-action" href="?page={{ pPrivado.next_page_number }}"> 
+          <i class="fas fa-angle-right"></i>
+        </a>
+        <a class="pagination-action" href="?page={{ pPrivado.paginator.num_pages }}">
+          <i class="fas fa-angle-double-right"></i>
+        </a>
+      {% endif %}
+
+  </div>
   
-</div>
 </div>
 {% endblock %}
 

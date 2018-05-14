@@ -1745,7 +1745,8 @@ input[type=number] { -moz-appearance:textfield; }
   margin-right: 10%;
   display: grid;
   grid-template-columns: repeat(3,0.33fr);
-  grid-template-rows: repeat(4,25vw);
+  grid-auto-rows: 25vw;
+  /*grid-template-rows: repeat(minmax(1,4),25vw);*/
   grid-gap: 20px;
   padding-bottom: 20px;
 }
@@ -1914,8 +1915,8 @@ input[type=number] { -moz-appearance:textfield; }
       margin-right: 0%;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(6,minmax(auto,45vw));
-      grid-auto-rows: minmax(auto,45vw);
+      /*grid-template-rows: repeat(6,minmax(auto,45vw));*/
+      grid-auto-rows: 45vw;
       grid-gap: 20px;
       padding-bottom: 20px;
     }
@@ -2090,7 +2091,6 @@ input[type=number] { -moz-appearance:textfield; }
       margin-right: 0%;
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: repeat(6,minmax(auto,200vw));
       grid-auto-rows: minmax(auto,200vw);
       grid-gap: 20px;
       padding-bottom: 20px;
