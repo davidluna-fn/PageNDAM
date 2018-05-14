@@ -43,13 +43,15 @@
             </a>
       {% endif %}
 
-      {% for num in pPrivado.paginator.page_range %}
-        {% if pPrivado.number == num %}
-            <a class="pagination-number pagination-current">{{ num }}</a>
-        {% elif num > pPrivado.number|add:'-3' and num < pPrivado.number|add:'3' %}
-            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
+      {% if pPrivado.has_previous or pPrivado.has_next %}      
+        {% for num in pPrivado.paginator.page_range %}
+          {% if pPrivado.number == num %}
+              <a class="pagination-number pagination-current">{{ num }}</a>
+          {% elif num > pPrivado.number|add:'-3' and num < pPrivado.number|add:'3' %}
+              <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
 
       {% if pPrivado.has_next %}
         <a class="pagination-action" href="?page={{ pPrivado.next_page_number }}"> 

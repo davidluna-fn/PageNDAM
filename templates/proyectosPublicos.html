@@ -89,13 +89,15 @@
             </a>
       {% endif %}
 
-      {% for num in pPublico.paginator.page_range %}
-        {% if pPublico.number == num %}
-            <a class="pagination-number pagination-current">{{ num }}</a>
-        {% elif num > pPublico.number|add:'-3' and num < pPublico.number|add:'3' %}
-            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
+      {% if pPublico.has_previous or pPublico.has_next %}
+        {% for num in pPublico.paginator.page_range %}
+          {% if pPublico.number == num %}
+              <a class="pagination-number pagination-current">{{ num }}</a>
+          {% elif num > pPublico.number|add:'-3' and num < pPublico.number|add:'3' %}
+              <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
 
       {% if pPublico.has_next %}
         <a class="pagination-action" href="?page={{ pPublico.next_page_number }}"> 
