@@ -152,17 +152,6 @@ function resetform(form) {
         smunicipios += '<option value="'+this.id_municipio+'">'+this.municipio+'</option>'; //vamos  creando el select
       });
       $('#municipios').html(smunicipios); //el html generado se asigna al select de municipios
-      $('#parroquias').html('');
-    });
-    $('#municipios').change(function(){
-      var estado = $('#estados').val();
-      var municipio = $('#municipios').val();
-      var pparroquias = $.grep(parroquias,function(n,i){return (n.id_estado == estado && n.id_municipio == municipio ); });
-      var sparroquias = '<option value=""></option>';
-      $(pparroquias).each(function(i){
-        sparroquias += '<option value="'+this.id_parroquia+'">'+this.parroquia+'</option>';
-      });
-      $('#parroquias').html(sparroquias);
     });
   });
   </script>
