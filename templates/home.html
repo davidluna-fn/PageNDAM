@@ -5,9 +5,9 @@
 {% block content %}
 
 <div id="home-banner" class="w3-display-container" onclick="headerActive('h-inicio')">
-    <img class="mySlides" src="{{ banner.0.img_principal.url }}" style="width:100%;height:50vw;">
-    <img class="mySlides" src="{{ banner.1.img_principal.url }}" style="width:100%;height:50vw;">
-    <img class="mySlides" src="{{ banner.2.img_principal.url }}" style="width:100%;height:50vw;">
+    <img class="mySlides w3-animate-zoom" src="{{ banner.0.img_principal.url }}" style="width:100%;height:50vw;">
+    <img class="mySlides w3-animate-zoom" src="{{ banner.1.img_principal.url }}" style="width:100%;height:50vw;">
+    <img class="mySlides w3-animate-zoom" src="{{ banner.2.img_principal.url }}" style="width:100%;height:50vw;">
     <button class="btn-banner-slide w3-display-left"  onclick="plusDivs(-1)">&#10094;</button>
     <button  class="btn-banner-slide w3-display-right" onclick="plusDivs(1)" >&#10095;</button>
     <img class="text-banner" src="{% static 'img/textobanner.png' %}">
