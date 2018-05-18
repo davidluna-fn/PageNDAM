@@ -219,8 +219,8 @@ function resetform(form) {
 <div id="titulo-tabla">
   <div class="campo1-busqueda"><h5>No.</h5></div>
   <div class="campo2-busqueda"><h5>AÑO</h5></div>
-  <div class="campo3-busqueda"><h5>OBJETIVO</h5></div>
-  <div class="campo4-busqueda"><h5>VALOR EN SMMLV</h5></div>
+  <div class="campo3-busqueda"><h5>OBJETO</h5></div>
+  <div class="campo4-busqueda"><h5>VALOR EN <br>SMMLV</h5></div>
   <div class="campo5-busqueda"><h5>CONTRATO</h5></div>
   <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
   <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div>
@@ -289,13 +289,16 @@ function resetform(form) {
             </a>
       {% endif %}
 
-      {% for num in filter.paginator.page_range %}
-        {% if filter.number == num %}
-            <a class="pagination-number pagination-current">{{ num }}</a>
-        {% elif num > filter.number|add:'-3' and num < filter.number|add:'3' %}
-            <a class="pagination-number" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
-        {% endif %}
-      {% endfor %}
+
+      {% if filter.has_previous or filter.has_next %}
+          {% for num in filter.paginator.page_range %}
+            {% if filter.number == num %}
+                <a class="pagination-number pagination-current">{{ num }}</a>
+            {% elif num > filter.number|add:'-3' and num < filter.number|add:'3' %}
+                <a class="pagination-number" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
+            {% endif %}
+          {% endfor %}
+      {% endif %}
 
       {% if filter.has_next %}
         <a class="pagination-action" href="?page={{ filter.next_page_number }}"> 
