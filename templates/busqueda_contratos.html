@@ -154,6 +154,40 @@ function resetform(form) {
       $('#municipios').html(smunicipios); //el html generado se asigna al select de municipios
     });
   });
+
+
+function sub1(){
+    var ran = document.getElementById("rango_precios");
+    if (ran.value == "1"){
+        var rango_sup = document.getElementById("rango_sup");
+        var rango_inf = document.getElementById("rango_inf");
+
+        rango_inf.value = "1";
+        rango_sup.value = "100000000";
+    }
+    if (ran.value == "2"){
+        var rango_sup = document.getElementById("rango_sup");
+        var rango_inf = document.getElementById("rango_inf");
+
+        rango_inf.value = "100000001";
+        rango_sup.value = "500000000";
+    }
+    if (ran.value == "3"){
+        var rango_sup = document.getElementById("rango_sup");
+        var rango_inf = document.getElementById("rango_inf");
+
+        rango_inf.value = "500000001";
+        rango_sup.value = "1000000000";
+    }
+    if (ran.value == "4"){
+        var rango_sup = document.getElementById("rango_sup");
+        var rango_inf = document.getElementById("rango_inf");
+
+        rango_inf.value = "1000000001";
+    }
+};
+
+
   </script>
 
 <form id="form-busqueda" onclick="headerActive('intranet-h')">
@@ -177,16 +211,25 @@ function resetform(form) {
         <li><select id='estados' name="departamento" class="form-control"></select></li>
         <li>{{ filterqs.form.municipio.label_tag }}</li>
         <li><select id='municipios' name="municipio" class="form-control"></select></li>
-        <li>Valor ejecutado menor a:</li>
-        <li>{% render_field filterqs.form.valor_ejecutado_lt class="form-control" id="number" %}</li>
-        <li>Valor ejecutado mayor a:</li>
-        <li>{% render_field filterqs.form.valor_ejecutado_gt class="form-control" %}</li>
+        <li>Cuantía: </li>
+        <li><select id='rango_precios' name="rango"  class="form-control">
+            <option  value="0"> ------------- </option>
+            <option  value="1">$0 - $100,000,000</option>
+            <option  value="2">$100,000,001 - $500,000,000</option>
+            <option  value="3">$500,000,001 - $1000,000,000</option>
+            <option  value="4">Mayor a $1,000,000,001</option>
+        </select></li>
+
+        <li style="display: none;">Valor ejecutado menor a:</li>
+        <li style="display: none;">{% render_field filterqs.form.valor_ejecutado_lt class="form-control" id="rango_sup" %}</li>
+        <li style="display: none;">Valor ejecutado mayor a:</li>
+        <li style="display: none;">{% render_field filterqs.form.valor_ejecutado_gt class="form-control" id="rango_inf" %}</li>
+        <li>{{ filterqs.form.year.label_tag }}</li>
+        <li>{% render_field filterqs.form.year class="form-control monthPicker" id="datepicker3" %}</li>
       </ul>
     </div>
     <div>
       <ul>
-        <li>{{ filterqs.form.year.label_tag }}</li>
-        <li>{% render_field filterqs.form.year class="form-control monthPicker" id="datepicker3" %}</li>
         <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
         <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipoObra" %}</li>
 <!--         <li>{{ filterqs.form.valor.label_tag }}</li>
@@ -198,7 +241,7 @@ function resetform(form) {
             </button>
           </div>
           <div id="btn-buscar">
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" onclick="sub1()" class="btn btn-primary">
               <p>BUSCAR</p>
             </button>
           </div>

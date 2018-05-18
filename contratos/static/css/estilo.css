@@ -2456,21 +2456,26 @@ input[type=number] { -moz-appearance:textfield; }
 #busqueda input[type=number]{
   width: 25vw;
 }
+#rango_precios{
+ width: 25vw;
+ background-color: var(--blanco-oscuro);
+ height: 30px; 
+}
 #estados{
   width: 25vw;
-  background-color: var(--blanco-claro);
+  background-color: var(--blanco-oscuro);
   height: 30px;
 }
 #municipios{
   width: 25vw;
-  background-color: var(--blanco-claro);
+  background-color: var(--blanco-oscuro);
   height: 30px;
 }
 
 #tipoObra{
   width: 25vw;
   text-decoration: none;
-  background-color: var(--blanco-claro);
+  background-color: var(--blanco-oscuro);
   height: 30px;
 }
 
@@ -2687,6 +2692,10 @@ input[type=number] { -moz-appearance:textfield; }
     #municipios{
       width: 40vw;
     }
+
+    #rango_precios{
+     width: 40vw;
+    }
     #tipoObra{
       width: 40vw;
       text-decoration: none;
@@ -2765,6 +2774,9 @@ input[type=number] { -moz-appearance:textfield; }
     }
     #municipios{
       width: 80vw;
+    }
+    #rango_precios{
+     width: 80vw;
     }
     #tipoObra{
       width: 80vw;
