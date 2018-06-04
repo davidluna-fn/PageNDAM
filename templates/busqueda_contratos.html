@@ -263,10 +263,10 @@ function sub1(){
   <div class="campo1-busqueda"><h5>No.</h5></div>
   <div class="campo2-busqueda"><h5>AÑO</h5></div>
   <div class="campo3-busqueda"><h5>OBJETO</h5></div>
-  <div class="campo4-busqueda"><h5>VALOR EN <br>SMMLV</h5></div>
-  <div class="campo5-busqueda"><h5>CONTRATO</h5></div>
-  <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
-  <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div>
+  <div class="campo4-busqueda"><h5>VALOR TOTAL <br>ACTUALIZADO</h5></div>
+  <div class="campo5-busqueda"><h5>VALOR SEGUN <br>PARTICIPACIÓN<br>ACTUALIZADO</h5></div>
+<!--   <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
+  <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div> -->
 </div>
 
 
@@ -284,18 +284,12 @@ function sub1(){
     </p>
   </div>
   <div class="campo4-busqueda">
-    <p>{{ contrato.valor_en_sm_participacion }}  </p>
+    <p>{{ contrato.valor_ejecutado }} (PESOS)<br>{{ contrato.valor_en_sm }} (SMMLV)</p>
   </div>
   <div class="campo5-busqueda">
-    <p>
-      {% if contrato.contrato == '' %}
-        No 
-      {% else %} 
-        Si 
-      {% endif %}
-    </p>
+    <p>{{ contrato.valor_ejecutado_participacion }} (PESOS)<br>{{ contrato.valor_en_sm_participacion }} (SMMLV)</p>
   </div>
-  <div class="campo6-busqueda">
+<!--   <div class="campo6-busqueda">
     <p>
       {% if contrato.acta_liquidacion == '' %} 
         No 
@@ -312,7 +306,7 @@ function sub1(){
         Si 
       {% endif %}
     </p>
-  </div>
+  </div> -->
 
 </div>
 
