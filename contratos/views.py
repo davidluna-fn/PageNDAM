@@ -24,11 +24,6 @@ def search(request):
     for i in range(len(SM)):
         vsm[str(SM[i].year)] = SM[i].valor
 
-    for i in contrato_list:
-        i.valor_ejecutado = round((i.valor_ejecutado /vsm[str(i.year)]) * vsm['2018'],2)
-
-
-
 
     contrato_filter = ContratosFilter(request.GET, queryset=contrato_list)
     context = {'filter':contrato_filter, 'date':date.today, 'user':request.user.username}
@@ -44,9 +39,9 @@ def search(request):
         cto_filter = paginator.get_page(page(paginator.num_pages))
 
     for i in cto_filter:
-        i.valor_en_sm_participacion = round(i.valor_ejecutado /vsm[str(i.year)],2) * i.porcentaje_participacion
-        i.valor_en_sm = round(i.valor_ejecutado /vsm[str(i.year)],2)
-        i.valor_ejecutado = round((i.valor_ejecutado /vsm[str(i.year)]) * vsm['2018'],2)
+        i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2018'],2)
+        i.valor_en_sm = round(i.valor_ejecutado /vsm['2018'],2)
+        i.valor_en_sm_participacion = round(i.valor_en_sm * i.porcentaje_participacion,2)
         i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
 
 

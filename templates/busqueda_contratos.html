@@ -265,11 +265,8 @@ function sub1(){
   <div class="campo3-busqueda"><h5>OBJETO</h5></div>
   <div class="campo4-busqueda"><h5>VALOR TOTAL <br>ACTUALIZADO</h5></div>
   <div class="campo5-busqueda"><h5>VALOR SEGUN <br>PARTICIPACIÓN<br>ACTUALIZADO</h5></div>
-<!--   <div class="campo6-busqueda"><h5>ACTA DE LIQUIDACIÓN</h5></div>
-  <div class="campo7-busqueda"><h5>ACTA DE RECIBO FINAL</h5></div> -->
+
 </div>
-
-
 {% for contrato in filter %}
   
 <div id="contenido-tabla">
@@ -289,25 +286,6 @@ function sub1(){
   <div class="campo5-busqueda">
     <p>{{ contrato.valor_ejecutado_participacion }} (PESOS)<br>{{ contrato.valor_en_sm_participacion }} (SMMLV)</p>
   </div>
-<!--   <div class="campo6-busqueda">
-    <p>
-      {% if contrato.acta_liquidacion == '' %} 
-        No 
-      {% else %} 
-        Si 
-      {% endif %}
-    </p>
-  </div>
-  <div class="campo7-busqueda">
-    <p>
-      {% if contrato.acta_recibo_final == '' %} 
-        No 
-      {% else %} 
-        Si 
-      {% endif %}
-    </p>
-  </div> -->
-
 </div>
 
 {% endfor %}

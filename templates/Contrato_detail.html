@@ -57,7 +57,7 @@
           <h5>
             {% if contrato.adicional1 != ''  %}
                 <img src="{% static 'img/file.png' %}" height="30vh">&nbsp;
-                <a href="{{ contrato.adicional1 }}">Descargar</a>
+                <a href="{{ contrato.adicional1.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>  
@@ -69,7 +69,7 @@
           <h5>
             {% if contrato.adicional2 != ''  %}
                 <img src="{% static 'img/file.png' %}" height="30vh">&nbsp;            
-                <a href="{{ contrato.adicional1 }}">Descargar</a>
+                <a href="{{ contrato.adicional1.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>  
@@ -81,7 +81,7 @@
           <h5>
             {% if contrato.acta_recibo_final != '' %}
                 <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
-                <a href="{{ contrato.acta_recibo_final }}">Descargar</a>
+                <a href="{{ contrato.acta_recibo_final.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>  
@@ -93,7 +93,7 @@
           <h5>
             {% if contrato.acta_liquidacion != '' %}
                 <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
-                <a href="{{ contrato.acta_liquidacion }}">Descargar</a>
+                <a href="{{ contrato.acta_liquidacion.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>  
@@ -105,7 +105,7 @@
           <h5>
             {% if contrato.certificacion_de_obra != '' %}
                 <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;
-                <a href="{{ contrato.certificacion_de_obra }}">Descargar</a>
+                <a href="{{ contrato.certificacion_de_obra.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>            
@@ -117,7 +117,7 @@
           <h5>
             {% if contrato.certificacion_director != '' %}
                 <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;        
-                <a href="{{ contrato.certificacion_director }}">Descargar</a>
+                <a href="{{ contrato.certificacion_director.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span>              
@@ -129,7 +129,7 @@
           <h5>
             {% if contrato.acuerdo_consorcial != '' %}
                 <img src="{% static 'img/file.png' %}" height="30vh"> &nbsp;                    
-                <a href="{{ contrato.acuerdo_consorcial }}">Descargar</a>
+                <a href="{{ contrato.acuerdo_consorcial.url }}">Descargar</a>
             {% else %}
                 <img src="{% static 'img/no-file.png' %}" height="30vh"> &nbsp;
                 <span id="no-file"> Archivo no disponible </span> 
