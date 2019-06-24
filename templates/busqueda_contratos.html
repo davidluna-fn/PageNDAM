@@ -269,7 +269,7 @@ function sub1(){
 </div>
 {% for contrato in filter %}
   
-<div id="contenido-tabla">
+<div id="contenido-tabla" style="font-family: arial;">
 
   <div class="campo1-busqueda"><p>{{ contrato.numero }}</p></div>
   <div class="campo2-busqueda"><p>{{ contrato.year }}</p></div>
@@ -310,7 +310,7 @@ function sub1(){
             {% if filter.number == num %}
                 <a class="pagination-number pagination-current">{{ num }}</a>
             {% elif num > filter.number|add:'-3' and num < filter.number|add:'3' %}
-                <a class="pagination-number" href="{{ request.get_full_path }}&page={{ num }}">{{ num }}</a>
+                <a class="pagination-number" href="{{ request.get_full_path }}?page={{ num }}">{{ num }}</a>
             {% endif %}
           {% endfor %}
       {% endif %}
