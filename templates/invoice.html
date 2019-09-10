@@ -59,10 +59,10 @@
         <th width=50>Número</th>
         <th width=35>Año</th>
         <th>Objeto</th>
-        <th width=50>Valor en SM</th>
-        <th width=55>Contrato</th>
-        <th width=70>Acta de liquidación</th>
-        <th width=50>Acta de Recibo final</th>
+        <!-- <th width=50>Valor en SM</th> -->
+        <th width=55>Porcentaje de Participacion</th>
+        <th width=70>Valor Total</th>
+        <th width=50>Valor Segun Participacion</th>
       </tr>
     </thead>
     <tbody>
@@ -71,7 +71,7 @@
           <td align="center">{{ contrato.numero }}</td>
           <td align="center">{{ contrato.year }}</td>
           <th align="left" valign="middle">{{ contrato.objeto }}</th>
-		      <th align="center">{{ contrato.valor_en_sm}}</th>
+		      <!-- <th align="center">{{ contrato.valor_en_sm}}</th> -->
           <th align="center">
               {% if contrato.contrato == '' %} No {% else %} Si {% endif %}
           </th>
