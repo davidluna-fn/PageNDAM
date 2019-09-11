@@ -97,7 +97,7 @@ def search(request):
         if 'pdf' in request.GET:
             template = get_template('invoice.html')
             for i in contrato_filter.qs:
-                if i.contrato_id == 0:
+                if i.id == 0:
                     continue
                 i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
                 i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
