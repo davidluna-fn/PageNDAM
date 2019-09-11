@@ -65,7 +65,7 @@ def search(request):
 
 
     contrato_filter = ContratosFilter(request.GET, queryset=contrato_list)
-    
+    context = {'filter':contrato_filter, 'date':date.today, 'user':request.user.username}
 
     page = request.GET.get('page', 1)
 
@@ -96,9 +96,7 @@ def search(request):
     if request.GET:
         if 'pdf' in request.GET:
             template = get_template('invoice.html')
-            for i in contrato_filter.qs:
-                if i.numero == None:
-                    continue
+            for i in context.filter:
                 i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
                 i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
                 i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
@@ -109,7 +107,7 @@ def search(request):
                 i.valor_en_sm_participacion = SetMoneda(i.valor_en_sm_participacion,"",2)
                 i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
 
-            context = {'filter':contrato_filter, 'date':date.today, 'user':request.user.username}
+            
             html = template.render(context)
             pdf = render_to_pdf('invoice.html', context)
             if pdf:
