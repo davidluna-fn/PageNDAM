@@ -73,13 +73,13 @@
           <th align="left" valign="middle">{{ contrato.objeto }}</th>
 		      <!-- <th align="center">{{ contrato.valor_en_sm}}</th> -->
           <th align="center">
-              {% if contrato.contrato == '' %} No {% else %} Si {% endif %}
+              {{contrato.porcentaje_participacion}}
           </th>
           <th align="center">
-              {% if contrato.acta_liquidacion == '' %} No {% else %} Si {% endif %}
+              {{contrato.valor_ejecutado}}
           </th>
           <th align="center">
-              {% if contrato.acta_recibo_final == '' %} No {% else %} Si {% endif %}
+              {{contrato.porcentaje_participacion }}
           </th>
         </tr>
       {% empty %}
