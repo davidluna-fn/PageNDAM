@@ -102,6 +102,7 @@ def search(request):
                     i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
                     i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
                     i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
+                    i.porcentaje_participacion = str(round(i.porcentaje_participacion*100))+'%'
                 except:
                     continue
             
