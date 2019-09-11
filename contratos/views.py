@@ -96,7 +96,7 @@ def search(request):
     if request.GET:
         if 'pdf' in request.GET:
             template = get_template('invoice.html')
-            for i in contrato_filter:
+            for i in contrato_filter.qs:
                 i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
                 i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
                 i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
