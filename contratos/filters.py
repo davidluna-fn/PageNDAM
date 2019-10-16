@@ -13,10 +13,6 @@ class ContratosFilter(django_filters.FilterSet):
     valor_ejecutado_lt = django_filters.NumberFilter(field_name='valor_ejecutado', lookup_expr='lt')
     fecha_terminacion_gt = django_filters.DateFilter(field_name='fecha_terminacion', lookup_expr='gt')
     fecha_terminacion_lt = django_filters.DateFilter(field_name='fecha_terminacion', lookup_expr='lt')
-#    valor =  django_filters.ChoiceFilter(choices=rangos, method='filtro_rangos')
-
-    def filtro_rangos(self, queryset, name,value):
-    	print(name)
 
     class Meta:
         model = Contrato
