@@ -291,8 +291,8 @@ function sub1(){
 
 
 {% if filter.has_other_pages %}
-<div id="content-paginator2"></div>
-<div id="paginator" class="pagination" style="display: inline-block;"></div>
+<div id="content-paginator2">
+<div id="paginator" class="pagination" style="display: inline-block;">
 
   {% if filter.has_previous %}
     <a class="pagination-action" href="?{% param_replace page=1 %}"><i class="fas fa-angle-double-left"></i></a>
@@ -321,6 +321,7 @@ function sub1(){
   {% endif %}
 
 {% endif %}
+</div>
 </div>
 </div>
 
