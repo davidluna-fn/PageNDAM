@@ -78,16 +78,18 @@ def search(request):
         cto_filter = paginator.get_page(page(paginator.num_pages))
 
     for i in cto_filter:
-        i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
-        i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
-        i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
-        i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
+        try:
+            i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
+            i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
+            i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
+            i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
 
-        i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
-        i.valor_en_sm = SetMoneda(i.valor_en_sm,"",2)
-        i.valor_en_sm_participacion = SetMoneda(i.valor_en_sm_participacion,"",2)
-        i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
-
+            i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
+            i.valor_en_sm = SetMoneda(i.valor_en_sm,"",2)
+            i.valor_en_sm_participacion = SetMoneda(i.valor_en_sm_participacion,"",2)
+            i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
+        except:
+            continue
 
 
 
