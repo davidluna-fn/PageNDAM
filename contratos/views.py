@@ -144,3 +144,6 @@ def contrato_detail_view(request,pk):
         return render(request,'Contrato_detail.html', context={'contrato':contrato_id,})
     else:
         return HttpResponse('Debe iniciar sesion para poder buscar contratos')
+
+
+

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load my_tags %}
 {% load widget_tweaks %}
 
 
@@ -232,8 +232,6 @@ function sub1(){
       <ul>
         <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
         <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipoObra" %}</li>
-<!--         <li>{{ filterqs.form.valor.label_tag }}</li>
-        <li>{% render_field filterqs.form.valor class="form-control" id="valor" %}</li> -->
         <li>
           <div id="btn-generar-reporte" >
             <button name='pdf' type="submit">
@@ -267,6 +265,7 @@ function sub1(){
   <div class="campo5-busqueda"><h5>VALOR SEGUN <br>PARTICIPACIÓN<br>ACTUALIZADO</h5></div>
 
 </div>
+
 {% for contrato in filter %}
   
 <div id="contenido-tabla" style="font-family: arial;">
@@ -291,14 +290,46 @@ function sub1(){
 {% endfor %}
 
 
+{% if filter.has_other_pages %}
+<div id="content-paginator2"></div>
+<div id="paginator" class="pagination" style="display: inline-block;"></div>
 
+  {% if filter.has_previous %}
+    <a class="pagination-action" href="?{% param_replace page=1 %}"><i class="fas fa-angle-double-left"></i></a>
+    {% if filter.previous_page_number != 1 %}
+      <a class="pagination-action" href="?{% param_replace page=filter.previous_page_number %}"><i class="fas fa-angle-left"></i></a>
+    {% endif %}
+  {% endif %}
+
+  {% if filter.has_previous or filter.has_next %}
+    {% for num in filter.paginator.page_range %}
+    {% if filter.number == num %}
+        <a class="pagination-number pagination-current">{{ num }}</a>
+    {% elif num > filter.number|add:'-3' and num < filter.number|add:'3' %}
+        <a class="pagination-number" href="?{% param_replace page=num %}">{{ num }}</a>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+  {% if filter.has_next %}
+    {% if filter.next_page_number != paginator.num_pages %}
+      <a class="pagination-action" href="?{% param_replace page=filter.next_page_number %}"><i class="fas fa-angle-right"></i></a>
+    {% endif %}
+    <a class="pagination-action" href="?{% param_replace page=paginator.num_pages %}">
+        <i class="fas fa-angle-double-right"></i>
+    </a>
+  {% endif %}
+
+{% endif %}
+</div>
+</div>
+
+
+<!-- {% if filter.has_other_pages %}
 <div id="content-paginator2">
   <div id="paginator" class="pagination" style="display: inline-block;">
 
       {% if filter.has_previous %}
-            <a class="pagination-action" href="?page=1" > 
-              <i class="fas fa-angle-double-left"></i>
-            </a>
             <a class="pagination-action" href="?page={{ filter.previous_page_number }}">
               <i class="fas fa-angle-left"></i>
             </a>
@@ -327,6 +358,6 @@ function sub1(){
   </div>
 </div>
 </div>
-
+{% endif %} -->
 
 {% endblock %}
