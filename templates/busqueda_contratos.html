@@ -222,6 +222,8 @@ function sub1(){
       <ul>
         <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
         <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipoObra" %}</li>
+        <li>{{ filterqs.form.empresa.label_tag }}</li>
+        <li>{% render_field filterqs.form.empresa class="form-control" id="empresa" %}</li>
         <li>
           <div id="btn-generar-reporte" >
             <button name='pdf' type="submit">
