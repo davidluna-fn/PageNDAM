@@ -2486,7 +2486,6 @@ input[type=number] { -moz-appearance:textfield; }
   height: 30px;
 }
 
-
 #btn-logout h5{
   margin-top: 5px;
   width: 200px
@@ -2710,11 +2709,11 @@ input[type=number] { -moz-appearance:textfield; }
       height: 30px;
     }
 
-      #empresa{
-      width: 40vw;
-      text-decoration: none;
-      background-color: var(--blanco-claro);
-      height: 30px;
+    #empresa{
+    width: 40vw;
+    text-decoration: none;
+    background-color: var(--blanco-claro);
+    height: 30px;
     }
     .campo1-busqueda{
       grid-area: 1 / 1 / 2 / 2;
