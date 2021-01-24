@@ -68,7 +68,7 @@
     <tbody>
       {% for contrato in filter.qs %}
         <tr>
-          <td align="center">{{ contrato.numero }}</td>
+          <td align="center">{{ contrato.numero }} <br>{{ contrato.empresa }} </td>
           <td align="center">{{ contrato.year }}</td>
           <th align="left" valign="middle">{{ contrato.objeto }}</th>
 		      <!-- <th align="center">{{ contrato.valor_en_sm}}</th> -->
