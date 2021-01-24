@@ -79,8 +79,8 @@ def search(request):
 
     for i in cto_filter:
         try:
-            i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
-            i.valor_en_sm = round(i.valor_ejecutado /vsm['2019'],2)
+            i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm[str(date.today().year)],2)
+            i.valor_en_sm = round(i.valor_ejecutado /vsm[str(date.today().year)],2)
             i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
             i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
 
@@ -100,7 +100,7 @@ def search(request):
             template = get_template('invoice.html')
             for i in context['filter'].qs:
                 try:
-                    i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm['2019'],2)
+                    i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm[str(date.today().year)],2)
                     i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
                     i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
                     i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
@@ -137,7 +137,7 @@ def contrato_detail_view(request,pk):
                 vsm[str(SM[i].year)] = SM[i].valor
 
             contrato_id=Contrato.objects.get(pk=pk)
-            contrato_id.valor_en_sm = SetMoneda(round(contrato_id.valor_ejecutado /vsm['2019'],2),"",2)
+            contrato_id.valor_en_sm = SetMoneda(round(contrato_id.valor_ejecutado /vsm[str(date.today().year)],2),"",2)
             contrato_id.valor_ejecutado = SetMoneda(contrato_id.valor_ejecutado,"$",2)
             contrato_id.porcentaje_participacion = str(round(contrato_id.porcentaje_participacion,1)*100)+"%"
             
