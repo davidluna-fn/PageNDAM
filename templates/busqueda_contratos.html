@@ -255,7 +255,7 @@ function sub1(){
   <div class="campo3-busqueda"><h5>OBJETO</h5></div>
   <div class="campo4-busqueda"><h5>VALOR TOTAL <br>ACTUALIZADO</h5></div>
   <div class="campo5-busqueda"><h5>VALOR SEGUN <br>PARTICIPACIÓN<br>ACTUALIZADO</h5></div>
-
+  <div class="campo5-busqueda"><h5>EMPRESA</h5></div>
 </div>
 
 {% for contrato in filter %}
@@ -276,6 +276,9 @@ function sub1(){
   </div>
   <div class="campo5-busqueda">
     <p>{{ contrato.valor_ejecutado_participacion }} (PESOS)<br>{{ contrato.valor_en_sm_participacion }} (SMMLV)</p>
+  </div>
+  <div class="campo5-busqueda">
+    <p>{{ contrato.empresa }}</p>
   </div>
 </div>
 
