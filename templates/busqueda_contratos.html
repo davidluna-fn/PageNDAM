@@ -223,7 +223,7 @@ function sub1(){
         <li>{{ filterqs.form.tipo_de_obra.label_tag }}</li>
         <li>{% render_field filterqs.form.tipo_de_obra class="form-control" id="tipoObra" %}</li>
         <li>{{ filterqs.form.empresa.label_tag }}</li>
-        <li>{% render_field filterqs.form.empresa class="form-control" id="empresa" %}</li>
+        <li>{% render_field filterqs.form.empresa class="form-control" id="tipoObra" %}</li>
         <li>
           <div id="btn-generar-reporte" >
             <button name='pdf' type="submit">
@@ -250,7 +250,7 @@ function sub1(){
 
 <div id="content-tabla">
 <div id="titulo-tabla">
-  <div class="campo1-busqueda"><h5>No.<br>/EMPRESA</h5></div>
+  <div class="campo1-busqueda"><h5>No.<br>EMPRESA</h5></div>
   <div class="campo2-busqueda"><h5>AÑO</h5></div>
   <div class="campo3-busqueda"><h5>OBJETO</h5></div>
   <div class="campo4-busqueda"><h5>VALOR TOTAL <br>ACTUALIZADO</h5></div>
