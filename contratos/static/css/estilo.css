@@ -2709,6 +2709,13 @@ input[type=number] { -moz-appearance:textfield; }
       background-color: var(--blanco-claro);
       height: 30px;
     }
+
+      #empresa{
+      width: 40vw;
+      text-decoration: none;
+      background-color: var(--blanco-claro);
+      height: 30px;
+    }
     .campo1-busqueda{
       grid-area: 1 / 1 / 2 / 2;
     }
@@ -2778,6 +2785,12 @@ input[type=number] { -moz-appearance:textfield; }
      width: 80vw;
     }
     #tipoObra{
+      width: 80vw;
+      text-decoration: none;
+      background-color: var(--blanco-claro);
+      height: 30px;
+    }
+    #empresa{
       width: 80vw;
       text-decoration: none;
       background-color: var(--blanco-claro);
