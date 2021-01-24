@@ -250,19 +250,18 @@ function sub1(){
 
 <div id="content-tabla">
 <div id="titulo-tabla">
-  <div class="campo1-busqueda"><h5>No.</h5></div>
+  <div class="campo1-busqueda"><h5>No.<br>/EMPRESA</h5></div>
   <div class="campo2-busqueda"><h5>AÑO</h5></div>
   <div class="campo3-busqueda"><h5>OBJETO</h5></div>
   <div class="campo4-busqueda"><h5>VALOR TOTAL <br>ACTUALIZADO</h5></div>
   <div class="campo5-busqueda"><h5>VALOR SEGUN <br>PARTICIPACIÓN<br>ACTUALIZADO</h5></div>
-  <div class="campo5-busqueda"><h5>EMPRESA</h5></div>
 </div>
 
 {% for contrato in filter %}
   
 <div id="contenido-tabla" style="font-family: arial;">
 
-  <div class="campo1-busqueda"><p>{{ contrato.numero }}</p></div>
+  <div class="campo1-busqueda"><p>{{ contrato.numero }}<br>/EMPRESA</p></div>
   <div class="campo2-busqueda"><p>{{ contrato.year }}</p></div>
   <div class="campo3-busqueda">
     <p style="text-align: left;">
@@ -276,9 +275,6 @@ function sub1(){
   </div>
   <div class="campo5-busqueda">
     <p>{{ contrato.valor_ejecutado_participacion }} (PESOS)<br>{{ contrato.valor_en_sm_participacion }} (SMMLV)</p>
-  </div>
-  <div class="campo5-busqueda">
-    <p>{{ contrato.empresa }}</p>
   </div>
 </div>
 
