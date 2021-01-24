@@ -2479,6 +2479,13 @@ input[type=number] { -moz-appearance:textfield; }
   height: 30px;
 }
 
+#empresa{
+  width: 25vw;
+  text-decoration: none;
+  background-color: var(--blanco-oscuro);
+  height: 30px;
+}
+
 
 #btn-logout h5{
   margin-top: 5px;
