@@ -15,6 +15,12 @@ clasificacion = (
 	(u'SUMINISTRO',u'SUMINISTRO'),
 )
 
+empresa = (
+	(u'NDAM',u'NDAM'),
+	(u'ARMELCO SAS',u'ARMELCO SAS'),
+)
+
+
 class Contrato(models.Model):
 	numero 						= models.CharField(max_length=5,verbose_name=u'Número',blank=False, null=False)
 	year						= models.IntegerField(verbose_name=u'Año',blank=False, null=False)
@@ -37,6 +43,7 @@ class Contrato(models.Model):
 	certificacion_de_obra		= models.FileField(upload_to='my_folder',blank=True, null=True)
 	certificacion_director		= models.FileField(upload_to='my_folder',blank=True, null=True)
 	acuerdo_consorcial			= models.FileField(upload_to='my_folder',blank=True, null=True)
+	empresa						= models.CharField(max_length=15,choices=empresa,verbose_name=u'empresa', default='NDAM')
 
 	def get_absolute_url(self):
 		return "/contrato/%i/" % self.id

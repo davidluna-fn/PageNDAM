@@ -7,7 +7,7 @@ class AdminContrato(admin.ModelAdmin):
 	fieldsets = [['Identidicadores', {'fields': [('numero','year'),
 												'numero_en_proponente',
 												('departamento','municipio')]}],
-				 [u'Descripción',{'fields':['entidad_contratante',
+				 [u'Descripción',{'fields':['entidad_contratante','empresa',
 				 										 'tipo_de_obra','objeto',
 				 										 ('plazo_en_dias','fecha_terminacion')]}],
 				 [u'Infomración economica',{'fields':[('valor_ejecutado',
