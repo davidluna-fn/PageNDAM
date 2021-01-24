@@ -16,5 +16,5 @@ class ContratosFilter(django_filters.FilterSet):
 
     class Meta:
         model = Contrato
-        fields = {'numero', 'year', 'objeto','tipo_de_obra',
+        fields = {'numero', 'year', 'objeto','tipo_de_obra','empresa',
                   'departamento','municipio',}
