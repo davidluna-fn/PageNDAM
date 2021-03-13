@@ -139,7 +139,7 @@ def contrato_detail_view(request,pk):
             contrato_id=Contrato.objects.get(pk=pk)
             contrato_id.valor_en_sm = SetMoneda(round(contrato_id.valor_ejecutado /vsm[str(date.today().year)],2),"",2)
             contrato_id.valor_ejecutado = SetMoneda(contrato_id.valor_ejecutado,"$",2)
-            contrato_id.porcentaje_participacion = str(round(contrato_id.porcentaje_participacion,1)*100)+"%"
+            contrato_id.porcentaje_participacion = str(round(contrato_id.porcentaje_participacion,2)*100)+"%"
             
         except Contrato.DoesNotExist:
             raise Http404("Contratos does not exist")
