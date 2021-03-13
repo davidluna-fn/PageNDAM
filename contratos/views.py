@@ -79,7 +79,7 @@ def search(request):
 
     for i in cto_filter:
         try:
-            if i.fecha_terminacion.year < date.today().year: 
+            if i.fecha_terminacion.year < date.today().year:
                 i.valor_ejecutado = round((i.valor_ejecutado/vsm[str(i.year)])*vsm[str(date.today().year)],2)
                 i.valor_en_sm = round(i.valor_ejecutado /vsm[str(date.today().year)],2)
                 i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
@@ -89,10 +89,10 @@ def search(request):
                 i.valor_en_sm_participacion = i.valor_en_sm * i.porcentaje_participacion
                 i.valor_ejecutado_participacion = round((i.valor_ejecutado * i.porcentaje_participacion),2)
 
-            i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
-            i.valor_en_sm = SetMoneda(i.valor_en_sm,"",2)
-            i.valor_en_sm_participacion = SetMoneda(i.valor_en_sm_participacion,"",2)
-            i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
+                i.valor_ejecutado = SetMoneda(i.valor_ejecutado,"$",2)
+                i.valor_en_sm = SetMoneda(i.valor_en_sm,"",2)
+                i.valor_en_sm_participacion = SetMoneda(i.valor_en_sm_participacion,"",2)
+                i.valor_ejecutado_participacion = SetMoneda(i.valor_ejecutado_participacion,"$",2)
         except:
             continue
 
